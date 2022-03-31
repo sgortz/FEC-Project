@@ -5,7 +5,8 @@ const { API_KEY, FEC_API_URL } = require('../../client/src/config/config');
 
 module.exports = {
   getAllreviews: function (page, count, sort, product_id, callback) {
-    let options = {
+
+     options = {
       method: 'get',
       url: `${FEC_API_URL}reviews?product_id=${product_id}&page=${page}&count=${count}&sort=${sort}`,
       headers : {

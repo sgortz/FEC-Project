@@ -43,6 +43,7 @@ module.exports = {
       product_id: req.body.product_id,
       rating: req.body.rating,
       summary: req.body.summary,
+      body: req.body.body,
       recommend: req.body.recommend,
       name: req.body.name,
       email: req.body.email,
@@ -50,13 +51,13 @@ module.exports = {
       characteristics: req.body.characteristics
     }
 
-    models.review.writeReview(databody, (err, results)=>{
+    models.review.writeReview(req.body, (err, results)=>{
       if (err) {
         console.log('Unable to write review');
         res.sendStatus(500);
       } else {
         console.log('Success! Write Review!');
-        res.status(201);
+        res.sendStatus(201);
       }
 
     });
@@ -73,14 +74,14 @@ module.exports = {
         res.sendStatus(500);
       } else {
         console.log('Success! Put Helpful!');
-        res.status(204);
+        res.sendStatus(204);
       }
 
     });
 
   },
 
-  putReport: function (creq, res) {
+  putReport: function (req, res) {
     console.log(req.params);
 
     let {review_id} = req.params;
@@ -90,7 +91,7 @@ module.exports = {
         res.sendStatus(500);
       } else {
         console.log('Success! Put Report!');
-        res.status(204);
+        res.sendStatus(204);
       }
 
     });
