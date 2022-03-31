@@ -1,11 +1,11 @@
 import React from 'react';
-import QuestionMain from './QuestionsAndAnswers/QuestionMain.jsx';
+import QAMain from './QuestionsAndAnswers/QAMain.jsx';
 
 
 const App = (props) => (
   <div>
 
-    <QuestionMain />
+    <QAMain />
 
   </div>
 
