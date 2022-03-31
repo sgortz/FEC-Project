@@ -1,6 +1,7 @@
 const axios = require('axios');
-const { API_KEY, FEC_API_URL } = require('.../client/src/config/config.js');
+const { API_KEY, FEC_API_URL } = require('../../client/src/config/config');
 // https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/
+
 
 module.exports = {
   getAllreviews: function (page, count, sort, product_id, callback) {
@@ -9,7 +10,7 @@ module.exports = {
       url: `${FEC_API_URL}reviews?product_id=${product_id}&page=${page}&count=${count}&sort=${sort}`,
       headers : {
         'User-Agent': 'request',
-        'Authorization': ${API_KEY}
+        'Authorization': API_KEY
       }
     };
 
@@ -29,7 +30,7 @@ module.exports = {
       url: `${FEC_API_URL}reviews/meta?product_id=${product_id}`,
       headers : {
         'User-Agent': 'request',
-        'Authorization': ${API_KEY}
+        'Authorization': API_KEY
       }
     };
 
@@ -49,9 +50,9 @@ module.exports = {
       url: `${FEC_API_URL}reviews`,
       headers : {
         'User-Agent': 'request',
-        'Authorization': ${API_KEY}
-      }
-      data: databody,
+        'Authorization': API_KEY
+      },
+      data: databody
     };
 
     return axios(options)
@@ -70,7 +71,7 @@ module.exports = {
       url: `${FEC_API_URL}reviews/${review_id}/helpful`,
       headers : {
         'User-Agent': 'request',
-        'Authorization': ${API_KEY}
+        'Authorization': API_KEY
       }
     };
 
@@ -90,7 +91,7 @@ module.exports = {
       url: `${FEC_API_URL}reviews/${review_id}/report`,
       headers : {
         'User-Agent': 'request',
-        'Authorization': ${API_KEY}
+        'Authorization': API_KEY
       }
     };
 
