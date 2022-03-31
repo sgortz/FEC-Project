@@ -4,9 +4,9 @@ const models = require('../models');
 
 module.exports = {
   getAllreviews: function (req, res) {
-    console.log(req.params);
+    console.log(req.query);
 
-    let {page, count, sort, product_id} = req.params;
+    let {page, count, sort, product_id} = req.query;
     models.review.getAllreviews(page, count, sort, product_id, (err, results)=>{
       if (err) {
         console.log('Unable to get all reviews');
@@ -21,9 +21,9 @@ module.exports = {
   },
 
   getReviewMeta: function (req, res) {
-    console.log(req.params);
+    console.log(req.query);
 
-    let {product_id} = req.params;
+    let {product_id} = req.query;
     models.review.getReviewMeta(product_id, (err, results)=>{
       if (err) {
         console.log('Unable to get review metadata');
