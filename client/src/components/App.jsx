@@ -1,15 +1,12 @@
 import React from 'react';
+import QAMain from './QuestionsAndAnswers/QAMain.jsx';
 import RatingsAndReviews from './RatingsAndReviews/RatingsReviews.jsx'
 
 
 const App = (props) => (
   <div>
-    <div>Hello World!</div>
 
-
-
-
-
+    <QAMain />
 
     <RatingsAndReviews/>
 
