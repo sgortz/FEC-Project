@@ -1,7 +1,11 @@
 import React from 'react';
+import NavBar from './NavBar.jsx'
 
 const App = (props) => (
-  <div>Hello World!</div>
+  <div>
+    <NavBar />
+
+  </div>
 );
 
 export default App;
