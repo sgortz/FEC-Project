@@ -32,6 +32,24 @@ function RatingsAndReviews (props) {
     .catch((err)=>{console.log(err)});
   }, [sortoption]);
 
+  useEffect (() => {
+    axios.get('/reviews/meta',
+          {
+            params: {
+              product_id : 37315,
+            }
+          }
+        )
+    .then((results)=>{
+      setMetadata(results.data);
+      console.log('successfully get review metadata')
+    })
+    .catch((err)=>{console.log(err)});
+  },[]);
+  //will need to put something inside [] above, eg. whenever a new review is submitted
+
+  
+
 
 
 
