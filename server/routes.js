@@ -7,8 +7,14 @@ var router = require('express').Router();
 
 
 
-/* -------- QUESTION & ANSWER -------- */
 
+//Ratings and Reviews
+router.get('/reviews/:product_id/:page/:count/:sort', controller.review.getAllreviews);
+router.get('/reviews/meta/:product_id', controller.review.getReviewMeta);
+router.post('/reviews', controller.review.writeReview);
+router.put('/reviews/:review_id/helpful', controller.review.putHelpful);
+router.put('/reviews/:review_id/report', controller.review.putReport);
+/* -------- QUESTION & ANSWER -------- */
 router.get('/qa/questions', controller.questions.getQuestions);
 router.post('/qa/questions', controller.questions.postQuestions);
 router.post('/qa/questions/answer', controller.questions.postAnswer);
