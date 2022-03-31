@@ -9,7 +9,7 @@ import AddReview from './components/AddReview.jsx'
 
 function RatingsAndReviews (props) {
 
-  const [review, setReview] = useState(null);
+  const [review, setReview] = useState([]);
   const [sortoption, setSortoption] = useState('relevant');
   const [metadata, setMetadata] = useState(null);
 
@@ -25,27 +25,14 @@ function RatingsAndReviews (props) {
           }
         )
     // axios.get(`/reviews/?product_id=37315&page=1&count=500&sort=relevant`)
-    .then((reviews)=>{
-      setReview(reviews.results);
+    .then((results)=>{
+      setReview(results.data.results)
       console.log('successfully get all reviews')
     })
     .catch((err)=>{console.log(err)});
   }, [sortoption]);
 
 
-
-  // const sortHandler = () => {
-  //   switch (sortoption) {
-  //     case 'helpful':
-
-  //       break;
-  //     case 'newest' :
-  //       setReview();
-  //       break;
-  //     default:
-  //       setReview();
-  //   }
-  // };
 
 
 
