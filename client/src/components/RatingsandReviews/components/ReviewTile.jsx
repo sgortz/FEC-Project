@@ -4,6 +4,9 @@ import moment from 'moment';
 
 function ReviewTile ({review}) {
 
+  const [reviewbody, setReviewbody] = useState(review.body.slice(0, 250));
+  const [showmore, setShowmore] = useState('show more');
+
   return(
     <div className="reviewtile">
       <h4>ReviewTile</h4>
@@ -16,9 +19,18 @@ function ReviewTile ({review}) {
       <div className="reviewsummary">
         <strong>{review.summary.slice(0, 60)}</strong>
       </div>
-      <div className="reviewbody">
-        {review.body}
-      </div>
+        {review.body.length < 250 ?
+          <div>
+            {reviewbody}
+          </div>
+          :
+          <div className="reviewbody">
+            {reviewbody}
+            <br></br>
+            <a onClick={()=> {setReviewbody(review.body); setShowmore(null)}}>{showmore}</a>
+          </div>
+        }
+
       <div className="reviewphoto">
         reviewphotos
       </div>
