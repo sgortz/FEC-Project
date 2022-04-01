@@ -5,27 +5,27 @@
   grid-auto-rows: minmax(30px, auto);
 }
 
-.one {
+.image-gallery {
   grid-column: 2;
   grid-row: 1 / 7;
 }
 
-.two {
+.star-review {
   grid-column: 3 / 6;
   grid-row: 1;
 }
 
-.three {
+.product-detail {
   grid-column: 3 / 5;
   grid-row: 2;
 }
 
-.four {
+.style-selector {
   grid-column: 3 / 5;
   grid-row: 3;
 }
 
-.five {
+.add-to-cart {
   grid-column: 3 /5;
   grid-row: 4;
 }
