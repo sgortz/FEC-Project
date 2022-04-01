@@ -6,6 +6,9 @@ function ReviewTile ({review}) {
 
   const [reviewbody, setReviewbody] = useState(review.body.slice(0, 250));
   const [showmore, setShowmore] = useState('show more');
+  const [reviewhelpful, setReviewhelpful] = useState(review.helpfulness);
+  const [reviewreport, setReviewreport] = useState('Report');
+  const [helpfulreportclicked, setHelpfulreportclicked] = useState(false);
 
   return(
     <div className="reviewtile">
@@ -19,31 +22,37 @@ function ReviewTile ({review}) {
       <div className="reviewsummary">
         <strong>{review.summary.slice(0, 60)}</strong>
       </div>
-        {review.body.length < 250 ?
-          <div>
-            {reviewbody}
-          </div>
-          :
-          <div className="reviewbody">
-            {reviewbody}
-            <br></br>
-            <a onClick={()=> {setReviewbody(review.body); setShowmore(null)}}>{showmore}</a>
-          </div>
-        }
+      {review.body.length < 250 ?
+        <div className="reviewbody">
+          {reviewbody}
+        </div>
+        :
+        <div className="reviewbody">
+          {reviewbody}
+          <br></br>
+          <a onClick={()=> {setReviewbody(review.body); setShowmore(null)}}>{showmore}</a>
+        </div>
+      }
 
       <div className="reviewphoto">
-        reviewphotos
+        review images placeholder
       </div>
-      <div className="reviewrecommend">
-        Recommend: {review.recommend}
-        {/* {{review.recommend}? return(<div>I recommend  project</div>)} */}
-      </div>
-      <div className="sellerresponse">
-        Response: {review.response}
-      </div>
-      <div className="reviewhelpful">
-        Helpful? Yes: {review.helpfulness} | Report
-      </div>
+      {review.recommend === true ?
+        <div className="reviewrecommend">✓ I recommend this product</div> : null
+      }
+      {review.response !== null?
+        <div className="sellerresponse"><strong>Response:</strong> <br></br>{review.response}</div> : null
+      }
+      {helpfulreportclicked === false ?
+        <div className="reviewhelpfulreport">
+          Helpful?
+          Yes:({reviewhelpful})  |  {reviewreport}
+        </div>
+        :
+        null
+
+
+      }
 
     </div>
   )
