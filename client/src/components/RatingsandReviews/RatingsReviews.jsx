@@ -10,6 +10,7 @@ import AddReview from './components/AddReview.jsx'
 function RatingsAndReviews (props) {
 
   const [reviews, setReviews] = useState([]);
+  const [reviewsrendered, setReviewsrendered] = useState(2);
   const [sortoption, setSortoption] = useState('relevant');
   const [metadata, setMetadata] = useState(null);
 
@@ -52,7 +53,7 @@ function RatingsAndReviews (props) {
 
 
 
-
+//if reviewsrendered === reviews, hide MoreReviews Button/Component
 
 
   return(
@@ -61,7 +62,7 @@ function RatingsAndReviews (props) {
       <ReviewMetaData/>
       <ReviewSort reviews={reviews} setSortoption={setSortoption}/>
       <ReviewList reviews={reviews} setReviews={setReviews}/>
-      <MoreReviews/>
+      <MoreReviews reviewsrendered={reviewsrendered} setReviewsrendered={setReviewsrendered}/>
       <AddReview/>
     </div>
   )

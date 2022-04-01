@@ -4,8 +4,8 @@ import axios from 'axios';
 function AddReview () {
 
   return(
-    <div>
-      <h3>AddReview</h3>
+<div>
+      <input type="button" id="addreview" value="Add A Review"/>
     </div>
   )
 
