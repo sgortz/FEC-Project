@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,300;1,100;1,300&family=Belleza&display=swap');
+
+.announcements {
+  display: block;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin: 10px auto;
+  text-align: center;
+
+}
+
+.announcements span {
+  text-decoration: underline
+}

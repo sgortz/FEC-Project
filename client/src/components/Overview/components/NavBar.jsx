@@ -3,8 +3,8 @@ import "./NavBar.css";
 
 const NavBar = () => (
   <div className="Navbar">
-   <div className="Logo">logo</div>
-   <div>Search bar goes here</div>
+   <h2 className="Logo">Zion Narrows</h2>
+   <div className="top-search-bar">_______________ 🔍</div>
   </div>
 )
 

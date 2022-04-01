@@ -1,28 +1,37 @@
 import React from 'react';
+import './AddToCart.css';
 
-const AddToCart = () => (
+const AddToCart = (props) => {
+  // console.log(props.styles.results);
+  return (
   <div>
     <form>
-      <select id="select-size" name="lunch">
-        <option value="pizza">SELECT SIZE</option>
-        <option value="curry">S</option>
-        <option value="salad">M</option>
-        <option value="ramen">L</option>
-        <option value="tacos">XL</option>
+      <select id="select-size" name="size">
+        <option value="Select-Size">SELECT SIZE</option>
+        <option value="S">XS</option>
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
       </select>
-      <select id="quantity" name="lunch">
-        <option value="pizza">1</option>
-        <option value="curry">2</option>
-        <option value="salad">3</option>
-        <option value="ramen">4</option>
-        <option value="tacos">5</option>
+      <select id="quantity" name="quantity">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
       </select>
-      <button> ADD TO BAG</button>
-      <button>*</button>
-
-
+      <button id="add-to-bag"> ADD TO BAG</button>
+      <button id="starred">*</button>
     </form>
   </div>
-)
+)}
 
 export default AddToCart;
+
+/**HIGH LEVEL STRATEGY FOR THIS COMPONENT
+ *
+ * 1. Need to iterate over the results array to get access to the style's id
+ * 2. Go iterate through the SKUS object to populate the components with
+ *
+ */

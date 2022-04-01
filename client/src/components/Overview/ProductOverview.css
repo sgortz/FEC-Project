@@ -1,0 +1,31 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(30px, auto);
+}
+
+.image-gallery {
+  grid-column: 2;
+  grid-row: 1 / 7;
+}
+
+.star-review {
+  grid-column: 3 / 6;
+  grid-row: 1;
+}
+
+.product-detail {
+  grid-column: 3 / 5;
+  grid-row: 2;
+}
+
+.style-selector {
+  grid-column: 3 / 5;
+  grid-row: 3;
+}
+
+.add-to-cart {
+  grid-column: 3 /5;
+  grid-row: 4;
+}
