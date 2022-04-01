@@ -1,4 +1,4 @@
-var data = [
+var productExample = [
   {
       "id": 37311,
       "campus": "hr-rfe",
@@ -55,3 +55,5 @@ var data = [
       "updated_at": "2021-08-13T14:37:33.145Z"
   }
 ]
+
+export default productExample;
