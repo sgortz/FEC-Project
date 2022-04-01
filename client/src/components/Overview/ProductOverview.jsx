@@ -7,10 +7,9 @@ import ProductDetail from './components/ProductDetail.jsx';
 import StyleSelector from './components/StyleSelector.jsx';
 import AddToCart from './components/AddToCart.jsx';
 import ProductDescription from './components/ProductDescription.jsx';
+import productExample from '../../Data/overviewDataExample.js';
 import stylesExample from '../../Data/overviewStylesExample.js';
 import './ProductOverview.css';
-
-console.log('styles! ', stylesExample)
 
 class ProductOverview extends React.Component {
   constructor(props) {
@@ -26,23 +25,23 @@ class ProductOverview extends React.Component {
         <NavBar />
         <Announcements />
         <div className="wrapper">
-          <div className="one">
+          <div className="image-gallery">
             <ImageGallery styles={stylesExample} />
           </div>
-          <div className="two">
-            <StarReview />
+          <div className="star-review">
+            <StarReview styles={stylesExample} />
           </div>
-          <div className="three">
-            <ProductDetail />
+          <div className="product-detail">
+            <ProductDetail product={productExample} styles={stylesExample} />
           </div>
-          <div className="four">
-            <StyleSelector styles={stylesExample} />
+          <div className="style-selector">
+            <StyleSelector styles={stylesExample} product={productExample}/>
           </div>
-          <div className="five">
-            <AddToCart />
+          <div className="add-to-cart">
+            <AddToCart styles={stylesExample} />
           </div>
         </div>
-        <ProductDescription />
+        <ProductDescription styles={stylesExample} />
       </div>
     )
   }
