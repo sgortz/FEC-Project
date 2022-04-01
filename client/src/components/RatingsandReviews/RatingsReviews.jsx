@@ -9,7 +9,7 @@ import AddReview from './components/AddReview.jsx'
 
 function RatingsAndReviews (props) {
 
-  const [review, setReview] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [sortoption, setSortoption] = useState('relevant');
   const [metadata, setMetadata] = useState(null);
 
@@ -26,7 +26,7 @@ function RatingsAndReviews (props) {
         )
     // axios.get(`/reviews/?product_id=37315&page=1&count=500&sort=relevant`)
     .then((results)=>{
-      setReview(results.data.results)
+      setReviews(results.data.results)
       console.log('successfully get all reviews')
     })
     .catch((err)=>{console.log(err)});
@@ -48,7 +48,7 @@ function RatingsAndReviews (props) {
   },[]);
   //will need to put something inside [] above, eg. whenever a new review is submitted
 
-  
+
 
 
 
@@ -59,8 +59,8 @@ function RatingsAndReviews (props) {
     <div>
       <h1>Ratings And Reviews</h1>
       <ReviewMetaData/>
-      <ReviewSort/>
-      <ReviewList/>
+      <ReviewSort reviews={reviews} setSortoption={setSortoption}/>
+      <ReviewList reviews={reviews} setReviews={setReviews}/>
       <MoreReviews/>
       <AddReview/>
     </div>

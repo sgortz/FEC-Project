@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function ReviewSort () {
+function ReviewSort ({reviews, setSortoption}) {
 
   return(
-    <div>
-      <h3>ReviewSort</h3>
-    </div>
+    <form >
+    <label>
+    {reviews.length} reviews, sorted by
+      <select onChange={(e)=>setSortoption(e.target.value)}>
+        <option value="relevance">relevance</option>
+        <option value="helpful">helpful</option>
+        <option value="newest">newest</option>
+      </select>
+    </label>
+  </form>
   )
 
 };
