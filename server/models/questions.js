@@ -7,11 +7,11 @@ module.exports = {
 
   getQuestions: function (query, callback) {
 
-    const { product_id, page, count } = query;
+    const { product_id } = query;
 
     options = {
       method: 'get',
-      url: `${FEC_API_URL}qa/questions?product_id=${product_id}&page=${page}&count=${count}`,
+      url: `${FEC_API_URL}qa/questions?product_id=${product_id}&count=20`,
       headers: {
         'User-Agent': 'request',
         'Authorization': API_KEY
