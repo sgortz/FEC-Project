@@ -3,6 +3,8 @@ import Answer from './Answer.jsx';
 
 
 
+
+
 const QAList = () => {
 
   return (
@@ -10,6 +12,7 @@ const QAList = () => {
         <strong>Q: This is a hardcoded question?</strong>
         <span>helpful? </span> <button>yes</button> <span> (23) </span>
         <Answer />
+        <button>MORE ANSWERED QUESTIONS</button>
 
     </div>
 

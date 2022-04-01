@@ -17,6 +17,8 @@ const QAMain = () => {
       <SearchBar />
       <br></br>
       <QAList />
+      <br></br>
+      <AddQuestion />
 
     </div>
 
