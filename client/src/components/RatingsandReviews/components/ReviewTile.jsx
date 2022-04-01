@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 function ReviewTile ({review}) {
 
   return(
     <div>
       <h4>ReviewTile</h4>
-      rating: {review.rating}
-      {review.reviewer_name}
-      {review.date}
+      <div>
+        rating: {review.rating}
+      </div>
+      <div>
+        {review.reviewer_name}, {moment(review.date).format('LL')}
+      </div>
+
       <br></br>
       {review.summary}
       <br></br>
