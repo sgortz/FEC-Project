@@ -8,7 +8,7 @@ function ReviewSort ({reviews, setSortoption}) {
     <label>
     {reviews.length} reviews, sorted by
       <select onChange={(e)=>setSortoption(e.target.value)}>
-        <option value="relevance">relevance</option>
+        <option value="relevant">relevant</option>
         <option value="helpful">helpful</option>
         <option value="newest">newest</option>
       </select>
