@@ -62,7 +62,7 @@ function RatingsAndReviews (props) {
       <ReviewMetaData/>
       <ReviewSort reviews={reviews} setSortoption={setSortoption}/>
       <ReviewList reviews={reviews} setReviews={setReviews} reviewsrenderedcount={reviewsrenderedcount}/>
-      <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
+      {reviewsrenderedcount !== reviews.length? <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/> : null}
       <AddReview/>
     </div>
   )
