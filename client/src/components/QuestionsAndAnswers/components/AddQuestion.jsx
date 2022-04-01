@@ -6,7 +6,7 @@ const AddQuestion = () => {
 
   return (
     <div>
-        <strong>Q: This is a hardcoded question</strong>
+        <button>ADD A QUESTION</button>
 
     </div>
 
