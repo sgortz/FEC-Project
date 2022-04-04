@@ -12,6 +12,7 @@ function RatingsAndReviews (props) {
   const [reviews, setReviews] = useState([]);
   const [reviewsrenderedcount, setReviewsrenderedcount] = useState(2);
   const [sortoption, setSortoption] = useState('relevant');
+  const [selectedstars, setSelectedstars] = useState([]);
 
   useEffect (() => {
     axios.get('/reviews',
@@ -36,7 +37,7 @@ function RatingsAndReviews (props) {
   return(
     <div>
       <h1>Ratings And Reviews</h1>
-      <ReviewMetaData product_id={props.product_id}/>
+      <ReviewMetaData product_id={props.product_id} selectedstars={selectedstars} setSelectedstars={setSelectedstars}/>
       <ReviewSort reviews={reviews} setSortoption={setSortoption}/>
       <ReviewList reviews={reviews} setReviews={setReviews} reviewsrenderedcount={reviewsrenderedcount}/>
       {reviewsrenderedcount !== reviews.length? <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/> : null}
