@@ -24,6 +24,13 @@
   color: white;
 }
 
+.ratingbarcontainer :hover{
+  width: 100%;
+  background-color: #C1E1C1;
+  text-align: center;
+  color: #C1E1C1;
+}
+
 /* Individual bar */
 .greenbar {
   height: 18px;

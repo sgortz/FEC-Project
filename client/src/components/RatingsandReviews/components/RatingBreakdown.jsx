@@ -13,6 +13,8 @@ function RatingBreakdown ({metadata}) {
   const [fourstar, setFourstar] = useState({count: 0, width: 0});
   const [fivestar, setFivestar] = useState({count: 0, width: 0});
 
+  const [removefilterline, setRemovefilterline] = useState(null);
+
 
   const calculaterating = (object) => {
     var sumrating = 0;
@@ -110,6 +112,7 @@ function RatingBreakdown ({metadata}) {
           <div>{fivestar.count}</div>
         </div>
       </div>
+
       <div className='ratingbreakdownrow'>
         <div className="ratingbreakdown left">
           <div>4 star</div>
@@ -123,6 +126,7 @@ function RatingBreakdown ({metadata}) {
           <div>{fourstar.count}</div>
         </div>
       </div>
+
       <div className='ratingbreakdownrow'>
         <div className="ratingbreakdown left">
           <div>3 star</div>
@@ -136,6 +140,7 @@ function RatingBreakdown ({metadata}) {
           <div>{threestar.count}</div>
         </div>
       </div>
+
       <div className='ratingbreakdownrow'>
         <div className="ratingbreakdown left">
           <div>2 star</div>
@@ -149,6 +154,7 @@ function RatingBreakdown ({metadata}) {
           <div>{twostar.count}</div>
         </div>
       </div>
+
       <div className='ratingbreakdownrow'>
         <div className="ratingbreakdown left">
           <div>1 star</div>
