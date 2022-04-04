@@ -109,7 +109,58 @@ function RatingBreakdown ({metadata}) {
         <div className='ratingbreakdown right'>
           <div>{fivestar.count}</div>
         </div>
-
+      </div>
+      <div className='ratingbreakdownrow'>
+        <div className="ratingbreakdown left">
+          <div>4 star</div>
+        </div>
+        <div className='ratingbreakdown middle'>
+          <div className='ratingbarcontainer'>
+            <div className='greenbar' style={{width: `${fourstar.width}%`}}></div>
+          </div>
+        </div>
+        <div className='ratingbreakdown right'>
+          <div>{fourstar.count}</div>
+        </div>
+      </div>
+      <div className='ratingbreakdownrow'>
+        <div className="ratingbreakdown left">
+          <div>3 star</div>
+        </div>
+        <div className='ratingbreakdown middle'>
+          <div className='ratingbarcontainer'>
+            <div className='greenbar' style={{width: `${threestar.width}%`}}></div>
+          </div>
+        </div>
+        <div className='ratingbreakdown right'>
+          <div>{threestar.count}</div>
+        </div>
+      </div>
+      <div className='ratingbreakdownrow'>
+        <div className="ratingbreakdown left">
+          <div>2 star</div>
+        </div>
+        <div className='ratingbreakdown middle'>
+          <div className='ratingbarcontainer'>
+            <div className='greenbar' style={{width: `${twostar.width}%`}}></div>
+          </div>
+        </div>
+        <div className='ratingbreakdown right'>
+          <div>{twostar.count}</div>
+        </div>
+      </div>
+      <div className='ratingbreakdownrow'>
+        <div className="ratingbreakdown left">
+          <div>1 star</div>
+        </div>
+        <div className='ratingbreakdown middle'>
+          <div className='ratingbarcontainer'>
+            <div className='greenbar' style={{width: `${onestar.width}%`}}></div>
+          </div>
+        </div>
+        <div className='ratingbreakdown right'>
+          <div>{onestar.count}</div>
+        </div>
       </div>
 
     </div>
