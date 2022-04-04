@@ -17,7 +17,7 @@ function ReviewMetaData (props) {
     )
     .then((results)=>{
       setMetadata(results.data);
-      console.log('successfully get review metadata')
+      // console.log('successfully get review metadata')
     })
     .catch((err)=>{console.log(err)});
   },[props.product_id]);
