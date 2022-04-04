@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ProductDetail = (props) => {
-  console.log(props.styles)
+
   return (
   <div>
     <small>CATEGORY</small>
