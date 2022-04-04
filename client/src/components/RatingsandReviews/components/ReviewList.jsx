@@ -10,7 +10,7 @@ function ReviewList ({reviews, setReview, reviewsrenderedcount}) {
       <div>
 
         {reviews.slice(0, reviewsrenderedcount).map((review, index)=>
-          <ReviewTile review={review} key={index}/>
+          <ReviewTile review={review} key={index} reviews={reviews}/>
         )}
 
       </div>

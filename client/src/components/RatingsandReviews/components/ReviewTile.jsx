@@ -2,13 +2,19 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 
-function ReviewTile ({review}) {
+function ReviewTile ({review, reviews}) {
 
   const [reviewbody, setReviewbody] = useState(review.body.slice(0, 250));
   const [showmore, setShowmore] = useState('show more');
   const [reviewhelpful, setReviewhelpful] = useState(review.helpfulness);
   const [reviewreport, setReviewreport] = useState('Report');
   const [helpfulreportclicked, setHelpfulreportclicked] = useState(false);
+
+  useEffect(()=>{
+    setReviewbody(review.body.slice(0, 250));
+    setReviewhelpful(review.helpfulness);
+    setHelpfulreportclicked(false);
+  }, [reviews]);
 
   return(
     <div className="reviewtile">
