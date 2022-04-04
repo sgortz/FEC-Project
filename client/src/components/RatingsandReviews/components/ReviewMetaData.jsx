@@ -23,14 +23,11 @@ function ReviewMetaData (props) {
   },[props.product_id]);
   //will need to put something inside [] above, eg. whenever a new review is submitted
 
-  console.log('metadata is', metadata);
+  // console.log('metadata is', metadata);
 
   return(
     <div>
       <h3>ReviewMetaData</h3>
-      {/* {metadata.product_id} */}
-      {/* <div>{metadata.metadata.product_id}</div> */}
-
       <RatingBreakdown metadata = {metadata}/>
       <ProductBreakdown metadata = {metadata}/>
     </div>
