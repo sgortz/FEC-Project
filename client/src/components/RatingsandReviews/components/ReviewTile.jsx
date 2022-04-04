@@ -12,9 +12,32 @@ function ReviewTile ({review, reviews}) {
 
   useEffect(()=>{
     setReviewbody(review.body.slice(0, 250));
+    setShowmore('show more');
     setReviewhelpful(review.helpfulness);
+    setReviewreport('Report');
     setHelpfulreportclicked(false);
   }, [reviews]);
+
+  const reportReview = () =>{
+    axios.put(`/reviews/${review.review_id}/report`)
+    .then(()=>{
+      setReviewreport('You\'ve reported this review');
+      console.log('successfully reported this review')
+    })
+    .catch((err)=>{console.log(err)});
+
+    setHelpfulreportclicked(true);
+  };
+
+  const markHelpful = () => {
+    axios.put(`/reviews/${review.review_id}/helpful`)
+    .then(()=>{
+      setReviewhelpful(review.helpfulness + 1);
+      console.log('successfully add one to review helpfulness')
+    })
+    .catch((err)=>{console.log(err)});
+    setHelpfulreportclicked(true);
+  };
 
   return(
     <div className="reviewtile">
@@ -49,16 +72,26 @@ function ReviewTile ({review, reviews}) {
       {review.response !== null?
         <div className="sellerresponse"><strong>Response:</strong> <br></br>{review.response}</div> : null
       }
-      {helpfulreportclicked === false ?
+      { helpfulreportclicked === false && reviewreport === 'Report' ?
         <div className="reviewhelpfulreport">
           Helpful?
-          Yes:({reviewhelpful})  |  {reviewreport}
+          <a onClick={markHelpful}> Yes:({reviewhelpful})</a>  |  <a onClick={reportReview}>{reviewreport}</a>
+        </div>
+        :
+        helpfulreportclicked === true && reviewreport === 'You\'ve reported this review' ?
+        <div className="reviewhelpfulreport">
+          {reviewreport}
+        </div>
+        :
+        helpfulreportclicked === true && reviewreport === 'Report' ?
+        <div className="reviewhelpfulreport">
+          Helpful? Yes:({reviewhelpful})  |  {reviewreport}
         </div>
         :
         null
 
-
       }
+
 
     </div>
   )
