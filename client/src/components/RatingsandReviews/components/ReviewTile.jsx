@@ -2,13 +2,42 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 
-function ReviewTile ({review}) {
+function ReviewTile ({review, reviews}) {
 
   const [reviewbody, setReviewbody] = useState(review.body.slice(0, 250));
   const [showmore, setShowmore] = useState('show more');
   const [reviewhelpful, setReviewhelpful] = useState(review.helpfulness);
   const [reviewreport, setReviewreport] = useState('Report');
   const [helpfulreportclicked, setHelpfulreportclicked] = useState(false);
+
+  useEffect(()=>{
+    setReviewbody(review.body.slice(0, 250));
+    setShowmore('show more');
+    setReviewhelpful(review.helpfulness);
+    setReviewreport('Report');
+    setHelpfulreportclicked(false);
+  }, [reviews]);
+
+  const reportReview = () =>{
+    axios.put(`/reviews/${review.review_id}/report`)
+    .then(()=>{
+      setReviewreport('You\'ve reported this review');
+      console.log('successfully reported this review')
+    })
+    .catch((err)=>{console.log(err)});
+
+    setHelpfulreportclicked(true);
+  };
+
+  const markHelpful = () => {
+    axios.put(`/reviews/${review.review_id}/helpful`)
+    .then(()=>{
+      setReviewhelpful(review.helpfulness + 1);
+      console.log('successfully add one to review helpfulness')
+    })
+    .catch((err)=>{console.log(err)});
+    setHelpfulreportclicked(true);
+  };
 
   return(
     <div className="reviewtile">
@@ -43,16 +72,26 @@ function ReviewTile ({review}) {
       {review.response !== null?
         <div className="sellerresponse"><strong>Response:</strong> <br></br>{review.response}</div> : null
       }
-      {helpfulreportclicked === false ?
+      { helpfulreportclicked === false && reviewreport === 'Report' ?
         <div className="reviewhelpfulreport">
           Helpful?
-          Yes:({reviewhelpful})  |  {reviewreport}
+          <a onClick={markHelpful}> Yes:({reviewhelpful})</a>  |  <a onClick={reportReview}>{reviewreport}</a>
+        </div>
+        :
+        helpfulreportclicked === true && reviewreport === 'You\'ve reported this review' ?
+        <div className="reviewhelpfulreport">
+          {reviewreport}
+        </div>
+        :
+        helpfulreportclicked === true && reviewreport === 'Report' ?
+        <div className="reviewhelpfulreport">
+          Helpful? Yes:({reviewhelpful})  |  {reviewreport}
         </div>
         :
         null
 
-
       }
+
 
     </div>
   )

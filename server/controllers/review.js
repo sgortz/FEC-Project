@@ -4,7 +4,7 @@ const models = require('../models');
 
 module.exports = {
   getAllreviews: function (req, res) {
-    console.log(req.query);
+    // console.log(req.query);
 
     let {page, count, sort, product_id} = req.query;
     models.review.getAllreviews(page, count, sort, product_id, (err, results)=>{
@@ -21,7 +21,7 @@ module.exports = {
   },
 
   getReviewMeta: function (req, res) {
-    console.log(req.query);
+    // console.log(req.query);
 
     let {product_id} = req.query;
     models.review.getReviewMeta(product_id, (err, results)=>{
@@ -37,7 +37,7 @@ module.exports = {
   },
 
   writeReview: function (req, res) {
-    console.log(req.body);
+    // console.log(req.body);
 
     const databody = {
       product_id: req.body.product_id,
@@ -65,7 +65,7 @@ module.exports = {
   },
 
   putHelpful: function (req, res) {
-    console.log(req.params);
+    // console.log(req.params);
 
     let {review_id} = req.params;
     models.review.putHelpful(review_id, (err, results)=>{
@@ -82,7 +82,7 @@ module.exports = {
   },
 
   putReport: function (req, res) {
-    console.log(req.params);
+    // console.log(req.params);
 
     let {review_id} = req.params;
     models.review.putReport(review_id, (err, results)=>{
