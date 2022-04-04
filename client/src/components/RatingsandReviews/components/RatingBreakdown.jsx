@@ -17,7 +17,24 @@ function RatingBreakdown ({metadata}) {
 
     var result = sumrating/countrating;
     return result.toFixed(1);
-  }
+  };
+
+  const recommendpercentage = (object) => {
+    var truecount = 0;
+    var falsecount = 0;
+
+    for (let key in object) {
+      if (key === 'true') {
+        truecount += Number(object[key]);
+      } else if (key === 'false'){
+        falsecount += Number(object[key]);
+      }
+    }
+
+    var result = truecount/(truecount + falsecount)*100;
+
+    return result;
+  };
 
 
   return(
@@ -25,6 +42,15 @@ function RatingBreakdown ({metadata}) {
       <h4>RatingBreakdown</h4>
       <div>
         {calculaterating(metadata.ratings)}
+      </div>
+      <div>
+        stars placeholder
+      </div>
+      <div>
+        {/* {metadata.recommended['false']} */}
+      </div>
+      <div>
+        {recommendpercentage(metadata.recommended)}% of reviews recommend this product
       </div>
     </div>
   )
