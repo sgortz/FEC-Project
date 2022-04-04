@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Belleza
+- Font Author: Copyright (c) 2012, Eduardo Tunni (http://www.tipo.net.ar), with Reserved Font Name "Belleza"
+- Font Source: http://fonts.gstatic.com/s/belleza/v14/0nkoC9_pNeMfhX4BtcbyawzruP8.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
