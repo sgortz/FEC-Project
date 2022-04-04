@@ -28,7 +28,7 @@ function RatingsAndReviews (props) {
     // axios.get(`/reviews/?product_id=37315&page=1&count=500&sort=relevant`)
     .then((results)=>{
       setReviews(results.data.results)
-      console.log('successfully get all reviews')
+      // console.log('successfully get all reviews')
     })
     .catch((err)=>{console.log(err)});
   }, [sortoption]);
@@ -43,7 +43,7 @@ function RatingsAndReviews (props) {
         )
     .then((results)=>{
       setMetadata(results.data);
-      console.log('successfully get review metadata')
+      // console.log('successfully get review metadata')
     })
     .catch((err)=>{console.log(err)});
   },[]);
