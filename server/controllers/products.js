@@ -31,9 +31,9 @@ module.exports = {
   },
 
   getProductStyles: function (req, res) {
-console.log('HELLO WORLD?', req.query);
-    // let { product_id } = req.query;
-    models.products.getProductStyles((err, results) => {
+    let { product_id } = req.query;
+
+    models.products.getProductStyles(product_id, (err, results) => {
       if (err) {
         console.log('Unable to get product\'s styles ', err);
         res.sendStatus(500);

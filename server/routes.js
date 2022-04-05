@@ -12,7 +12,7 @@ router.get('/products/:product_id/', controller.products.getProductFeatures);
 router.get('/products/:product_id/styles', controller.products.getProductStyles);
 
 //Ratings and Reviews
-// router.get('/reviews/', controller.review.getAllreviews);
+router.get('/reviews/', controller.review.getAllreviews);
 router.get('/reviews/meta/', controller.review.getReviewMeta);
 router.post('/reviews', controller.review.writeReview);
 router.put('/reviews/:review_id/helpful', controller.review.putHelpful);
