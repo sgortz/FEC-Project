@@ -1,4 +1,11 @@
+/* DEPENDENCIES */
 import React from 'react';
+import axios from 'axios';
+
+/* STYLE SHEET */
+import './ProductOverview.css';
+
+/* CHILDREN COMPONENTS */
 import NavBar from './components/NavBar.jsx';
 import Announcements from './components/Announcements.jsx';
 import ImageGallery from './components/ImageGallery.jsx';
@@ -7,43 +14,70 @@ import ProductDetail from './components/ProductDetail.jsx';
 import StyleSelector from './components/StyleSelector.jsx';
 import AddToCart from './components/AddToCart.jsx';
 import ProductDescription from './components/ProductDescription.jsx';
+
+/* HARD CODED DATA */
 import productExample from '../../Data/overviewDataExample.js';
 import stylesExample from '../../Data/overviewStylesExample.js';
-import './ProductOverview.css';
 
 class ProductOverview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: ''
+      products: [],
+      products_features: [],
+      product_styles: [],
     }
+    this.handleApi = this.handleApi.bind(this);
+  }
+
+  handleApi() {
+    console.log('api request activated')
+    axios.get('/products')
+      .then(response => {
+        // console.log('API response! ', Array.isArray(response.data))
+        response.data.map((product, index) => {
+          this.setState(prevState => ({ products: prevState.products.concat(product) }))
+        })
+      })
+      .catch(err => { console.error(err) })
+  }
+
+  componentDidMount() {
+    this.handleApi();
   }
 
   render() {
-    return (
-      <div>
-        <NavBar />
-        <Announcements />
-        <div className="wrapper">
-          <div className="image-gallery">
-            <ImageGallery styles={stylesExample} />
+    console.log('the fucking lenght: ', this.state.products.length);
+    if (this.state.products.length === 0) {
+      return <h1>Sorry, no products to show.</h1>
+    } else {
+      return (
+        <div>
+          <NavBar />
+          <Announcements />
+          <ProductDetail product={this.state.products[0]} styles={stylesExample} />
+          <ImageGallery photos={stylesExample.results[0].photos} />
+          {/* <div className="wrapper">
+            <div className="image-gallery">
+            </div>
+            <div className="star-review">
+              <StarReview styles={stylesExample} />
+            </div>
+            <div className="product-detail">
+            </div>
+            <div className="style-selector">
+              <StyleSelector styles={stylesExample} product={productExample}/>
+            </div>
+            <div className="add-to-cart">
+              <AddToCart styles={stylesExample} />
+            </div>
           </div>
-          <div className="star-review">
-            <StarReview styles={stylesExample} />
-          </div>
-          <div className="product-detail">
-            <ProductDetail product={productExample} styles={stylesExample} />
-          </div>
-          <div className="style-selector">
-            <StyleSelector styles={stylesExample} product={productExample}/>
-          </div>
-          <div className="add-to-cart">
-            <AddToCart styles={stylesExample} />
-          </div>
+          <ProductDescription styles={stylesExample} /> */}
         </div>
-        <ProductDescription styles={stylesExample} />
-      </div>
-    )
+      )
+
+    }
+
   }
 }
 
