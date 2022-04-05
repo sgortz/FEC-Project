@@ -5,6 +5,7 @@ import ReviewSort from './components/ReviewSort.jsx'
 import ReviewList from './components/ReviewList.jsx'
 import MoreReviews from './components/MoreReviews.jsx'
 import AddReview from './components/AddReview.jsx'
+import ReviewModal from './components/ReviewModal.jsx'
 
 
 function RatingsAndReviews (props) {
@@ -13,6 +14,7 @@ function RatingsAndReviews (props) {
   const [reviewsrenderedcount, setReviewsrenderedcount] = useState(2);
   const [sortoption, setSortoption] = useState('relevant');
   const [selectedstars, setSelectedstars] = useState([]);
+  const [reviewmodalshow, setReviewmodalshow] = useState(false);
 
   useEffect (() => {
     axios.get('/reviews',
@@ -43,7 +45,7 @@ function RatingsAndReviews (props) {
     <div>
       <h1>Ratings And Reviews</h1>
       <ReviewMetaData product_id={props.product_id} selectedstars={selectedstars} setSelectedstars={setSelectedstars} setReviewsrenderedcount={setReviewsrenderedcount}/>
-      
+
       <ReviewSort reviews={reviews} setSortoption={setSortoption}/>
 
       <ReviewList reviews={reviews} setReviews={setReviews} reviewsrenderedcount={reviewsrenderedcount} selectedstars={selectedstars} filteredreview={filteredreview}/>
@@ -55,7 +57,15 @@ function RatingsAndReviews (props) {
       <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
       : null}
 
-      <AddReview/>
+      <AddReview setReviewmodalshow={setReviewmodalshow}/>
+
+      { reviewmodalshow
+        ?
+        <ReviewModal setReviewmodalshow={setReviewmodalshow}/>
+        :
+        null
+      }
+
 
     </div>
   )
