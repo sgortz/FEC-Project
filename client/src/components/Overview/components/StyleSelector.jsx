@@ -6,17 +6,17 @@ const StyleSelector = (props)=> {
 
   return (
   <div>
-    <strong>STYLE > </strong>
+    <div className="clothing-style">STYLE > </div>
     <br/>
-    <img className="sgortz" src={photo} />
-    <img className="sgortz" src={photo} />
-    <img className="sgortz" src={photo} />
-    <img className="sgortz" src={photo} />
+    <img className="style-circular-photo" src={photo} />
+    <img className="style-circular-photo" src={photo} />
+    <img className="style-circular-photo" src={photo} />
+    <img className="style-circular-photo" src={photo} />
     <br/>
-    <img className="sgortz" src={photo} />
-    <img className="sgortz" src={photo} />
-    <img className="sgortz" src={photo} />
-    <img className="sgortz" src={photo} />
+    <img className="style-circular-photo" src={photo} />
+    <img className="style-circular-photo" src={photo} />
+    <img className="style-circular-photo" src={photo} />
+    <img className="style-circular-photo" src={photo} />
   </div>
 )}
 export default StyleSelector;

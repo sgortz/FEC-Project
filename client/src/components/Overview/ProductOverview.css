@@ -1,3 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Quicksand:wght@300;500;700&display=swap');
+
+body {
+  background-color: #F8F3F0
+}
+
+.page-loading {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 25px;
+  text-align: center;
+}
+
+.loading {
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+  animation: loader-spin infinite 20s linear;
+}
+
+@keyframes loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -21,11 +49,11 @@
 }
 
 .style-selector {
-  grid-column: 3 / 5;
+  grid-column: 3 / 10;
   grid-row: 3;
 }
 
 .add-to-cart {
-  grid-column: 3 /5;
+  grid-column: 3 / 7;
   grid-row: 4;
 }
