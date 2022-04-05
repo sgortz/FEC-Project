@@ -46,14 +46,14 @@ const AddQuestion = ({ handleOpenModel, product_id }) => {
   }
 
   return (
-    <div className='questionModel'>
+    <div className='model'>
 
       <form className='modalContent'>
         <h3 className='modelTitle'>Ask Your Question</h3>
         <label htmlFor='nickname'>Your Name * : </label>
         <input type='text' name='name' required
           maxLength='60'
-          placeholder='Example: jackson11!'
+          placeholder='Example: jackson11'
           onChange={handleOnchange}
           value={name} />
         <p>For privacy reasons, do not use your full name or email address. </p>

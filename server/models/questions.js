@@ -52,7 +52,8 @@ module.exports = {
 
   postAnswer: function (req, callback) {
 
-    let question_id = req.params.question_id;
+
+    let question_id = req.body.question_id;
 
     options = {
       method: 'post',
@@ -76,7 +77,7 @@ module.exports = {
 
   putQuestionHelpful: function (req, callback) {
 
-    let question_id = req.params.question_id;
+    let question_id = req.body.question_id;
 
     options = {
       method: 'put',
@@ -100,7 +101,7 @@ module.exports = {
 
   putAnswerHelpful: function (req, callback) {
 
-    let answer_id = req.params.answer_id;
+    let answer_id = req.body.answer_id;
 
     options = {
       method: 'put',
@@ -124,7 +125,7 @@ module.exports = {
 
   putReportQuestion: function (req, callback) {
 
-    let question_id = req.params.question_id;
+    let question_id = req.body.question_id;
 
     options = {
       method: 'put',
@@ -148,7 +149,7 @@ module.exports = {
 
   putReportAnswer: function (req, callback) {
 
-    let answer_id = req.params.answer_id;
+    let answer_id = req.body.answer_id;
 
     options = {
       method: 'put',

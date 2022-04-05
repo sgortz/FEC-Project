@@ -1,23 +1,17 @@
 import React from 'react';
-import LoadMoreQuestions from './LoadMoreQuestions.jsx';
 import QAEntry from './QAEntry.jsx';
+import "./QuestionAndAnswers.css";
 
 
 
-
-
-const QAList = ({ questionList, filteredQuestions, questionNumber }) => {
-
-
-
-
+const QAList = ({ filteredQuestions, questionNumber }) => {
 
   return (
 
     <div className='QAList'>
 
       {
-        (filteredQuestions.slice(0, questionNumber)).map((question, index) => (
+        (filteredQuestions.slice(0, questionNumber)).map((question) => (
           <QAEntry key={question.question_id} question={question} />
         ))
       }

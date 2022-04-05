@@ -1,6 +1,7 @@
 
 /* QuestionModel Basic CSS */
- .questionModel {
+
+ .model {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
   z-index: 150; /* Overlay effect: positioned over other containers */
@@ -50,6 +51,72 @@
   transition: all ease 0.3s;
 }
 
-
 /* SearchBar Basic CSS */
+.searchBarWrapper {
+  position: relative;
+  display: flex;
+  min-width: 100px;
+}
+
+.fa {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  width: 14px;
+}
+
+.search {
+  border: 1px solid grey;
+  border-radius: 10px;
+  height: 25px;
+  width: 70%;
+  padding: 2px 23px 2px 30px;
+  background-color: #f5f5f5;
+}
+
+.search:hover, .search:focus {
+  border: 2px solid #63994d;
+  background-color: white;
+}
+
+/* QAList Basic CSS */
+.QAList {
+
+
+}
+
+/* Question Basic CSS */
+.QAEntry {
+
+}
+.question {
+  padding: 5px, 0, 5px, 0
+}
+
+.inlineLeft, .inlineRight {
+  display: inline-block;
+}
+
+.inlineLeft {
+  max-width: 50%;
+}
+
+.questionBody{
+  font-size: 30;
+}
+
+.inlineRight {
+  position: absolute;
+  right: 30%;
+}
+
+.helpful, .helpful-button, .break, .add-answer, .report-button{
+  margin: 5px
+}
+
+.helpful-button, .add-answer ,.report-button{
+  text-decoration: underline;
+  cursor: pointer
+}
+
 
