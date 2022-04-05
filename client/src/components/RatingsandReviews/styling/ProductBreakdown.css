@@ -1,0 +1,40 @@
+.maincharlabel {
+}
+
+.productbreakdown {
+  float: left;
+  width: 100%;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+
+.productbarcontainer {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: end;
+  color: #04AA6D;
+}
+
+.productlabelscontainer {
+  width: 100%;
+}
+
+
+.indicator {
+  height: 18px;
+  /* background-color: #04AA6D; */
+}
+
+/*char labels*/
+.leftlabel {
+  display: inline;
+  float: left;
+  /* text-align: left; */
+}
+
+.rightlabel {
+  display: inline;
+  float: right;
+  /* text-align: right; */
+}

@@ -21,19 +21,19 @@ function ProductBreakdown ({metadata}) {
 
     if (allchars) {
       if (allchars.Size) {
-        sizechar = {display: true, value: Number(allchars.Size.value)}
+        sizechar = {display: true, value: Number(allchars.Size.value)/5 * 100}
       }
       if (allchars.Comfort) {
-        comfortchar = {display: true, value: Number(allchars.Comfort.value)}
+        comfortchar = {display: true, value: Number(allchars.Comfort.value)/5 * 100}
       }
       if (allchars.Quality) {
-        qualitychar = {display: true, value: Number(allchars.Quality.value)}
+        qualitychar = {display: true, value: Number(allchars.Quality.value)/5 * 100}
       }
       if (allchars.Width) {
-        widthchar = {display: true, value: Number(allchars.Width.value)}
+        widthchar = {display: true, value: Number(allchars.Width.value)/5 * 100}
       }
       if (allchars.Length) {
-        lengthchar = {display: true, value: Number(allchars.Length.value)}
+        lengthchar = {display: true, value: Number(allchars.Length.value)/5 * 100}
       }
     }
 
@@ -51,10 +51,106 @@ function ProductBreakdown ({metadata}) {
 
   return(
     <div>
-      <h4>ProductBreakdown</h4>
-      <div>
-
-      </div>
+      {size.display?
+        <div className='productbreakdown'>
+          <div className='maincharlabel'>Size</div>
+          <div className='productbarcontainer'>
+            <div className='indicator' style={{width: `${size.value}%`}}>
+              <i className="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+          <div className='productlabelscontainer'>
+            <div className='leftlabel'>
+              Too small
+            </div>
+            <div className='rightlabel'>
+              Too large
+            </div>
+          </div>
+        </div>
+      :
+      null
+      }
+      {comfort.display?
+        <div className='productbreakdown'>
+          <div className='maincharlabel'>Comfort</div>
+          <div className='productbarcontainer'>
+            <div className='indicator' style={{width: `${comfort.value}%`}}>
+              <i className="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+          <div className='productlabelscontainer'>
+            <div className='leftlabel'>
+              Poor
+            </div>
+            <div className='rightlabel'>
+              Perfect
+            </div>
+          </div>
+        </div>
+      :
+      null
+      }
+      {quality.display?
+        <div className='productbreakdown'>
+          <div className='maincharlabel'>Quality</div>
+          <div className='productbarcontainer'>
+            <div className='indicator' style={{width: `${quality.value}%`}}>
+              <i className="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+          <div className='productlabelscontainer'>
+            <div className='leftlabel'>
+              Poor
+            </div>
+            <div className='rightlabel'>
+              Perfect
+            </div>
+          </div>
+        </div>
+      :
+      null
+      }
+      {width.display?
+        <div className='productbreakdown'>
+          <div className='maincharlabel'>Width</div>
+          <div className='productbarcontainer'>
+            <div className='indicator' style={{width: `${width.value}%`}}>
+              <i className="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+          <div className='productlabelscontainer'>
+            <div className='leftlabel'>
+              Too short
+            </div>
+            <div className='rightlabel'>
+              Too large
+            </div>
+          </div>
+        </div>
+      :
+      null
+      }
+      {length.display?
+        <div className='productbreakdown'>
+          <div className='maincharlabel'>Length</div>
+          <div className='productbarcontainer'>
+            <div className='indicator' style={{width: `${length.value}%`}}>
+              <i className="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+          <div className='productlabelscontainer'>
+            <div className='leftlabel'>
+              Too short
+            </div>
+            <div className='rightlabel'>
+              Too long
+            </div>
+          </div>
+        </div>
+      :
+      null
+      }
     </div>
   )
 
