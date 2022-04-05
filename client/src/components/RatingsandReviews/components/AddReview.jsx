@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function AddReview () {
+function AddReview ({setReviewmodalshow}) {
 
   return(
-<div>
-      <input type="button" id="addreview" value="Add A Review"/>
+    <div>
+      <input type="button" id="addreview" value="Add A Review" onClick={(e)=>
+      { e.preventDefault();
+        setReviewmodalshow(true);}}/>
     </div>
   )
 

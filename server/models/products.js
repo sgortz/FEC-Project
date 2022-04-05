@@ -51,7 +51,7 @@ module.exports = {
         'Authorization': API_KEY
       }
     };
-
+    console.log('here\'s the url: ', options.url)
     return axios(options)
       .then((response) => {
         callback(null, response.data);

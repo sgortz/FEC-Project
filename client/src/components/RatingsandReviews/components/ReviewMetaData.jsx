@@ -28,7 +28,7 @@ function ReviewMetaData (props) {
   return(
     <div>
       <h3>ReviewMetaData</h3>
-      <RatingBreakdown metadata = {metadata}/>
+      <RatingBreakdown metadata = {metadata} selectedstars={props.selectedstars} setSelectedstars={props.setSelectedstars} setReviewsrenderedcount={props.setReviewsrenderedcount}/>
       <ProductBreakdown metadata = {metadata}/>
     </div>
   )
