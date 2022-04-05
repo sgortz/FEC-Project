@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../styling/RatingBreakdown.css';
 
 
-function RatingBreakdown ({metadata, selectedstars, setSelectedstars}) {
+function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReviewsrenderedcount}) {
 
   const [totalcounts, setTotalcounts] = useState(null);
 
@@ -85,6 +85,7 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars}) {
       newselectedstars.splice(newselectedstars.indexOf(star), 1);
     }
     setSelectedstars(newselectedstars);
+    setReviewsrenderedcount(2);
   };
 
   useEffect(()=>{
@@ -182,7 +183,7 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars}) {
         null
         :
         <div>
-          Star filters currently applied: {JSON.stringify(selectedstars)}
+          Star filters currently applied: {JSON.stringify(selectedstars.sort())}
           <br></br>
           <u onClick={()=>{setSelectedstars([])}}>Remove all filters</u>
         </div>

@@ -33,17 +33,34 @@ function RatingsAndReviews (props) {
     .catch((err)=>{console.log(err)});
   }, [sortoption]);
 
+  const [filteredreview, setFilteredreview] = useState([]);
+
+  useEffect(()=>{
+    setFilteredreview(reviews.filter(review => selectedstars.indexOf(review.rating) !== -1));
+  }, [selectedstars]);
 
   return(
     <div>
       <h1>Ratings And Reviews</h1>
-      <ReviewMetaData product_id={props.product_id} selectedstars={selectedstars} setSelectedstars={setSelectedstars}/>
+      <ReviewMetaData product_id={props.product_id} selectedstars={selectedstars} setSelectedstars={setSelectedstars} setReviewsrenderedcount={setReviewsrenderedcount}/>
+
       <ReviewSort reviews={reviews} setSortoption={setSortoption}/>
-      <ReviewList reviews={reviews} setReviews={setReviews} reviewsrenderedcount={reviewsrenderedcount}/>
-      {reviewsrenderedcount !== reviews.length? <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/> : null}
+
+      <ReviewList reviews={reviews} setReviews={setReviews} reviewsrenderedcount={reviewsrenderedcount} selectedstars={selectedstars} filteredreview={filteredreview}/>
+
+      {reviewsrenderedcount < reviews.length && filteredreview.length === 0?
+      <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
+      :
+      reviewsrenderedcount < filteredreview.length && filteredreview.length !== 0?
+      <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
+      : null}
+
       <AddReview/>
+
     </div>
   )
 }
 
 export default RatingsAndReviews;
+
+
