@@ -34,12 +34,12 @@ function ReviewModal ({setReviewmodalshow}) {
 
   return(
     <div className='reviewmodal'>
-      <div className='modal-content'>
-        <div className='modal-header'>
-          <h3 className='modal-title'>Write Review</h3>
+      <div className='review-modal-content'>
+        <div className='review-modal-header'>
+          <h3 className='review-modal-title'>Write Review</h3>
         </div>
-        <div className='modal-body'>
-          <div className='overallrating'>
+        <div className='review-modal-body'>
+          <div className='reviewoverallrating'>
             Overall Rating: Stars placeholder
           </div>
           <div className='recommendproduct'>
@@ -51,13 +51,14 @@ function ReviewModal ({setReviewmodalshow}) {
           </div>
           <div className='nickname'>
             <label>Your nickname: </label>
-            <input type="text" name="nickname" required maxLength='60' placeholder='Example: jackson11!'
+            <input type="text" name="nickname" required maxLength='60'
+            id='reviewnickname' placeholder='Example: jackson11!'
             value={name} onChange={handleOnchange}></input>
           </div>
           <p id='note'>For privacy reasons, do not use your full name or email address</p>
           <div className='email'>
             <label>Your email: </label>
-            <input type="text" name="email" required maxLength='60' placeholder='Example: jackson11@gmail.com'
+            <input type="text" name="email" required maxLength='60' id='reviewemail' placeholder='Example: jackson11@gmail.com'
             value={email} onChange={handleOnchange}></input>
           </div>
           <p id='note'>For authentication reasons, you will not be emailed</p>
@@ -89,7 +90,7 @@ function ReviewModal ({setReviewmodalshow}) {
 
 
         </div>
-        <div className='modal-footer'>
+        <div className='review-modal-footer'>
           <input type="button" id="closereviewmodal" value="Close" onClick={(e)=>
             { e.preventDefault();
               setReviewmodalshow(false);}}/>

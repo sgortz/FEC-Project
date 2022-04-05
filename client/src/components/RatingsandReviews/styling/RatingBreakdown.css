@@ -5,14 +5,14 @@
   margin-top:10px;
 }
 
-.middle {
+.rbdmiddle {
   margin-top:10px;
   float: left;
   width: 70%;
 }
 
 /* Place text to the right */
-.right {
+.rbdright {
   text-align: right;
 }
 

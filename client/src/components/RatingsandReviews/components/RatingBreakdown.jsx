@@ -110,71 +110,71 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
       </div>
       <br></br>
       <div className='ratingbreakdownrow' onClick={(e) => applyfilter(e, 5)}>
-        <div className="ratingbreakdown left">
+        <div className="ratingbreakdown rbdleft">
           <div>5 star</div>
         </div>
-        <div className='ratingbreakdown middle'>
+        <div className='ratingbreakdown rbdmiddle'>
           <div className='ratingbarcontainer'>
             <div className='greenbar' style={{width: `${fivestar.width}%`}}></div>
           </div>
         </div>
-        <div className='ratingbreakdown right'>
+        <div className='ratingbreakdown rbdright'>
           <div>{fivestar.count}</div>
         </div>
       </div>
 
       <div className='ratingbreakdownrow' onClick={(e) => applyfilter(e, 4)}>
-        <div className="ratingbreakdown left">
+        <div className="ratingbreakdown rbdleft">
           <div>4 star</div>
         </div>
-        <div className='ratingbreakdown middle'>
+        <div className='ratingbreakdown rbdmiddle'>
           <div className='ratingbarcontainer'>
             <div className='greenbar' style={{width: `${fourstar.width}%`}}></div>
           </div>
         </div>
-        <div className='ratingbreakdown right'>
+        <div className='ratingbreakdown rbdright'>
           <div>{fourstar.count}</div>
         </div>
       </div>
 
       <div className='ratingbreakdownrow' onClick={(e) => applyfilter(e, 3)}>
-        <div className="ratingbreakdown left">
+        <div className="ratingbreakdown rbdleft">
           <div>3 star</div>
         </div>
-        <div className='ratingbreakdown middle'>
+        <div className='ratingbreakdown rbdmiddle'>
           <div className='ratingbarcontainer'>
             <div className='greenbar' style={{width: `${threestar.width}%`}}></div>
           </div>
         </div>
-        <div className='ratingbreakdown right'>
+        <div className='ratingbreakdown rbdright'>
           <div>{threestar.count}</div>
         </div>
       </div>
 
       <div className='ratingbreakdownrow' onClick={(e) => applyfilter(e, 2)}>
-        <div className="ratingbreakdown left">
+        <div className="ratingbreakdown rbdleft">
           <div>2 star</div>
         </div>
-        <div className='ratingbreakdown middle'>
+        <div className='ratingbreakdown rbdmiddle'>
           <div className='ratingbarcontainer'>
             <div className='greenbar' style={{width: `${twostar.width}%`}}></div>
           </div>
         </div>
-        <div className='ratingbreakdown right'>
+        <div className='ratingbreakdown rbdright'>
           <div>{twostar.count}</div>
         </div>
       </div>
 
       <div className='ratingbreakdownrow' onClick={(e) => applyfilter(e, 1)}>
-        <div className="ratingbreakdown left">
+        <div className="ratingbreakdown rbdleft">
           <div>1 star</div>
         </div>
-        <div className='ratingbreakdown middle'>
+        <div className='ratingbreakdown rbdmiddle'>
           <div className='ratingbarcontainer'>
             <div className='greenbar' style={{width: `${onestar.width}%`}}></div>
           </div>
         </div>
-        <div className='ratingbreakdown right'>
+        <div className='ratingbreakdown rbdright'>
           <div>{onestar.count}</div>
         </div>
       </div>

@@ -1,7 +1,7 @@
-.maincharlabel {
+.review-maincharlabel {
 }
 
-.productbreakdown {
+.review-productbreakdown {
   float: left;
   width: 100%;
   margin-top:10px;
@@ -21,19 +21,19 @@
 }
 
 
-.indicator {
+.review-indicator {
   height: 18px;
   /* background-color: #04AA6D; */
 }
 
 /*char labels*/
-.leftlabel {
+.reviewchar-leftlabel {
   display: inline;
   float: left;
   /* text-align: left; */
 }
 
-.rightlabel {
+.reviewchar-rightlabel {
   display: inline;
   float: right;
   /* text-align: right; */

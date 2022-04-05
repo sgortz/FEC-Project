@@ -11,7 +11,7 @@
   padding-top: 20px; /* Location of the content container */
 }
 
-.modal-content {
+.review-modal-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +46,7 @@
 }
 
 /*make text input box wider*/
-input[type=text] {
+#reviewnickname, #reviewemail {
   width: 200px;
 }
 

@@ -52,18 +52,18 @@ function ProductBreakdown ({metadata}) {
   return(
     <div>
       {size.display?
-        <div className='productbreakdown'>
-          <div className='maincharlabel'>Size</div>
+        <div className='review-productbreakdown'>
+          <div className='review-maincharlabel'>Size</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${size.value}%`}}>
               <i className="fa-solid fa-caret-down"></i>
             </div>
           </div>
           <div className='productlabelscontainer'>
-            <div className='leftlabel'>
+            <div className='reviewchar-leftlabel'>
               Too small
             </div>
-            <div className='rightlabel'>
+            <div className='reviewchar-rightlabel'>
               Too large
             </div>
           </div>
@@ -72,18 +72,18 @@ function ProductBreakdown ({metadata}) {
       null
       }
       {comfort.display?
-        <div className='productbreakdown'>
-          <div className='maincharlabel'>Comfort</div>
+        <div className='review-productbreakdown'>
+          <div className='review-maincharlabel'>Comfort</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${comfort.value}%`}}>
               <i className="fa-solid fa-caret-down"></i>
             </div>
           </div>
           <div className='productlabelscontainer'>
-            <div className='leftlabel'>
+            <div className='reviewchar-leftlabel'>
               Poor
             </div>
-            <div className='rightlabel'>
+            <div className='reviewchar-rightlabel'>
               Perfect
             </div>
           </div>
@@ -92,18 +92,18 @@ function ProductBreakdown ({metadata}) {
       null
       }
       {quality.display?
-        <div className='productbreakdown'>
-          <div className='maincharlabel'>Quality</div>
+        <div className='review-productbreakdown'>
+          <div className='review-maincharlabel'>Quality</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${quality.value}%`}}>
               <i className="fa-solid fa-caret-down"></i>
             </div>
           </div>
           <div className='productlabelscontainer'>
-            <div className='leftlabel'>
+            <div className='reviewchar-leftlabel'>
               Poor
             </div>
-            <div className='rightlabel'>
+            <div className='reviewchar-rightlabel'>
               Perfect
             </div>
           </div>
@@ -112,18 +112,18 @@ function ProductBreakdown ({metadata}) {
       null
       }
       {width.display?
-        <div className='productbreakdown'>
-          <div className='maincharlabel'>Width</div>
+        <div className='review-productbreakdown'>
+          <div className='review-maincharlabel'>Width</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${width.value}%`}}>
               <i className="fa-solid fa-caret-down"></i>
             </div>
           </div>
           <div className='productlabelscontainer'>
-            <div className='leftlabel'>
+            <div className='reviewchar-leftlabel'>
               Too short
             </div>
-            <div className='rightlabel'>
+            <div className='reviewchar-rightlabel'>
               Too large
             </div>
           </div>
@@ -132,18 +132,18 @@ function ProductBreakdown ({metadata}) {
       null
       }
       {length.display?
-        <div className='productbreakdown'>
-          <div className='maincharlabel'>Length</div>
+        <div className='review-productbreakdown'>
+          <div className='review-maincharlabel'>Length</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${length.value}%`}}>
               <i className="fa-solid fa-caret-down"></i>
             </div>
           </div>
           <div className='productlabelscontainer'>
-            <div className='leftlabel'>
+            <div className='reviewchar-leftlabel'>
               Too short
             </div>
-            <div className='rightlabel'>
+            <div className='reviewchar-rightlabel'>
               Too long
             </div>
           </div>
