@@ -12,7 +12,7 @@ module.exports = {
         console.log('Unable to get all reviews');
         res.sendStatus(500);
       } else {
-        console.log('Success! Get All Reviews!');
+        // console.log('Success! Get All Reviews!');
         res.status(200).json(results);
       }
     });
@@ -29,7 +29,7 @@ module.exports = {
         console.log('Unable to get review metadata');
         res.sendStatus(500);
       } else {
-        console.log('Success! Get Review Meta!');
+        // console.log('Success! Get Review Meta!');
         res.status(200).json(results);
       }
     });
@@ -56,7 +56,7 @@ module.exports = {
         console.log('Unable to write review');
         res.sendStatus(500);
       } else {
-        console.log('Success! Write Review!');
+        // console.log('Success! Write Review!');
         res.sendStatus(201);
       }
 
@@ -73,7 +73,7 @@ module.exports = {
         console.log('Unable to put helpful');
         res.sendStatus(500);
       } else {
-        console.log('Success! Put Helpful!');
+        // console.log('Success! Put Helpful!');
         res.sendStatus(204);
       }
 
@@ -90,7 +90,7 @@ module.exports = {
         console.log('Unable to put report');
         res.sendStatus(500);
       } else {
-        console.log('Success! Put Report!');
+        // console.log('Success! Put Report!');
         res.sendStatus(204);
       }
 
