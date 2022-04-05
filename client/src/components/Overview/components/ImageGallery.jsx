@@ -7,8 +7,6 @@ const ImageGallery = ({ photos }) => {
   const [currentPhoto, setCurrentPhoto] = useState(1);
   const length = photos.length;
 
-  // console.log(currentPhoto)
-
   const nextPhoto = () => {
     setCurrentPhoto(currentPhoto === length - 1 ? 0 : currentPhoto + 1)
   }

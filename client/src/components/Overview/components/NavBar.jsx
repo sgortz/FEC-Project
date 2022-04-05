@@ -4,11 +4,12 @@ import "./NavBar.css";
 
 const NavBar = () => (
   <div className="Navbar">
-   <h1 className="Logo">Z. Narrows</h1>
-   <form>
-     <input className="top-search-bar" type="text" disabled="true" />
-     {/* <FiSearch /> */}
-   </form>
+    <h1 className="Logo">Z. Narrows</h1>
+    <form>
+      <input className="top-search-bar" type="text" disabled={true}>
+      {/* <FiSearch /> */}
+      </input>
+    </form>
   </div>
 )
 

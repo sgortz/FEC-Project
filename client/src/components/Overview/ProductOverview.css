@@ -1,6 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Quicksand:wght@300;500;700&display=swap');
+
+body {
+  background-color: #F8F3F0
+}
+
+.page-loading {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 25px;
+  text-align: center;
+}
+
 .loading {
   display: block;
   margin: 0 auto;
+  margin-top: 100px;
   animation: loader-spin infinite 20s linear;
 }
 

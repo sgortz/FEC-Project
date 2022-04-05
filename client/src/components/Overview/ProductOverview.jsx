@@ -33,7 +33,6 @@ class ProductOverview extends React.Component {
   }
 
   handleApi() {
-    console.log('api request activated')
     axios.get('/products')
       .then(response => {
         // console.log('API response! ', Array.isArray(response.data))
@@ -54,8 +53,8 @@ class ProductOverview extends React.Component {
         <IconContext.Provider value={{ size: '6rem', className: 'loading' }}>
           <div>
             <NavBar />
-            <h1 style={{ 'textAlign': 'center', 'marginTop': '100px' }}>Page not found :( </h1>
             <RiLoader2Line className="loading" />
+            <h1 className="page-loading"> page loading... </h1>
           </div>
         </IconContext.Provider>
       )
@@ -68,9 +67,9 @@ class ProductOverview extends React.Component {
             <div className="image-gallery">
               <ImageGallery photos={stylesExample.results[0].photos} />
             </div>
-            <div className="star-review">
-              <StarReview styles={stylesExample} />
-            </div>
+            {/* <div className="star-review">
+              <StarReview/>
+            </div> */}
             <div className="product-detail">
               <ProductDetail product={this.state.products[0]} styles={stylesExample} />
             </div>
@@ -81,7 +80,7 @@ class ProductOverview extends React.Component {
               <AddToCart styles={stylesExample} />
             </div>
           </div>
-          <ProductDescription styles={stylesExample} />
+          <ProductDescription product={this.state.products[0]} />
         </div>
       )
 
