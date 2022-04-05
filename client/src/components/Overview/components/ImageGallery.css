@@ -1,3 +1,32 @@
-.current-style {
-  max-width: 444px;
+.photos {
+  position: relative;
+  /* height: 100vh; */
+  display: flex;
+  justify-content: start;
+  /* align-items: center; */
+}
+
+.image {
+  height: 600px;
+  border-radius: 10px;
+}
+
+.right-arrow,
+.left-arrow {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  font-size: 3rem;
+  position: relative;
+  top: 290px;
+  user-select: none;
+  z-index: 10;
+}
+
+.right-arrow {
+  right: -400px;
+}
+
+.left-arrow {
+  left: 97px;
 }
