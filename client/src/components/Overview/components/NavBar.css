@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Quicksand:wght@300;500;700&display=swap');
 
 body {
-  font-family: 'Belleza', sans-serif;
+  /* font-family: 'Belleza', sans-serif; */
+  font-family: 'Libre Baskerville', serif;
   margin-left: 30px;
 }
 

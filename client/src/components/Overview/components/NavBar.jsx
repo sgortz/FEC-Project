@@ -1,10 +1,14 @@
 import React from 'react';
+import { FiSearch } from "react-icons/fi";
 import "./NavBar.css";
 
 const NavBar = () => (
   <div className="Navbar">
-   <h2 className="Logo">Zion Narrows</h2>
-   <div className="top-search-bar">_______________ 🔍</div>
+   <h1 className="Logo">Z. Narrows</h1>
+   <form>
+     <input className="top-search-bar" type="text" disabled="true" />
+     {/* <FiSearch /> */}
+   </form>
   </div>
 )
 
