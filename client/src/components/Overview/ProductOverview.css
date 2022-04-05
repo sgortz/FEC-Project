@@ -1,3 +1,18 @@
+.loading {
+  display: block;
+  margin: 0 auto;
+  animation: loader-spin infinite 20s linear;
+}
+
+@keyframes loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(7, 1fr);

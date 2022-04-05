@@ -1,6 +1,8 @@
 /* DEPENDENCIES */
 import React from 'react';
 import axios from 'axios';
+import { RiLoader2Line } from 'react-icons/ri';
+import { IconContext } from "react-icons";
 
 /* STYLE SHEET */
 import './ProductOverview.css';
@@ -47,32 +49,39 @@ class ProductOverview extends React.Component {
   }
 
   render() {
-    console.log('the fucking lenght: ', this.state.products.length);
     if (this.state.products.length === 0) {
-      return <h1>Sorry, no products to show.</h1>
+      return (
+        <IconContext.Provider value={{ size: '6rem', className: 'loading' }}>
+          <div>
+            <NavBar />
+            <h1 style={{ 'textAlign': 'center', 'marginTop': '100px' }}>Page not found :( </h1>
+            <RiLoader2Line className="loading" />
+          </div>
+        </IconContext.Provider>
+      )
     } else {
       return (
         <div>
           <NavBar />
           <Announcements />
-          <ProductDetail product={this.state.products[0]} styles={stylesExample} />
-          <ImageGallery photos={stylesExample.results[0].photos} />
-          {/* <div className="wrapper">
+          <div className="wrapper">
             <div className="image-gallery">
+              <ImageGallery photos={stylesExample.results[0].photos} />
             </div>
             <div className="star-review">
               <StarReview styles={stylesExample} />
             </div>
             <div className="product-detail">
+              <ProductDetail product={this.state.products[0]} styles={stylesExample} />
             </div>
             <div className="style-selector">
-              <StyleSelector styles={stylesExample} product={productExample}/>
+              <StyleSelector styles={stylesExample} product={productExample} />
             </div>
             <div className="add-to-cart">
               <AddToCart styles={stylesExample} />
             </div>
           </div>
-          <ProductDescription styles={stylesExample} /> */}
+          <ProductDescription styles={stylesExample} />
         </div>
       )
 
