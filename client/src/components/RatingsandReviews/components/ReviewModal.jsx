@@ -77,8 +77,14 @@ function ReviewModal ({setReviewmodalshow}) {
             </div>
             <textarea maxLength='1000' id='reviewbody' required
             name='reviewbody' placeholder='Why did you like the product? If not, why did you not like?' value={body} onChange={handleOnchange}></textarea>
-
-
+            {body.length < 50 ?
+            <p id='note'>Minimum required characters left: {50-body.length}</p>
+            :
+            <p id='note'>Minimum reached</p>
+            }
+          </div>
+          <div>
+            Upload Photo placeholder
           </div>
 
 
