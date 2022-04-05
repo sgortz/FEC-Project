@@ -47,7 +47,11 @@ class ProductOverview extends React.Component {
             ))
         });
 
-        axios.get(`/products/${productId}/styles`, { param: productId })
+        axios.get(`/products/${productId}/styles`, {
+          params: {
+            product_id: productId
+          }
+        })
           .then(response => {
             console.log('Do I get a second response? ', response.data)
           })
