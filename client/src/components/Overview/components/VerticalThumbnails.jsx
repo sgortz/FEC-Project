@@ -6,7 +6,7 @@ const VerticalThumbnails = ({ photos, currentPhoto }) => {
   return (
     <ul>
       {photos.map((thumbnail, index) => {
-        return (<li key={index}className="thumbnail-list">
+        return (<li key={index} className="thumbnail-list">
           <img src={thumbnail.thumbnail_url} alt="thumbnail" className={index === currentPhoto ? "current-thumbnail thumbnail " : "thumbnail"}/>
         </li>)
       })}
