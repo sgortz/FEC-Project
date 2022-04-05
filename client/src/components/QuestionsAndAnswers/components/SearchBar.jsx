@@ -16,8 +16,8 @@ const SearchBar = ({ handleSearch }) => {
   return (
 
       <div className = 'searchBarWrapper'>
-         <i className="fa fa-search"></i>
-        <input className = 'search' size = '100' type='text' placeholder='HAVE A QUESTION? SEARCH FOR ANSWERS...'
+         <i className="fa fa-search QAicon"></i>
+        <input className = 'QAsearch' size = '100' type='text' placeholder='HAVE A QUESTION? SEARCH FOR ANSWERS...'
         onChange = {onChange} value = {searchTerm} />
       </div>
 

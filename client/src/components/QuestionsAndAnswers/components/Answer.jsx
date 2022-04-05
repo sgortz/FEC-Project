@@ -44,14 +44,14 @@ const Answer = ({ answer }) => {
       </div>
       <div className='answerFooter'>
         <span> by {answerer_name}, {moment(date).format('LL')} </span>
-        <span className='break'>|</span>
-        <span className='helpful'>helpful? </span>
+        <span className='QAbreak'>|</span>
+        <span className='QAhelpful'>helpful? </span>
         {!helpfulClicked?
-        <a className='helpful-button' onClick = {handleClickHelpful}>Yes ({answerHelpful})</a>
+        <a className='QAhelpful-button' onClick = {handleClickHelpful}>Yes ({answerHelpful})</a>
         : <a>Yes ({answerHelpful})</a>}
-        <span className='break'>|</span>
+        <span className='QAbreak'>|</span>
         {!reportClicked?
-          <a className='report-button' onClick = {handleClickReport}>Report</a>
+          <a className='QAreport-button' onClick = {handleClickReport}>Report</a>
           : <a>Reported!</a>
         }
       </div>

@@ -7,8 +7,8 @@ var router = require('express').Router();
 
 
 /* -------- PRODUCT OVERVIEW -------- */
-// router.get('/products/', controller.products.getProductInfo);
-// router.get('/products/:product_id/', controller.products.getProductFeatures);
+router.get('/products/', controller.products.getProductInfo);
+router.get('/products/:product_id/', controller.products.getProductFeatures);
 // router.get('/products/:product_id/styles', controller.products.getProductStyles);
 
 //Ratings and Reviews

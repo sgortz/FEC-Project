@@ -59,9 +59,9 @@ const AddAnswer = ({handleOpenModel, question}) => {
 
 
     <div >
-      <div className='model'>
-        <form className='modalContent'>
-          <h3 className='modelTitle'>Submit your Answer</h3>
+      <div className='QAmodel'>
+        <form className='QAmodalContent'>
+          <h3 className='QAmodelTitle'>Submit your Answer</h3>
 
           <label htmlFor='nickname'>Your Name * : </label>
           <input type='text' name='name' required
@@ -92,13 +92,13 @@ const AddAnswer = ({handleOpenModel, question}) => {
 
           <div>
             <span>
-            <button className='uploadBtn'>Upload</button>
+            <button className='QAuploadBtn'>Upload</button>
             </span>
             <span>
-              <button className='closeBtn' onClick={handleOpenModel}>Close</button>
+              <button className='QAcloseBtn' onClick={handleOpenModel}>Close</button>
             </span>
             <span>
-              <button className='submitBtn' onClick={handleAnswerSubmit}>Submit</button>
+              <button className='QAsubmitBtn' onClick={handleAnswerSubmit}>Submit</button>
             </span>
           </div>
         </form>

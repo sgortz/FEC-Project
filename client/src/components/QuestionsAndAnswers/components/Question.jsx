@@ -31,17 +31,17 @@ const Question = ({ question }) => {
 
   return (
 
-    <div className='question'>
-      <div className='inlineLeft'>
+    <div className='questionContainer'>
+      <div className='QAinlineLeft'>
         <strong >Q: {question.question_body} </strong>
       </div>
-      <div className='inlineRight'>
-        <span className='helpful'>helpful? </span>
+      <div className='QAinlineRight'>
+        <span className='QAhelpful'>helpful? </span>
         {!helpfulClicked ?
-          <a className='helpful-button' onClick={handleClickHelpful}>Yes ({questionHelpful}) </a>
+          <a className='QAhelpful-button' onClick={handleClickHelpful}>Yes ({questionHelpful}) </a>
           : <a>Yes ({questionHelpful})</a>
         }
-        <span className='break'>|</span>
+        <span className='QAbreak'>|</span>
         <a className='add-answer' onClick={handleOpenModel}>Add Answer</a>
         {showAnswerModel ?
           <AddAnswer question={question} handleOpenModel={handleOpenModel} /> : null}
