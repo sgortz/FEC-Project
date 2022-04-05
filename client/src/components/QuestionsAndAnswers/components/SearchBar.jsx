@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import "./QuestionAndAnswers.css";
 
 
 
-const SearchBar = (props) => {
+
+
+const SearchBar = ({ handleSearch, searchTerm }) => {
+
+  const onChange = (e) => {
+    handleSearch(e.target.value);
+  }
 
   return (
 
-      <div className = 'SearchBar'>
-        <input size = '100' type='text' placeholder='HAVE A QUESTION? SEARCH FOR ANSWERS...'></input>
+      <div className = 'searchBar'>
+        <input size = '100' type='text' placeholder='HAVE A QUESTION? SEARCH FOR ANSWERS...'
+        onChange = {onChange} value = {searchTerm} /><i className="fa fa-search"></i>
 
       </div>
 
@@ -19,3 +27,4 @@ const SearchBar = (props) => {
 
 
 export default SearchBar;
+

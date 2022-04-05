@@ -6,25 +6,26 @@ import QAEntry from './QAEntry.jsx';
 
 
 
-const QAList = ({questionList}) => {
+const QAList = ({ questionList, filteredQuestions, questionNumber }) => {
+
 
 
 
 
   return (
 
-    <div className = 'QAList'>
+    <div className='QAList'>
 
-      {(questionList.slice(0, 4)).map((question, index) =>
-        <QAEntry key = {question.question_id} question = {question}/>
-      )}
+      {
+        (filteredQuestions.slice(0, questionNumber)).map((question, index) => (
+          <QAEntry key={question.question_id} question={question} />
+        ))
+      }
 
     </div>
 
-
   )
 }
-
 
 
 export default QAList;

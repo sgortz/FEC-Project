@@ -12,7 +12,6 @@ function RatingsAndReviews (props) {
   const [reviews, setReviews] = useState([]);
   const [reviewsrenderedcount, setReviewsrenderedcount] = useState(2);
   const [sortoption, setSortoption] = useState('relevant');
-  const [metadata, setMetadata] = useState(null);
 
   useEffect (() => {
     axios.get('/reviews',
@@ -28,38 +27,16 @@ function RatingsAndReviews (props) {
     // axios.get(`/reviews/?product_id=37315&page=1&count=500&sort=relevant`)
     .then((results)=>{
       setReviews(results.data.results)
-      console.log('successfully get all reviews')
+      // console.log('successfully get all reviews')
     })
     .catch((err)=>{console.log(err)});
   }, [sortoption]);
-
-  useEffect (() => {
-    axios.get('/reviews/meta',
-          {
-            params: {
-              product_id : 37315,
-            }
-          }
-        )
-    .then((results)=>{
-      setMetadata(results.data);
-      console.log('successfully get review metadata')
-    })
-    .catch((err)=>{console.log(err)});
-  },[]);
-  //will need to put something inside [] above, eg. whenever a new review is submitted
-
-
-
-
-
-//if reviewsrenderedcount === reviews.length, hide MoreReviews Button/Component
 
 
   return(
     <div>
       <h1>Ratings And Reviews</h1>
-      <ReviewMetaData/>
+      <ReviewMetaData product_id={props.product_id}/>
       <ReviewSort reviews={reviews} setSortoption={setSortoption}/>
       <ReviewList reviews={reviews} setReviews={setReviews} reviewsrenderedcount={reviewsrenderedcount}/>
       {reviewsrenderedcount !== reviews.length? <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/> : null}

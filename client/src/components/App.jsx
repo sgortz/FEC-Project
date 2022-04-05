@@ -7,7 +7,7 @@ const App = (props) => (
   <div>
     <ProductOverview />
     <QuestionAndAnswers product_id={37315}/>
-    <RatingsAndReviews />
+    <RatingsAndReviews product_id={37315}/>
   </div>
 )
 
