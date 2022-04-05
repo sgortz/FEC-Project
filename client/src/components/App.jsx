@@ -6,8 +6,8 @@ import RatingsAndReviews from './RatingsAndReviews/RatingsReviews.jsx'
 const App = (props) => (
   <div>
     <ProductOverview />
-    {/* <QuestionAndAnswers product_id={37315}/>
-    <RatingsAndReviews product_id={37315}/> */}
+    <QuestionAndAnswers product_id={37315}/>
+    <RatingsAndReviews product_id={37315}/>
   </div>
 )
 

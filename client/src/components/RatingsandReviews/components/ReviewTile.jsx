@@ -59,7 +59,7 @@ function ReviewTile ({review, reviews}) {
         <div className="reviewbody">
           {reviewbody}
           <br></br>
-          <a onClick={()=> {setReviewbody(review.body); setShowmore(null)}}>{showmore}</a>
+          <u onClick={()=> {setReviewbody(review.body); setShowmore(null)}}>{showmore}</u>
         </div>
       }
 
@@ -75,7 +75,7 @@ function ReviewTile ({review, reviews}) {
       { helpfulreportclicked === false && reviewreport === 'Report' ?
         <div className="reviewhelpfulreport">
           Helpful?
-          <a onClick={markHelpful}> Yes:({reviewhelpful})</a>  |  <a onClick={reportReview}>{reviewreport}</a>
+          <u onClick={markHelpful}> Yes:({reviewhelpful})</u>  |  <u onClick={reportReview}>{reviewreport}</u>
         </div>
         :
         helpfulreportclicked === true && reviewreport === 'You\'ve reported this review' ?
