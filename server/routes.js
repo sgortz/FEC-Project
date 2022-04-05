@@ -6,10 +6,13 @@ var router = require('express').Router();
 // router.get('/pageDetail', controller.pageDetail.get);
 
 
-
+/* -------- PRODUCT OVERVIEW -------- */
+router.get('/products/', controller.products.getProductInfo);
+router.get('/products/:product_id/', controller.products.getProductFeatures);
+router.get('/products/:product_id/styles', controller.products.getProductStyles);
 
 //Ratings and Reviews
-router.get('/reviews/', controller.review.getAllreviews);
+// router.get('/reviews/', controller.review.getAllreviews);
 router.get('/reviews/meta/', controller.review.getReviewMeta);
 router.post('/reviews', controller.review.writeReview);
 router.put('/reviews/:review_id/helpful', controller.review.putHelpful);
@@ -25,7 +28,4 @@ router.put('/qa/answers/:answer_id/helpful', controller.questions.putAnswerHelpf
 router.put('/qa/questions/:question_id/report', controller.questions.putReportQuestion);
 router.put('/qa/answers/:answer_id/report', controller.questions.putReportAnswer);
 
-
-
 module.exports = router;
-
