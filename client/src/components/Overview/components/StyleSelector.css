@@ -1,4 +1,10 @@
-.sgortz {
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,300;0,400;0,700;1,100;1,300&family=Libre+Baskerville:ital@0;1&display=swap');
+
+.clothing-style {
+  font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.style-circular-photo {
   max-width: 80px;
   margin: 7px;
   border-radius: 50%;

@@ -29,22 +29,39 @@ class ProductOverview extends React.Component {
       products_features: [],
       product_styles: [],
     }
-    this.handleApi = this.handleApi.bind(this);
+    this.handleProductApi = this.handleProductApi.bind(this);
+    this.handleProductFeatures = this.handleProductFeatures.bind(this);
+    // this.handleProductStyles = this.handleProductStyles.bind(this);
   }
 
-  handleApi() {
+  handleProductApi() {
     axios.get('/products')
       .then(response => {
-        // console.log('API response! ', Array.isArray(response.data))
+        // console.log('API response! ', response.data[0].id)
+        let productId = response.data[0].id;
+
         response.data.map((product, index) => {
-          this.setState(prevState => ({ products: prevState.products.concat(product) }))
-        })
+          this.setState(
+            prevState => (
+              { products: prevState.products.concat(product) }
+            ))
+        });
+
+        axios.get(`/products/${productId}/styles`, { param: productId })
+          .then(response => {
+            console.log('Do I get a second response? ', response.data)
+          })
       })
       .catch(err => { console.error(err) })
   }
 
+  handleProductFeatures() {
+    console.log('hello from features')
+  }
+  // handleProductStyles(){}
+
   componentDidMount() {
-    this.handleApi();
+    this.handleProductApi();
   }
 
   render() {
@@ -71,7 +88,9 @@ class ProductOverview extends React.Component {
               <StarReview/>
             </div> */}
             <div className="product-detail">
-              <ProductDetail product={this.state.products[0]} styles={stylesExample} />
+              <ProductDetail
+                product={this.state.products[0]}
+                productFeatures={this.handleProductFeatures} />
             </div>
             <div className="style-selector">
               <StyleSelector styles={stylesExample} product={productExample} />
