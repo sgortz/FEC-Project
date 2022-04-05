@@ -1,6 +1,7 @@
 
 /* QuestionModel Basic CSS */
- .questionModel {
+
+ .QAmodel {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
   z-index: 150; /* Overlay effect: positioned over other containers */
@@ -13,7 +14,7 @@
   padding-top: 275px; /* Location of the content container */
 }
 
-.modalContent {
+.QAmodalContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,23 +34,89 @@
   animation-duration: 0.5s;
 }
 
-.closeBtn{
+.QAcloseBtn{
   margin: 1rem 0 1rem 0;
   margin-left: 10%;
   border-radius: 20px 0 0 20px;
 }
 
-.submitBtn{
+.QAsubmitBtn{
   margin: 1rem 0 1rem 8rem;
   margin-left: 52%;
   border-radius: 0 20px 20px 0;
 }
 
-.closeBtn:hover, .submitBtn:hover{
+.QAcloseBtn:hover, .QAsubmitBtn:hover{
   background-color: lightgrey;
   transition: all ease 0.3s;
 }
 
-
 /* SearchBar Basic CSS */
+.searchBarWrapper {
+  position: relative;
+  display: flex;
+  min-width: 100px;
+}
+
+.QAicon {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  width: 14px;
+}
+
+.QAsearch {
+  border: 1px solid grey;
+  border-radius: 10px;
+  height: 25px;
+  width: 70%;
+  padding: 2px 23px 2px 30px;
+  background-color: #f5f5f5;
+}
+
+.QAsearch:hover, .QAsearch:focus {
+  border: 2px solid #63994d;
+  background-color: white;
+}
+
+/* QAList Basic CSS */
+.QAList {
+
+
+}
+
+/* Question Basic CSS */
+.QAEntry {
+
+}
+.questionContainer {
+  padding: 5px, 0, 5px, 0
+}
+
+.QAinlineLeft, .QAinlineRight {
+  display: inline-block;
+}
+
+.QAinlineLeft {
+  max-width: 50%;
+}
+
+.questionBody{
+  font-size: 30;
+}
+
+.QAinlineRight {
+  position: absolute;
+  right: 30%;
+}
+
+.QAhelpful, .QAhelpful-button, .QAbreak, .add-answer, .report-button{
+  margin: 5px
+}
+
+.QAhelpful-button, .add-answer ,.QAreport-button{
+  text-decoration: underline;
+  cursor: pointer
+}
+
 
