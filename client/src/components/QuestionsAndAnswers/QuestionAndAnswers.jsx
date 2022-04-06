@@ -5,6 +5,7 @@ import axios from 'axios';
 import SearchBar from './components/SearchBar.jsx';
 import QAList from './components/QAList.jsx';
 import AddQuestion from './components/AddQuestion.jsx';
+import "./components/QuestionAndAnswers.css";
 
 
 const QuestionAndAnswers = ({ product_id }) => {
@@ -13,7 +14,7 @@ const QuestionAndAnswers = ({ product_id }) => {
   const [questionList, setQuestionList] = useState([]);
   const [filteredQuestions, setFilteredQuestions] = useState([]);
   const [showModel, setShowModel] = useState(false);
-  const [questionNumber, setQuestionNumber] = useState(2);
+  const [questionNumber, setQuestionNumber] = useState(4);
   const [collapseQuestions, setCollapseQuestions] = useState(true)
 
 
@@ -37,9 +38,11 @@ const QuestionAndAnswers = ({ product_id }) => {
   }
 
   const closeQuestions = () => {
-    setQuestionNumber(2);
+    setQuestionNumber(4);
     setCollapseQuestions(prev => !prev);
   }
+
+
 
 
   useEffect(() => {
@@ -58,6 +61,7 @@ const QuestionAndAnswers = ({ product_id }) => {
 
 
   return (
+
     <div className='QuestionAndAnswers'>
 
       <h2>QUESTIONS & ANSWERS</h2>
@@ -65,16 +69,16 @@ const QuestionAndAnswers = ({ product_id }) => {
 
       {questionList ?
         <QAList filteredQuestions={filteredQuestions} questionNumber={questionNumber}/> : null}
-
+      <br></br>
       {filteredQuestions.length > 2  && collapseQuestions ?
-        <button onClick={showMoreQuestion} >MORE ANSWERED QUESTIONS</button> : null}
+        <button className='moreQBtn' onClick={showMoreQuestion} >MORE ANSWERED QUESTIONS</button> : null}
 
       {!collapseQuestions ?
-        <button onClick = {closeQuestions}>GO BACK</button> : null}
-      <button onClick={handleOpenModel} >ADD A QUESTION</button>
+        <button className='goBackQ' onClick = {closeQuestions}>GO BACK</button> : null}
+      <button className='addQBtn' onClick={handleOpenModel} >ADD A QUESTION</button>
 
       {showModel ?
-        <AddQuestion product_id={product_id} handleOpenModel={handleOpenModel} /> : null}
+        <AddQuestion  product_id={product_id} handleOpenModel={handleOpenModel} /> : null}
 
     </div>
   )

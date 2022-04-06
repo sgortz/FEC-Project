@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import AnswerPhoto from './AnswerPhoto.jsx';
 import "./QuestionAndAnswers.css";
 
 const Answer = ({ answer }) => {
@@ -40,12 +41,23 @@ const Answer = ({ answer }) => {
   return (
     <div className='Answer'>
       <div className='answerBody'>
-        <p><strong>A: </strong>{body}</p>
+        <span className='A'>A:</span>
+        <span className='ABody'>{body}</span>
       </div>
+      <span className='answerPhotos'>
+        {answer.photos.length > 0?
+          answer.photos.map((url,index) => (
+          <AnswerPhoto key={index} url={url}/> ))
+          : null
+        }
+      </span>
       <div className='answerFooter'>
-        <span> by {answerer_name}, {moment(date).format('LL')} </span>
+        {answerer_name === "seller"?
+          <span> by <strong>Seller</strong>, {moment(date).format('LL')} </span>
+          : <span> by {answerer_name}, {moment(date).format('LL')} </span>
+        }
         <span className='QAbreak'>|</span>
-        <span className='QAhelpful'>helpful? </span>
+        <span className='QAhelpful'>Helpful? </span>
         {!helpfulClicked?
         <a className='QAhelpful-button' onClick = {handleClickHelpful}>Yes ({answerHelpful})</a>
         : <a>Yes ({answerHelpful})</a>}

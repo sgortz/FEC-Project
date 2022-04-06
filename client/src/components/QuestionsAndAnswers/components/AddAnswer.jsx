@@ -21,7 +21,7 @@ const AddAnswer = ({handleOpenModel, question}) => {
     }
 
     if (verifyEmail(email) && name.length > 0 && answerBody.length > 0) {
-      var data = { question_id: question_id, body: answerBody, name: name, email: email };
+      var data = { question_id: question_id, body: answerBody, name: name, email: email, photos:photos};
 
       axios.post('/qa/questions/:question_id/answers', data)
         .then(res => {
@@ -49,10 +49,8 @@ const AddAnswer = ({handleOpenModel, question}) => {
   }
 
   const handleAddPhoto = (e) => {
-    console.log(e.target.files[0]);
-    let img = e.target.files[0];
-    let imgUrl = URL.createObjectURL(img);
-    setPhotos([...photos, imgUrl]);
+    let imgUrl = e.target.value;
+    setPhotos([imgUrl]);
   }
 
   return (
@@ -86,14 +84,11 @@ const AddAnswer = ({handleOpenModel, question}) => {
             value={answerBody}></textarea>
 
           <label htmlFor = 'photos'>Upload Photos (Optional): </label>
-          <input type='file' onChange={handleAddPhoto}></input>
+          <input type='url' onChange={handleAddPhoto} placeholder="https://example.com" height='40px' ></input>
 
 
 
           <div>
-            <span>
-            <button className='QAuploadBtn'>Upload</button>
-            </span>
             <span>
               <button className='QAcloseBtn' onClick={handleOpenModel}>Close</button>
             </span>
