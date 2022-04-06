@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import StarRating from './StarRating.jsx'
 import '../styling/ReviewModal.css';
+
 function ReviewModal ({product_id, productChars, setReviewmodalshow}) {
 
-  const [rating, setRating] = useState(5);
+  const [rating, setRating] = useState(null);
+  const [ratingDescription, setRatingDescription] = useState('');
   const [summary, setSummary] = useState('');
   const [body, setBody] = useState('');
   const [recommend, setRecommend] = useState(null);
@@ -20,7 +23,19 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow}) {
   const [fit, setFit] = useState('None Selected');
 
 
-
+  useEffect(()=>{
+    if (rating === 1) {
+      setRatingDescription('Poor')
+    } else if (rating === 2) {
+      setRatingDescription('Fair')
+    } else if (rating === 3) {
+      setRatingDescription('Average')
+    } else if (rating === 4) {
+      setRatingDescription('Good')
+    } else if (rating === 5) {
+      setRatingDescription('Great')
+    }
+  }, [rating]);
 
 
   const handleOnchange = (e) => {
@@ -120,7 +135,8 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow}) {
         </div>
         <div className='review-modal-body'>
           <div className='reviewoverallrating'>
-            Overall Rating: Stars placeholder
+            Overall Rating:
+            <StarRating rating={rating} setRating={setRating}/> {ratingDescription}
           </div>
           <div className='recommendproduct'>
             <label>Do you recommend this product?</label>
