@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Star from '../../SharedComponents/Star.jsx';
 import '../styling/RatingBreakdown.css';
 
 
@@ -22,7 +23,7 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
       countrating += Number(object[key]);
     }
     var ratingresult = sumrating/countrating;
-    return ratingresult.toFixed(1);
+    return ratingresult;
   };
 
   const recommendpercentage = (object) => {
@@ -99,12 +100,11 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
       <h4>RatingBreakdown</h4>
       <div>
         <h2>
-          {calculaterating(metadata.ratings)}
+          {calculaterating(metadata.ratings).toFixed(1)}
         </h2>
+        <Star value={calculaterating(metadata.ratings)}/>
       </div>
-      <div>
-        stars placeholder
-      </div>
+
       <div>
         {recommendpercentage(metadata.recommended)}% of reviews recommend this product
       </div>

@@ -1,24 +1,58 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {FaStar} from 'react-icons/fa';
 import './star.css';
+
 
 function Star (props) {
 
+  const [calculatedStar, setCalculatedStar] = useState(0);
+
+  const calculatestar = () => {
+    var width = 0;
+    let whole = Math.floor(props.value);
+    let residue = props.value-whole;
+
+    width += whole * 20;
+
+    if (residue >= 0.25 && residue < 0.50) {
+      width += 5;
+    } else if (residue >= 0.50 && residue < 0.75) {
+      width += 10;
+    } else if (residue >= 0.75 && residue < 1) {
+      width += 15;
+    }
+
+    return(width);
+  }
+
+  useEffect(()=>{
+    setCalculatedStar(calculatestar());
+  }, [props.value]);
+
   return (
-    <div class="rating-group">
-        <input disabled checked class="rating__input rating__input--none" name="rating3" id="rating3-none" value="0" type="radio"/>
-        <label aria-label="1 star" class="rating__label" for="rating3-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-1" value="1" type="radio"/>
-        <label aria-label="2 stars" class="rating__label" for="rating3-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-2" value="2" type="radio"/>
-        <label aria-label="3 stars" class="rating__label" for="rating3-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-3" value="3" type="radio"/>
-        <label aria-label="4 stars" class="rating__label" for="rating3-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-4" value="4" type="radio"/>
-        <label aria-label="5 stars" class="rating__label" for="rating3-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
-        <input class="rating__input" name="rating3" id="rating3-5" value="5" type="radio"/>
+    <div className='allstars' >
+      <div className='back-stars'>
+        {
+        [...Array(5)].map((star, index)=><FaStar key={index} aria-hidden='true' size={20}/>)
+        }
+
+        <div className='front-stars' style={{width: `${calculatedStar}%`}}>
+          {
+          [...Array(5)].map((star, index)=><FaStar key={index} aria-hidden='true' size={20}/>)
+          }
+
+        </div>
+
+      </div>
+
+
+
     </div>
+
   )
 
 };
 
 export default Star;
+
+// style={{width: `${calculatedStar}%`}}
