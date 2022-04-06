@@ -7,8 +7,8 @@
   position: fixed; /* Fix position on the top-left corner*/
   top: 0;
   left: 0;
-  overflow: auto;
-  padding-top: 20px; /* Location of the content container */
+  max-height: 130%;
+  overflow-y: auto;
 }
 
 .review-modal-content {
@@ -17,9 +17,9 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  width: 50%; /* Width in proportion to its parent container*/
-  max-width: 500px; /* Max width where it stops expanding */
-  height: 90%; /* Height in proportion to its parent container */
+  width: 70%; /* Width in proportion to its parent container*/
+  max-width: 700px; /* Max width where it stops expanding */
+  height: 130%; /* Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
   border: 1px solid black;
@@ -30,6 +30,10 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.5s;
+}
+
+.review-modal-body {
+  width: 80%
 }
 
 #closereviewmodal {
@@ -52,12 +56,12 @@
 
 /*textarea*/
 #reviewsummary {
-  width: 390px;
+  width: 560px;
   height: 50px;
 }
 
 #reviewbody {
-  width: 390px;
+  width: 560px;
   height: 100px;
 }
 
@@ -67,3 +71,38 @@
   margin-block: unset;
 }
 
+
+/*chracteristic radio boxes*/
+.newreviewcharlabel {
+  text-align: center;
+  width: 100%
+}
+
+.newreviewchardes {
+  text-align: center;
+  font-size: smaller;
+  width: 100%
+}
+
+.newreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+
+}
+
+.newreview label {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  font-size: smaller;
+
+}
+
+/*add padding to each review radio box*/
+.newreviewbox {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
