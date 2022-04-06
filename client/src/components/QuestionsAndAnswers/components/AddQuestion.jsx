@@ -71,7 +71,6 @@ const AddQuestion = ({ handleOpenModel, product_id }) => {
           onChange={handleOnchange}
           value={questionBody}
         ></textarea>
-
         <div>
           <span>
             <button className='QAcloseBtn' onClick={handleOpenModel}>Close</button>

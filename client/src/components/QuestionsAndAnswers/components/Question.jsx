@@ -33,10 +33,10 @@ const Question = ({ question }) => {
 
     <div className='questionContainer'>
       <div className='QAinlineLeft'>
-        <strong >Q: {question.question_body} </strong>
+        <span >Q: {question.question_body} </span>
       </div>
       <div className='QAinlineRight'>
-        <span className='QAhelpful'>helpful? </span>
+        <span className='QAhelpful'>Helpful? </span>
         {!helpfulClicked ?
           <a className='QAhelpful-button' onClick={handleClickHelpful}>Yes ({questionHelpful}) </a>
           : <a>Yes ({questionHelpful})</a>
