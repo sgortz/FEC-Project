@@ -17,8 +17,8 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  width: 50%; /* Width in proportion to its parent container*/
-  max-width: 500px; /* Max width where it stops expanding */
+  width: 70%; /* Width in proportion to its parent container*/
+  max-width: 700px; /* Max width where it stops expanding */
   height: 130%; /* Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
@@ -30,6 +30,10 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.5s;
+}
+
+.review-modal-body {
+  width: 80%
 }
 
 #closereviewmodal {
@@ -52,12 +56,12 @@
 
 /*textarea*/
 #reviewsummary {
-  width: 390px;
+  width: 560px;
   height: 50px;
 }
 
 #reviewbody {
-  width: 390px;
+  width: 560px;
   height: 100px;
 }
 
@@ -83,7 +87,7 @@
 .newreview {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
 
 }
@@ -93,5 +97,12 @@
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
+  font-size: smaller;
 
+}
+
+/*add padding to each review radio box*/
+.newreviewbox {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

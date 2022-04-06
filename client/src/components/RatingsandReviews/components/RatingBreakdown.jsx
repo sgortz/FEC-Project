@@ -36,7 +36,7 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
       }
     }
     var percentageresult = truecount/(truecount + falsecount)*100;
-    return percentageresult;
+    return percentageresult.toFixed(1);
   };
 
   const starscountandwidth = () => {

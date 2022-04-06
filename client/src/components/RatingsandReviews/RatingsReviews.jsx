@@ -15,12 +15,13 @@ function RatingsAndReviews (props) {
   const [sortoption, setSortoption] = useState('relevant');
   const [selectedstars, setSelectedstars] = useState([]);
   const [reviewmodalshow, setReviewmodalshow] = useState(false);
+  const [productChars, setProductChars] = useState({'hello': 1});
 
   useEffect (() => {
     axios.get('/reviews',
           {
             params: {
-              product_id : 37315,
+              product_id : props.product_id,
               page : 1,
               count : 20,
               sort : `${sortoption}`
@@ -44,7 +45,8 @@ function RatingsAndReviews (props) {
   return(
     <div>
       <h1>Ratings And Reviews</h1>
-      <ReviewMetaData product_id={props.product_id} selectedstars={selectedstars} setSelectedstars={setSelectedstars} setReviewsrenderedcount={setReviewsrenderedcount}/>
+      <ReviewMetaData product_id={props.product_id} selectedstars={selectedstars} setSelectedstars={setSelectedstars} setReviewsrenderedcount={setReviewsrenderedcount}
+      setProductChars={setProductChars}/>
 
       <ReviewSort reviews={reviews} setSortoption={setSortoption}/>
 
@@ -61,7 +63,10 @@ function RatingsAndReviews (props) {
 
       { reviewmodalshow
         ?
-        <ReviewModal setReviewmodalshow={setReviewmodalshow}/>
+        <ReviewModal
+        product_id={props.product_id}
+        productChars={productChars}
+        setReviewmodalshow={setReviewmodalshow}/>
         :
         null
       }

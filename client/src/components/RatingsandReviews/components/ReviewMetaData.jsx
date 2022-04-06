@@ -17,6 +17,7 @@ function ReviewMetaData (props) {
     )
     .then((results)=>{
       setMetadata(results.data);
+      props.setProductChars(results.data.characteristics)
       // console.log('successfully get review metadata')
     })
     .catch((err)=>{console.log(err)});
