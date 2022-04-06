@@ -35,22 +35,15 @@ function Star (props) {
         {
         [...Array(5)].map((star, index)=><FaStar key={index} aria-hidden='true' size={20}/>)
         }
-
+        
         <div className='front-stars' style={{width: `${calculatedStar}%`}}>
           {
           [...Array(5)].map((star, index)=><FaStar key={index} aria-hidden='true' size={20}/>)
           }
-
         </div>
-
       </div>
-
-
-
     </div>
-
   )
-
 };
 
 export default Star;

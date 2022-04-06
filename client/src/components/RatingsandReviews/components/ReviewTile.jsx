@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import Star from '../../SharedComponents/Star.jsx';
 
 function ReviewTile ({review, reviews}) {
 
@@ -44,6 +45,7 @@ function ReviewTile ({review, reviews}) {
       <h4>ReviewTile</h4>
       <div>
         rating: {review.rating}
+        <Star value={review.rating}/>
       </div>
       <div className="reviewnameanddate">
         {review.reviewer_name}, {moment(review.date).format('LL')}
