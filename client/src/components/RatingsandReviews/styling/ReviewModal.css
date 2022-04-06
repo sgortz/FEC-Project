@@ -7,8 +7,8 @@
   position: fixed; /* Fix position on the top-left corner*/
   top: 0;
   left: 0;
-  overflow: auto;
-  padding-top: 20px; /* Location of the content container */
+  max-height: 130%;
+  overflow-y: auto;
 }
 
 .review-modal-content {
@@ -19,7 +19,7 @@
   background-color: white;
   width: 50%; /* Width in proportion to its parent container*/
   max-width: 500px; /* Max width where it stops expanding */
-  height: 90%; /* Height in proportion to its parent container */
+  height: 130%; /* Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
   border: 1px solid black;
@@ -67,3 +67,31 @@
   margin-block: unset;
 }
 
+
+/*chracteristic radio boxes*/
+.newreviewcharlabel {
+  text-align: center;
+  width: 100%
+}
+
+.newreviewchardes {
+  text-align: center;
+  font-size: smaller;
+  width: 100%
+}
+
+.newreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+
+}
+
+.newreview label {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+
+}
