@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Star from '../../SharedComponents/Star.jsx';
 import '../styling/RatingBreakdown.css';
 
 
-function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReviewsrenderedcount}) {
+function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReviewsrenderedcount, setAvgReviewRating}) {
 
   const [totalcounts, setTotalcounts] = useState(null);
 
@@ -22,7 +23,7 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
       countrating += Number(object[key]);
     }
     var ratingresult = sumrating/countrating;
-    return ratingresult.toFixed(1);
+    return ratingresult;
   };
 
   const recommendpercentage = (object) => {
@@ -36,7 +37,7 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
       }
     }
     var percentageresult = truecount/(truecount + falsecount)*100;
-    return percentageresult;
+    return percentageresult.toFixed(1);
   };
 
   const starscountandwidth = () => {
@@ -90,6 +91,7 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
 
   useEffect(()=>{
     starscountandwidth();
+    setAvgReviewRating(calculaterating(metadata.ratings));
   }, [metadata]);
 
 
@@ -99,12 +101,11 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
       <h4>RatingBreakdown</h4>
       <div>
         <h2>
-          {calculaterating(metadata.ratings)}
+          {calculaterating(metadata.ratings).toFixed(1)}
         </h2>
+        <Star value={calculaterating(metadata.ratings)}/>
       </div>
-      <div>
-        stars placeholder
-      </div>
+
       <div>
         {recommendpercentage(metadata.recommended)}% of reviews recommend this product
       </div>

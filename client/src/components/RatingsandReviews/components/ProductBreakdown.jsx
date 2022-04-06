@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styling/ProductBreakdown.css';
-
+import {VscTriangleDown} from "react-icons/vsc"
 
 function ProductBreakdown ({metadata}) {
   const [size, setSize] = useState({display: false, value: 0});
@@ -9,6 +9,8 @@ function ProductBreakdown ({metadata}) {
   const [quality, setQuality] = useState({display: false, value: 0});
   const [width, setWidth] = useState({display: false, value: 0});
   const [length, setLength] = useState({display: false, value: 0});
+  const [fit, setFit] = useState({display: false, value: 0});
+
 
   const setcharcateristics = () => {
     var sizechar = {display: false, value: 0};
@@ -16,6 +18,8 @@ function ProductBreakdown ({metadata}) {
     var qualitychar = {display: false, value: 0};
     var widthchar = {display: false, value: 0};
     var lengthchar = {display: false, value: 0};
+    var fitchar = {display: false, value: 0};
+
 
     var allchars = metadata.characteristics;
 
@@ -35,6 +39,9 @@ function ProductBreakdown ({metadata}) {
       if (allchars.Length) {
         lengthchar = {display: true, value: Number(allchars.Length.value)/5 * 100}
       }
+      if (allchars.Fit) {
+        fitchar = {display: true, value: Number(allchars.Fit.value)/5 * 100}
+      }
     }
 
     setSize(sizechar);
@@ -42,6 +49,8 @@ function ProductBreakdown ({metadata}) {
     setQuality(qualitychar);
     setWidth(widthchar);
     setLength(lengthchar);
+    setFit(fitchar);
+
   };
 
   useEffect(()=>{
@@ -56,7 +65,7 @@ function ProductBreakdown ({metadata}) {
           <div className='review-maincharlabel'>Size</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${size.value}%`}}>
-              <i className="fa-solid fa-caret-down"></i>
+              <VscTriangleDown />
             </div>
           </div>
           <div className='productlabelscontainer'>
@@ -76,12 +85,12 @@ function ProductBreakdown ({metadata}) {
           <div className='review-maincharlabel'>Comfort</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${comfort.value}%`}}>
-              <i className="fa-solid fa-caret-down"></i>
+              <VscTriangleDown />
             </div>
           </div>
           <div className='productlabelscontainer'>
             <div className='reviewchar-leftlabel'>
-              Poor
+              Uncomfortable
             </div>
             <div className='reviewchar-rightlabel'>
               Perfect
@@ -96,7 +105,7 @@ function ProductBreakdown ({metadata}) {
           <div className='review-maincharlabel'>Quality</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${quality.value}%`}}>
-              <i className="fa-solid fa-caret-down"></i>
+              <VscTriangleDown />
             </div>
           </div>
           <div className='productlabelscontainer'>
@@ -116,15 +125,15 @@ function ProductBreakdown ({metadata}) {
           <div className='review-maincharlabel'>Width</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${width.value}%`}}>
-              <i className="fa-solid fa-caret-down"></i>
+              <VscTriangleDown />
             </div>
           </div>
           <div className='productlabelscontainer'>
             <div className='reviewchar-leftlabel'>
-              Too short
+              Too narrow
             </div>
             <div className='reviewchar-rightlabel'>
-              Too large
+              Too wide
             </div>
           </div>
         </div>
@@ -136,15 +145,35 @@ function ProductBreakdown ({metadata}) {
           <div className='review-maincharlabel'>Length</div>
           <div className='productbarcontainer'>
             <div className='indicator' style={{width: `${length.value}%`}}>
-              <i className="fa-solid fa-caret-down"></i>
+              <VscTriangleDown />
             </div>
           </div>
           <div className='productlabelscontainer'>
             <div className='reviewchar-leftlabel'>
-              Too short
+              Runs short
             </div>
             <div className='reviewchar-rightlabel'>
-              Too long
+              Runs long
+            </div>
+          </div>
+        </div>
+      :
+      null
+      }
+      {fit.display?
+        <div className='review-productbreakdown'>
+          <div className='review-maincharlabel'>Fit</div>
+          <div className='productbarcontainer'>
+            <div className='indicator' style={{width: `${fit.value}%`}}>
+              <VscTriangleDown />
+            </div>
+          </div>
+          <div className='productlabelscontainer'>
+            <div className='reviewchar-leftlabel'>
+              Runs tight
+            </div>
+            <div className='reviewchar-rightlabel'>
+              Runs long
             </div>
           </div>
         </div>

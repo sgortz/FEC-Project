@@ -1,0 +1,8 @@
+#starratingradio {
+  display:none;
+}
+
+.ratingstar {
+  cursor: pointer;
+  transition: color 200ms;
+}
