@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {FaStar} from 'react-icons/fa';
 import './star.css';
 
+//when using Star component, make sure to pass value as one prop
+//eg. <Star value={...}/>
 
 function Star (props) {
 
@@ -35,7 +37,7 @@ function Star (props) {
         {
         [...Array(5)].map((star, index)=><FaStar key={index} aria-hidden='true' size={20}/>)
         }
-        
+
         <div className='front-stars' style={{width: `${calculatedStar}%`}}>
           {
           [...Array(5)].map((star, index)=><FaStar key={index} aria-hidden='true' size={20}/>)
@@ -48,4 +50,3 @@ function Star (props) {
 
 export default Star;
 
-// style={{width: `${calculatedStar}%`}}

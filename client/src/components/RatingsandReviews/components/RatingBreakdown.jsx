@@ -4,7 +4,7 @@ import Star from '../../SharedComponents/Star.jsx';
 import '../styling/RatingBreakdown.css';
 
 
-function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReviewsrenderedcount}) {
+function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReviewsrenderedcount, setAvgReviewRating}) {
 
   const [totalcounts, setTotalcounts] = useState(null);
 
@@ -91,6 +91,7 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
 
   useEffect(()=>{
     starscountandwidth();
+    setAvgReviewRating(calculaterating(metadata.ratings));
   }, [metadata]);
 
 
