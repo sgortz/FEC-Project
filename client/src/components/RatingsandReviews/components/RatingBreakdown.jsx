@@ -98,11 +98,10 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
 
   return(
     <div>
-      <h4>RatingBreakdown</h4>
       <div>
-        <h2>
+        <h1>
           {calculaterating(metadata.ratings).toFixed(1)}
-        </h2>
+        </h1>
         <Star value={calculaterating(metadata.ratings)}/>
       </div>
 

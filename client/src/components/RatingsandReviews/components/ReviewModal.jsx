@@ -166,23 +166,23 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow}) {
                 <div className='newreviewcharlabel'>Size</div>
                 <div className='newreviewchardes'>{size}</div>
                 <div className='newreview size'>
-                  <div className='sizecheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='size' id='sizeradiobt1' value='A size too small' onChange={handleOnchange}/>
                     <label>A size too small</label>
                   </div>
-                  <div className='sizecheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='size' id='sizeradiobt2' value='1/2 a size too small' onChange={handleOnchange}/>
                     <label>1/2 a size too small</label>
                   </div>
-                  <div className='sizecheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='size' id='sizeradiobt3' value='Perfect' onChange={handleOnchange}/>
                     <label>Perfect</label>
                   </div>
-                  <div className='sizecheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='size' id='sizeradiobt4' value='1/2 a size too big' onChange={handleOnchange}/>
                     <label>1/2 a size too big</label>
                   </div>
-                  <div className='sizecheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='size' id='sizeradiobt5' value='A size too wide' onChange={handleOnchange}/>
                     <label>A size too wide</label>
                   </div>
@@ -196,23 +196,23 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow}) {
                 <div className='newreviewcharlabel'>Comfort</div>
                 <div className='newreviewchardes'>{comfort}</div>
                 <div className='newreview comfort'>
-                  <div className='comfortcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='comfort' id='comfortradiobt1' value='Uncomfortable' onChange={handleOnchange}/>
                     <label>Uncomfortable</label>
                   </div>
-                  <div className='comfortcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='comfort' id='comfortradiobt2' value='Slightly uncomfortable' onChange={handleOnchange}/>
                     <label>Slightly uncomfortable</label>
                   </div>
-                  <div className='comfortcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='comfort' id='comfortradiobt3' value='Ok' onChange={handleOnchange}/>
                     <label>Ok</label>
                   </div>
-                  <div className='comfortcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='comfort' id='comfortradiobt4' value='Comfortable' onChange={handleOnchange}/>
                     <label>Comfortable</label>
                   </div>
-                  <div className='comfortcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='comfort' id='comfortradiobt5' value='Perfect' onChange={handleOnchange}/>
                     <label>Perfect</label>
                   </div>
@@ -226,23 +226,23 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow}) {
                 <div className='newreviewcharlabel'>Quality</div>
                 <div className='newreviewchardes'>{quality}</div>
                 <div className='newreview quality'>
-                  <div className='qualitycheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='quality' id='qualityradiobt1' value='Poor' onChange={handleOnchange}/>
                     <label>Poor</label>
                   </div>
-                  <div className='qualitycheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='quality' id='qualityradiobt2' value='Below average' onChange={handleOnchange}/>
                     <label>Below average</label>
                   </div>
-                  <div className='qualitycheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='quality' id='qualityradiobt3' value='What I expected' onChange={handleOnchange}/>
                     <label>What I expected</label>
                   </div>
-                  <div className='qualitycheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='quality' id='qualityradiobt4' value='Pretty great' onChange={handleOnchange}/>
                     <label>Pretty great</label>
                   </div>
-                  <div className='qualitycheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='quality' id='qualityradiobt5' value='Perfect' onChange={handleOnchange}/>
                     <label>Perfect</label>
                   </div>
@@ -256,23 +256,23 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow}) {
                 <div className='newreviewcharlabel'>Width</div>
                 <div className='newreviewchardes'>{width}</div>
                 <div className='newreview width'>
-                  <div className='widthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='width' id='widthradiobt1' value='Too narrow' onChange={handleOnchange}/>
                     <label>Too narrow</label>
                   </div>
-                  <div className='widthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='width' id='widthradiobt2' value='Slightly narrow' onChange={handleOnchange}/>
                     <label>Slightly narrow</label>
                   </div>
-                  <div className='widthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='width' id='widthradiobt3' value='Perfect' onChange={handleOnchange}/>
                     <label>Perfect</label>
                   </div>
-                  <div className='widthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='width' id='widthradiobt4' value='Slightly wide' onChange={handleOnchange}/>
                     <label>Slightly wide</label>
                   </div>
-                  <div className='widthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='width' id='widthradiobt5' value='Too wide' onChange={handleOnchange}/>
                     <label>Too wide</label>
                   </div>
@@ -286,23 +286,23 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow}) {
                 <div className='newreviewcharlabel'>Length</div>
                 <div className='newreviewchardes'>{length}</div>
                 <div className='newreview length'>
-                  <div className='lengthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='length' id='lengthradiobt1' value='Runs short' onChange={handleOnchange}/>
                     <label>Runs short</label>
                   </div>
-                  <div className='lengthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='length' id='lengthradiobt2' value='Runs slightly short' onChange={handleOnchange}/>
                     <label>Runs slightly short</label>
                   </div>
-                  <div className='lengthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='length' id='lengthradiobt3' value='Perfect' onChange={handleOnchange}/>
                     <label>Perfect</label>
                   </div>
-                  <div className='lengthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='length' id='lengthradiobt4' value='Runs slightly long' onChange={handleOnchange}/>
                     <label>Runs slightly long</label>
                   </div>
-                  <div className='lengthcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='length' id='lengthradiobt5' value='Runs long' onChange={handleOnchange}/>
                     <label>Runs long</label>
                   </div>
@@ -316,23 +316,23 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow}) {
                 <div className='newreviewcharlabel'>Fit</div>
                 <div className='newreviewchardes'>{fit}</div>
                 <div className='newreview fit'>
-                  <div className='fitcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='fit' id='fitradiobt1' value='Runs tight' onChange={handleOnchange}/>
                     <label>Runs tight</label>
                   </div>
-                  <div className='fitcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='fit' id='fitradiobt2' value='Runs slightly tight' onChange={handleOnchange}/>
                     <label>Runs slightly tight</label>
                   </div>
-                  <div className='fitcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='fit' id='fitradiobt3' value='Perfect' onChange={handleOnchange}/>
                     <label>Perfect</label>
                   </div>
-                  <div className='fitcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='fit' id='fitradiobt4' value='Runs slightly long' onChange={handleOnchange}/>
                     <label>Runs slightly long</label>
                   </div>
-                  <div className='fitcheckboxgroup'>
+                  <div className='checkboxgroup'>
                     <input type='radio' name='fit' id='fitradiobt5' value='Runs long' onChange={handleOnchange}/>
                     <label>Runs long</label>
                   </div>

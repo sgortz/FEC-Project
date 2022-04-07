@@ -4,7 +4,7 @@ import axios from 'axios';
 function ReviewSort ({reviews, setSortoption}) {
 
   return(
-    <form >
+    <form className='ReviewSort'>
     <label>
     {reviews.length} reviews, sorted by
       <select onChange={(e)=>setSortoption(e.target.value)}>

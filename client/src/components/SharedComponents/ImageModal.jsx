@@ -13,7 +13,7 @@ function ImageModal (props) {
   }
 
   const PhotoModal= (
-  <div className='PhotoModel'>
+  <div className='PhotoModal'>
     <span className='PhotoCloseBtn' onClick={handleClickPhoto}>&times;</span>
     <img className='PhotoFZ' src={props.url}></img>
   </div>

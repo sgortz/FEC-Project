@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import RatingBreakdown from './RatingBreakdown.jsx';
 import ProductBreakdown from './ProductBreakdown.jsx';
+import '../styling/ReviewMeta.css'
 
 
 function ReviewMetaData (props) {
@@ -18,17 +19,13 @@ function ReviewMetaData (props) {
     .then((results)=>{
       setMetadata(results.data);
       props.setProductChars(results.data.characteristics)
-      // console.log('successfully get review metadata')
     })
     .catch((err)=>{console.log(err)});
   },[props.product_id]);
-  //will need to put something inside [] above, eg. whenever a new review is submitted
 
-  // console.log('metadata is', metadata);
 
   return(
-    <div>
-      <h3>ReviewMetaData</h3>
+    <div className='ReviewMeta'>
       <RatingBreakdown metadata = {metadata} selectedstars={props.selectedstars} setSelectedstars={props.setSelectedstars} setReviewsrenderedcount={props.setReviewsrenderedcount} setAvgReviewRating={props.setAvgReviewRating}/>
       <ProductBreakdown metadata = {metadata}/>
     </div>
