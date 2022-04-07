@@ -180,25 +180,25 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
         </div>
         <div className='review-modal-body'>
           <div className='reviewoverallrating'>
-            Overall Rating:
+            Overall Rating: *
             <StarRating rating={rating} setRating={setRating}/> {ratingDescription}
           </div>
           <div className='recommendproduct'>
-            <label>Do you recommend this product?</label>
+            <label>Do you recommend this product? * </label>
             <input type="radio" name="recommend" id="inlineradioyes" value='true'  onChange={handleOnchange}></input>
             <label>Yes</label>
             <input type="radio" name="recommend" id="inlineradiono" value='false'  onChange={handleOnchange}></input>
             <label>No</label>
           </div>
           <div className='nickname'>
-            <label>Your nickname: </label>
+            <label>Your nickname: * </label>
             <input type="text" name="nickname" required maxLength='60'
             id='reviewnickname' placeholder='Example: jackson11!'
             value={name} onChange={handleOnchange}></input>
           </div>
           <p id='note'>For privacy reasons, do not use your full name or email address</p>
           <div className='email'>
-            <label>Your email: </label>
+            <label>Your email: * </label>
             <input type="text" name="email" required maxLength='60' id='reviewemail' placeholder='Example: jackson11@gmail.com'
             value={email} onChange={handleOnchange}></input>
           </div>
@@ -208,7 +208,7 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
           <div className='newreviewallchars'>
             {productChars.Size ?
               <div className='newreviewbox'>
-                <div className='newreviewcharlabel'>Size</div>
+                <div className='newreviewcharlabel'>Size * </div>
                 <div className='newreviewchardes'>{size}</div>
                 <div className='newreview size'>
                   <div className='checkboxgroup'>
@@ -238,7 +238,7 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
 
             {productChars.Comfort?
               <div className='newreviewbox'>
-                <div className='newreviewcharlabel'>Comfort</div>
+                <div className='newreviewcharlabel'>Comfort * </div>
                 <div className='newreviewchardes'>{comfort}</div>
                 <div className='newreview comfort'>
                   <div className='checkboxgroup'>
@@ -268,7 +268,7 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
 
             {productChars.Quality?
               <div className='newreviewbox'>
-                <div className='newreviewcharlabel'>Quality</div>
+                <div className='newreviewcharlabel'>Quality * </div>
                 <div className='newreviewchardes'>{quality}</div>
                 <div className='newreview quality'>
                   <div className='checkboxgroup'>
@@ -298,7 +298,7 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
 
             {productChars.Width?
               <div className='newreviewbox'>
-                <div className='newreviewcharlabel'>Width</div>
+                <div className='newreviewcharlabel'>Width * </div>
                 <div className='newreviewchardes'>{width}</div>
                 <div className='newreview width'>
                   <div className='checkboxgroup'>
@@ -328,7 +328,7 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
 
             {productChars.Length?
               <div className='newreviewbox'>
-                <div className='newreviewcharlabel'>Length</div>
+                <div className='newreviewcharlabel'>Length * </div>
                 <div className='newreviewchardes'>{length}</div>
                 <div className='newreview length'>
                   <div className='checkboxgroup'>
@@ -358,7 +358,7 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
 
             {productChars.Fit?
               <div className='newreviewbox'>
-                <div className='newreviewcharlabel'>Fit</div>
+                <div className='newreviewcharlabel'>Fit * </div>
                 <div className='newreviewchardes'>{fit}</div>
                 <div className='newreview fit'>
                   <div className='checkboxgroup'>
@@ -391,14 +391,14 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
 
           <div className='reviewsummarycontainer'>
             <div className='reviewsummarylabel'>
-              <label>Review Summary: </label>
+              <label>Review Summary: * </label>
             </div>
             <textarea maxLength='60' id='reviewsummary' required
             name='reviewsummary' placeholder='Example: Best Purchase ever!' value={summary} onChange={handleOnchange}></textarea>
           </div>
           <div className='reviewbodycontainer'>
             <div className='reviewbodylabel'>
-              <label>Review Body: </label>
+              <label>Review Body: * </label>
             </div>
             <textarea maxLength='1000' id='reviewbody' required
             name='reviewbody' placeholder='Why did you like the product? If not, why did you not like?' value={body} onChange={handleOnchange}></textarea>
@@ -410,7 +410,10 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
           </div>
           <div>
             {uploadPicBtnDisplay && photos.length < 5?
-            <input type="button" id='uploadphotos' value='Upload Pictures' onClick={(e)=>{e.preventDefault(); setUploadPicBtnDisplay(false);}}/>
+            <div>
+              <input type="button" id='uploadphotos' value='Upload Pictures' onClick={(e)=>{e.preventDefault(); setUploadPicBtnDisplay(false);}}/>
+              <p id='note' style={{display: 'inline'}}> (Optional)</p>
+            </div>
             : uploadPicBtnDisplay===false?
             <div className='embedphotomodal'>
               <input type="text" name="embedphotourl" required

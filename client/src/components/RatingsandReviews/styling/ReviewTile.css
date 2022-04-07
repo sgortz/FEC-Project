@@ -24,3 +24,11 @@
 .reviewsummary {
   font-size: larger;
 }
+
+u {
+  cursor: pointer;
+}
+
+u :hover {
+  background-color: grey;
+}
