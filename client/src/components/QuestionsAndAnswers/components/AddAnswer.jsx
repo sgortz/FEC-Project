@@ -36,6 +36,7 @@ const AddAnswer = ({handleOpenModel, question}) => {
     } else if (!verifyEmail(email)) {
       alert("Please enter an valid email address!");
     }
+    
   }
 
   const handleOnchange = (e) => {

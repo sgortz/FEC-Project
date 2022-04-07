@@ -13,8 +13,19 @@ const QAEntry = ({ question }) => {
 
   let answerId = Object.keys(question.answers);
   let answerList = answerId.map(id => question.answers[id])
-  let sorterAnswerList = answerList.sort((a, b) => {
+
+
+
+  let sortedAnswerList = (answerList.sort((a, b) => {
     return b.helpfulness - a.helpfulness;
+  }))
+
+  sortedAnswerList.forEach(answer => {
+    if (answer.answerer_name.toLowerCase() ==='seller') {
+      let index = sortedAnswerList.indexOf(answer);
+      sortedAnswerList.splice(index, 1)
+      sortedAnswerList.unshift(answer);
+    }
   })
 
 
@@ -32,7 +43,7 @@ const QAEntry = ({ question }) => {
 
     <div className='QAEntry'>
       <Question question={question} />
-      {sorterAnswerList.slice(0, answerNumber).map(answer => {
+      {sortedAnswerList.slice(0, answerNumber).map(answer => {
         return <Answer key={answer.id} answer={answer} />;
       })}
       {answerList.length > 2 && !showMoreAnswer ?

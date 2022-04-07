@@ -2,9 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Zen+Kurenaido&display=swap');
 
 .QuestionAndAnswers {
-  display: block;
+  display: flex;
+  flex-direction: column;
   line-height: 20px;
   margin: 12%;
+  width: 80%;
 }
 /* QuestionModel Basic CSS */
 
@@ -64,6 +66,7 @@
   margin-bottom: 8px ;
   position: relative;
   display: inline-block;
+
 }
 
 .QAicon {
@@ -78,7 +81,7 @@
   border-radius: 8px;
   height: 30px;
   box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
-  width: 600px;
+  width: 75%;
   padding: 2px 23px 2px 30px;
   background-color: #f5f5f5;
   cursor: text;
@@ -92,38 +95,45 @@
 
 /* QAList Basic CSS */
 .QAList {
+  display: flex;
+  flex-direction: column;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 800px
-
+  max-width: 82%;
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 /* Question Basic CSS */
 .QAEntry {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
-
 }
+
 .showMoreA, .collapseA{
   color: #d39d7c;
   font-weight: 600;
   font-size: 14px;
 }
+
 .questionContainer {
+  display: flex;
+  flex-direction: row;
   padding: 5px, 0, 5px, 0;
   margin-bottom: 15px;
+  justify-content: space-between ;
 }
 
 .QAinlineLeft, .QAinlineRight {
-  display: inline-block;
+  display: inline-flex;
   justify-content: space-between;
 }
 
 .QAinlineLeft {
-  max-width: 620px;
+  max-width: 50%;
   font-weight: 600;
   color: black;
-
 }
 
 .questionBody{
@@ -131,14 +141,9 @@
 }
 
 .QAinlineRight {
-  position: absolute;
-
-  right: 25%;
   color: #565959!important;
   font-size: 14px;
   line-height: 20px;
-
-
 }
 
 .QAhelpful, .QAhelpful-button, .QAbreak, .add-answer, .QAreport-button{
@@ -172,7 +177,13 @@
 
 
 /* more question and add question button CSS */
+.QABtn{
+  display: flex;
+  justify-content: space-between;
+}
+
 .moreQBtn, .goBackQ, .addQBtn{
+
   align-items: center;
   background-color: #fee6e3;
   border: 2px solid #111;
@@ -181,12 +192,14 @@
   color: #111;
   cursor: pointer;
   display: inline-flex;
+
+
   font-family: Inter,sans-serif;
   font-size: 12px;
   height: 48px;
-  margin-right: 300px;
+  margin-right: 200px;
   line-height: 24px;
-  max-width: 100%;
+  max-width: 30%;
   padding: 0 25px;
   position: relative;
   text-align: center;
@@ -256,7 +269,7 @@
 .AnswerPhotoModel {
 
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;

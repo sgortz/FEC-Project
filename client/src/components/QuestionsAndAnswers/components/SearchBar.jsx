@@ -3,9 +3,9 @@ import "./QuestionAndAnswers.css";
 
 
 
-const SearchBar = ({ handleSearch }) => {
+const SearchBar = ({ handleSearch, setSearchTerm, searchTerm }) => {
 
-  const [searchTerm, setSearchTerm] = useState('');
+
 
 
   const onChange = (e) => {
