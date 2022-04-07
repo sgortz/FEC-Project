@@ -23,7 +23,7 @@ function RatingsAndReviews (props) {
             params: {
               product_id : props.product_id,
               page : 1,
-              count : 20,
+              count : 100,
               sort : `${sortoption}`
             }
           }

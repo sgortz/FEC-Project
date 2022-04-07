@@ -12,7 +12,7 @@ const App = (props) => {
     <div>
     <ProductOverview />
     <QuestionAndAnswers product_id={37311}/>
-    <RatingsAndReviews product_id={37315} setAvgReviewRating={setAvgReviewRating}/>
+    <RatingsAndReviews product_id={37311} setAvgReviewRating={setAvgReviewRating}/>
   </div>
 
   )
