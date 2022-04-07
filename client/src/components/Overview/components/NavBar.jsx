@@ -1,15 +1,18 @@
 import React from 'react';
 import { FiSearch } from "react-icons/fi";
+import { RiShoppingBagLine } from "react-icons/ri";
+
 import "./NavBar.css";
 
 const NavBar = () => (
   <div className="Navbar">
-    <h1 className="Logo">Z. Narrows</h1>
+    <div className="Logo">Z. Narrows</div>
     <form>
       <input className="top-search-bar" type="text" disabled={true}>
       {/* <FiSearch /> */}
       </input>
     </form>
+    <RiShoppingBagLine size="15px" />
   </div>
 )
 

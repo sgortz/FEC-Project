@@ -1,8 +1,9 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Quicksand:wght@300;500;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Quicksand:wght@300;500;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
 
 body {
-  /* font-family: 'Belleza', sans-serif; */
+
   margin: 0;
 }
 
@@ -17,9 +18,11 @@ body {
 
 .Logo {
   color: #090706;
+  font-family: 'Belleza', sans-serif;
+  font-size: 40px;
   margin: 10px;
-  font-family: 'Libre Baskerville', serif;
-  font-style: italic;
+  /* font-family: 'Libre Baskerville', serif; */
+  /* font-style: italic; */
 }
 
 .top-search-bar {
