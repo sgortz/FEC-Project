@@ -37,3 +37,24 @@
   background-color: #04AA6D;
 
 }
+
+/*ReviewMetaRating Container*/
+.ReviewMetaRating {
+  display: flex;
+  flex-direction: column;
+}
+
+.AverageRatingandStars {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+}
+
+#RatingMetaAvgRating {
+  padding-left: 35px;
+  font-size: xxx-large;
+}
+
+.StarFilterandRemove {
+  padding-top: 15px;
+}

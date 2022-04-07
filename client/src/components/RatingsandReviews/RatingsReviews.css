@@ -1,0 +1,54 @@
+.RRContainer {
+  display: grid;
+  grid-template-columns: 1.1fr 3fr;
+  grid-template-rows: 20px 20px 1fr 30px;
+  column-gap: 120px;
+  row-gap: 30px;
+  padding-left: 170px;
+  padding-right: 170px;
+  padding-bottom: 200px;
+}
+
+#RatingsandReviews {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.ReviewMeta {
+  grid-column: 1/2;
+  grid-row: 2/4;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.ReviewSort {
+  grid-column:2/3;
+  grid-row: 2/3;
+  font-size: larger;
+}
+
+.ReviewList {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.ReviewButtons {
+  grid-column: 2/3;
+  grid-row: 4/5;
+  display: flex;
+  gap: 12px;
+}
+
+.ReviewList {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+#morereviews {
+  cursor: pointer;
+}
+
+#addreview {
+  cursor: pointer;
+}
