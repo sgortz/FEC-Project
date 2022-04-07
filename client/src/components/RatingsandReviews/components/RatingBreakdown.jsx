@@ -97,13 +97,12 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
 
 
   return(
-    <div>
-      <h4>RatingBreakdown</h4>
-      <div>
-        <h2>
+    <div className='ReviewMetaRating'>
+      <div className='AverageRatingandStars'>
+        <h1 id='RatingMetaAvgRating'>
           {calculaterating(metadata.ratings).toFixed(1)}
-        </h2>
-        <Star value={calculaterating(metadata.ratings)}/>
+        </h1>
+        <Star id='RatingMetaFractionStars' value={calculaterating(metadata.ratings)}/>
       </div>
 
       <div>
@@ -183,7 +182,7 @@ function RatingBreakdown ({metadata, selectedstars, setSelectedstars,  setReview
       {selectedstars.length === 0 ?
         null
         :
-        <div>
+        <div className='StarFilterandRemove'>
           Star filters currently applied: {JSON.stringify(selectedstars.sort())}
           <br></br>
           <u onClick={()=>{setSelectedstars([])}}>Remove all filters</u>

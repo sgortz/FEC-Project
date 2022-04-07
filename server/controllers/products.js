@@ -1,46 +1,20 @@
-const models = require('../models');
+const { getProductFeatures, getProductStyles } = require('../models/products.js');
 
 module.exports = {
-  getProductInfo: function (req, res) {
-    console.log('There is a ', req.method, ' coming in to Get Product Info!');
+  getProductData: function (req, res) {
+    console.log('There is a ', req.method, ' coming in for features');
+    // console.log(product_id);
+    let { product_id } = req.params;
 
-    models.products.getProductInfo((err, results) => {
-      if (err) {
-        console.log('Unable to get product\'s information ', err);
-        res.sendStatus(500);
-      } else {
-        console.log('Success! Getting product\'s information!');
+    let promises = [getProductFeatures(product_id), getProductStyles(product_id)];
+    return Promise.all(promises)
+      .then((results) => {
+        // console.log(results)
         res.status(200).json(results);
-      }
-    })
+      })
+      .catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+      })
   },
-
-  getProductFeatures: function (req, res) {
-    console.log('There is a ', req.method, ' coming in to Get Product Features!');
-
-    let { product_id } = req.query;
-    models.products.getProductFeatures(product_id, (err, results) => {
-      if (err) {
-        console.log('Unable to get product\'s features ', err);
-        res.sendStatus(500);
-      } else {
-        console.log('Success! Getting product\'s features!');
-        res.status(200).json(results);
-      }
-    });
-  },
-
-  getProductStyles: function (req, res) {
-    let { product_id } = req.query;
-
-    models.products.getProductStyles(product_id, (err, results) => {
-      if (err) {
-        console.log('Unable to get product\'s styles ', err);
-        res.sendStatus(500);
-      } else {
-        console.log('Success! Getting product\'s styles!');
-        res.status(200).json(results);
-      }
-    });
-  }
 }

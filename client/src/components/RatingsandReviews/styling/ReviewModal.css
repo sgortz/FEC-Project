@@ -7,7 +7,7 @@
   position: fixed; /* Fix position on the top-left corner*/
   top: 0;
   left: 0;
-  max-height: 130%;
+  /* max-height: 130%; */
   overflow-y: auto;
 }
 
@@ -19,7 +19,7 @@
   background-color: white;
   width: 70%; /* Width in proportion to its parent container*/
   max-width: 700px; /* Max width where it stops expanding */
-  height: 130%; /* Height in proportion to its parent container */
+  /* height: 130%; Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
   border: 1px solid black;
@@ -33,15 +33,29 @@
 }
 
 .review-modal-body {
-  width: 80%
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+}
+
+.review-modal-footer {
+  padding-top: 15px;
+}
+
+.starrating {
+  padding-left: 13px;
+  padding-right: 13px;
 }
 
 #closereviewmodal {
   margin: 1rem 0 1rem 0;
+  cursor: pointer;
 }
 
 #submitnewreview {
   margin: 1rem 0 1rem 8rem;
+  cursor: pointer;
 }
 
 #closereviewmodal:hover, #submitnewreview:hover{
@@ -87,7 +101,7 @@
 .newreview {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
 
 }
@@ -101,8 +115,40 @@
 
 }
 
+.checkboxgroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*add padding to each review radio box*/
 .newreviewbox {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.newreviewembeddedphotos {
+  display: flex;
+}
+
+/*Uploda Pictures*/
+.embedphotomodal {
+  display: flex;
+  justify-content: space-between;
+}
+
+#uploadphotos {
+  cursor: pointer;
+}
+
+#embedphotourl {
+  width: 85%
+}
+
+#embedphotosubmitbtn {
+  cursor: pointer;
+}
+
+.newreviewembeddedphotos {
+  padding-top: 7px;
 }
