@@ -44,12 +44,15 @@ function ReviewTile ({review, reviews}) {
 
   return(
     <div className="reviewtile">
-      <div>
-        <Star value={review.rating}/>
+      <div className='reviewtileheader'>
+        <div>
+          <Star value={review.rating}/>
+        </div>
+        <div className="reviewnameanddate">
+          {review.reviewer_name}, {moment(review.date).format('LL')}
+        </div>
       </div>
-      <div className="reviewnameanddate">
-        {review.reviewer_name}, {moment(review.date).format('LL')}
-      </div>
+
       <div className="reviewsummary">
         <strong>{review.summary.slice(0, 60)}</strong>
       </div>

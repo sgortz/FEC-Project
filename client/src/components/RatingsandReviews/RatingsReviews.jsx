@@ -68,7 +68,8 @@ function RatingsAndReviews (props) {
           <ReviewModal
           product_id={props.product_id}
           productChars={productChars}
-          setReviewmodalshow={setReviewmodalshow}/>
+          setReviewmodalshow={setReviewmodalshow}
+          setReviews={setReviews}/>
           :
           null
         }
