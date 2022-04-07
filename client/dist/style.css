@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Quicksand:wght@300;500;700&display=swap');
+
+body {
+  background-color: #F8F3F0;
+  margin: 30px;
+}
+
+/* ---------------- NavBar Component ---------------- */
+.Navbar {
+  /* background-color: #752819; */
+  /* background-color: #3DB2FF; */
+  background-color: #FFB830;
+  background-color: rgba(255, 209, 36, 1);
+}
+
+.Logo {
+  color: #090706;
+}
+
+.top-search-bar {
+  border: 1px solid #FFB830;
+}
+
+/* ------------------- Announcements Component ------------------- */
+.announcements {
+  /* background-color: #f8e1c7; */
+  background-color: #21A9BF;
+}
+
+/* -------------------- StarReview Component -------------------- */
+
+.link-to-review {
+  color: black;
+}
+.link-to-review:hover {
+  color: #40804f;
+}
+
+/* ---------------- VerticalThumbnails Component ---------------- */
+.current-thumbnail {
+  border: 1px solid #40804f;;
+}
+
+/* --------------------- AddToCart Component -------------------- */
+#select-size, #quantity, #add-to-bag, .starred {
+  border: 5px solid #feedec;
+
+}
+
+#add-to-bag, .starred  {
+  /* background-color: #e4d2d1; */
+  background-color: #40814E;
+}
+
+/* ---------------- ProductDescription Component ---------------- */
+.social-media {
+  color: black;
+}
