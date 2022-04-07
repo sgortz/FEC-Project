@@ -9,8 +9,8 @@ const App = (props) => {
   return (
     <div>
       <ProductOverview product_id={37311} />
-      <QuestionAndAnswers product_id={37311} />
-      <RatingsAndReviews product_id={37315} setAvgReviewRating={setAvgReviewRating} />
+      {/* <QuestionAndAnswers product_id={37311} />
+      <RatingsAndReviews product_id={37315} setAvgReviewRating={setAvgReviewRating} /> */}
     </div>
   )
 }

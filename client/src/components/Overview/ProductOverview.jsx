@@ -13,7 +13,7 @@ import Announcements from './components/Announcements.jsx';
 import ImageGallery from './components/ImageGallery.jsx';
 import StarReview from './components/StarReview.jsx';
 import ProductDetail from './components/ProductDetail.jsx';
-import StyleSelector from './components/StyleSelector.jsx';
+import StylesGallery from './components/StylesGallery.jsx';
 import AddToCart from './components/AddToCart.jsx';
 import ProductDescription from './components/ProductDescription.jsx';
 
@@ -21,12 +21,19 @@ class ProductOverview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product_id: '',
       product_data: [],
+      current_photo_index: 0
     }
     this.fetchProductData = this.fetchProductData.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
+  handleClick(e){
+    console.log('button clicked');
+  }
+
+
+  /* Fetching data from API */
   fetchProductData(id) {
     axios.get(`/products/${id}/`)
       .then(response => {
@@ -55,10 +62,11 @@ class ProductOverview extends React.Component {
         <div>
           <NavBar />
           <Announcements />
-          <div className="wrapper">
-            <ProductDetail data={this.state.product_data} />
-            <ImageGallery photos={this.state.product_data[1]} />
-           {/*  <div className="image-gallery">
+          {/* <div className="wrapper"> */}
+            {/* <ProductDetail data={this.state.product_data} />
+            <ImageGallery photos={this.state.product_data[1]} /> */}
+            <StylesGallery styles={this.state.product_data[1].results} />
+            {/*  <div className="image-gallery">
             </div>
             <div className="star-review">
               <StarReview/>
@@ -66,13 +74,12 @@ class ProductOverview extends React.Component {
             <div className="product-detail">
             </div>
             <div className="style-selector">
-              <StyleSelector styles={this.state.product_styles[0]} />
             </div>
             <div className="add-to-cart">
           </div>*/}
-          <AddToCart data={this.state.product_data[1]} />
-            </div>
-          <ProductDescription features={this.state.product_data[0]} />
+            {/* <AddToCart data={this.state.product_data[1]} /> */}
+          {/* </div> */}
+          {/* <ProductDescription features={this.state.product_data[0]} /> */}
         </div>
       )
     }

@@ -44,7 +44,7 @@ function RatingsAndReviews (props) {
 
   return(
     <div>
-      <h1>Ratings And Reviews</h1>
+      <h1 id='RatingsandReviews'>Ratings And Reviews</h1>
       <ReviewMetaData product_id={props.product_id} selectedstars={selectedstars} setSelectedstars={setSelectedstars} setReviewsrenderedcount={setReviewsrenderedcount}
       setProductChars={setProductChars} setAvgReviewRating={props.setAvgReviewRating}/>
 
