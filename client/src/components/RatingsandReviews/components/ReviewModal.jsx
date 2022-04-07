@@ -111,12 +111,22 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
 
   }
 
+
+
   const handleEmbedPhoto = (e) => {
     e.preventDefault();
-    //check if image is valid?
-    let newphotos = [...photos];
-    newphotos.push(embedImgUrl);
-    setPhotos(newphotos);
+    var img = new Image();
+    img.src = embedImgUrl;
+
+    img.onload = () => {
+      var newphotos = [...photos];
+      newphotos.push(embedImgUrl);
+      setPhotos(newphotos);
+    };
+    img.onerror = (err) => {
+      alert('You must paste a valid picture url')
+
+    }
     setUploadPicBtnDisplay(true);
     setEmbedImgUrl('');
   }
