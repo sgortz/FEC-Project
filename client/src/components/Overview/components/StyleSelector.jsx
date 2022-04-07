@@ -1,22 +1,19 @@
 import React from 'react';
-import photo from '../../../../img/sgortz.png'
 import './StyleSelector.css';
 
-const StyleSelector = (props)=> {
-
-  return (
-  <div>
-    <div className="clothing-style">STYLE > </div>
-    <br/>
-    <img className="style-circular-photo" src={photo} />
-    <img className="style-circular-photo" src={photo} />
-    <img className="style-circular-photo" src={photo} />
-    <img className="style-circular-photo" src={photo} />
-    <br/>
-    <img className="style-circular-photo" src={photo} />
-    <img className="style-circular-photo" src={photo} />
-    <img className="style-circular-photo" src={photo} />
-    <img className="style-circular-photo" src={photo} />
-  </div>
-)}
+const StyleSelector = (props) => {
+  if (props.styles === undefined) {
+    return null;
+  } else {
+    return (
+      <>
+        <div className="clothing-style">STYLE > {props.styles.results[0].name} </div>
+        <br />
+        {props.styles.results.map((style, index) => {
+          return (<a href="#" key={index}><img className="style-circular-photo" src={style.photos[0].thumbnail_url} /></a>)
+        })}
+      </>
+    )
+  }
+}
 export default StyleSelector;

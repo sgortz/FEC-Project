@@ -17,64 +17,35 @@ import StyleSelector from './components/StyleSelector.jsx';
 import AddToCart from './components/AddToCart.jsx';
 import ProductDescription from './components/ProductDescription.jsx';
 
-/* HARD CODED DATA */
-import productExample from '../../Data/overviewDataExample.js';
-import stylesExample from '../../Data/overviewStylesExample.js';
-
 class ProductOverview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      products: [],
-      products_features: [],
-      product_styles: [],
+      product_id: '',
+      product_data: [],
     }
-    this.handleProductApi = this.handleProductApi.bind(this);
-    this.handleProductFeatures = this.handleProductFeatures.bind(this);
-    // this.handleProductStyles = this.handleProductStyles.bind(this);
+    this.fetchProductData = this.fetchProductData.bind(this);
   }
 
-  handleProductApi() {
-    axios.get('/products')
+  fetchProductData(id) {
+    axios.get(`/products/${id}/`)
       .then(response => {
-        // console.log('API response! ', response.data[0].id)
-        let productId = response.data[0].id;
-
-        response.data.map((product, index) => {
-          this.setState(
-            prevState => (
-              { products: prevState.products.concat(product) }
-            ))
-        });
-
-        axios.get(`/products/${productId}/styles`, {
-          params: {
-            product_id: productId
-          }
-        })
-          .then(response => {
-            console.log('Do I get a second response? ', response.data)
-          })
+        this.setState({ product_data: response.data })
       })
       .catch(err => { console.error(err) })
   }
 
-  handleProductFeatures() {
-    console.log('hello from features')
-  }
-  // handleProductStyles(){}
-
   componentDidMount() {
-    this.handleProductApi();
+    this.fetchProductData(this.props.product_id);
   }
 
   render() {
-    if (this.state.products.length === 0) {
+    if (this.state.product_data.length === 0) {
       return (
         <IconContext.Provider value={{ size: '6rem', className: 'loading' }}>
           <div>
             <NavBar />
-            <RiLoader2Line className="loading" />
+            <RiLoader2Line />
             <h1 className="page-loading"> page loading... </h1>
           </div>
         </IconContext.Provider>
@@ -85,30 +56,26 @@ class ProductOverview extends React.Component {
           <NavBar />
           <Announcements />
           <div className="wrapper">
-            <div className="image-gallery">
-              <ImageGallery photos={stylesExample.results[0].photos} />
+            <ProductDetail data={this.state.product_data} />
+            <ImageGallery photos={this.state.product_data[1]} />
+           {/*  <div className="image-gallery">
             </div>
-            {/* <div className="star-review">
+            <div className="star-review">
               <StarReview/>
-            </div> */}
+            </div>
             <div className="product-detail">
-              <ProductDetail
-                product={this.state.products[0]}
-                productFeatures={this.handleProductFeatures} />
             </div>
             <div className="style-selector">
-              <StyleSelector styles={stylesExample} product={productExample} />
+              <StyleSelector styles={this.state.product_styles[0]} />
             </div>
             <div className="add-to-cart">
-              <AddToCart styles={stylesExample} />
+          </div>*/}
+          <AddToCart data={this.state.product_data[1]} />
             </div>
-          </div>
-          <ProductDescription product={this.state.products[0]} />
+          <ProductDescription features={this.state.product_data[0]} />
         </div>
       )
-
     }
-
   }
 }
 
