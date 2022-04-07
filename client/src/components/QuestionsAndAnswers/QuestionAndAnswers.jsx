@@ -5,6 +5,7 @@ import axios from 'axios';
 import SearchBar from './components/SearchBar.jsx';
 import QAList from './components/QAList.jsx';
 import AddQuestion from './components/AddQuestion.jsx';
+import "./components/QuestionAndAnswers.css";
 
 
 const QuestionAndAnswers = ({ product_id }) => {
@@ -12,17 +13,19 @@ const QuestionAndAnswers = ({ product_id }) => {
 
   const [questionList, setQuestionList] = useState([]);
   const [filteredQuestions, setFilteredQuestions] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
   const [showModel, setShowModel] = useState(false);
-  const [questionNumber, setQuestionNumber] = useState(2);
+  const [questionNumber, setQuestionNumber] = useState(4);
   const [collapseQuestions, setCollapseQuestions] = useState(true)
 
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-    let filteredQuestions = questionList.filter(
-      q => q.question_body.toLowerCase().includes(term.toLowerCase()));
-    setFilteredQuestions(filteredQuestions);
 
+  const handleSearch = (term) => {
+    if (term.length > 2) {
+      let filteredQuestions = questionList.filter(
+        q => q.question_body.toLowerCase().includes(term.toLowerCase()));
+      setFilteredQuestions(filteredQuestions);
+    } else {
+      setFilteredQuestions(questionList);
+    }
   }
 
   const handleOpenModel = () => {
@@ -31,20 +34,22 @@ const QuestionAndAnswers = ({ product_id }) => {
 
   const showMoreQuestion = () => {
     setQuestionNumber(questionList.length);
-    setCollapseQuestions(prev => !prev);
+    setCollapseQuestions(prev => !prev)
   }
 
   const closeQuestions = () => {
-    setQuestionNumber(2);
+    setQuestionNumber(4);
     setCollapseQuestions(prev => !prev);
   }
+
+
 
 
   useEffect(() => {
     axios.get('/qa/questions', { params: { product_id: product_id } })
       .then(res => {
         var sortedQuestions = res.data.results.sort((a, b) => {
-          return a.question_helpfulness + b.question_helpfulness;
+          return b.question_helpfulness - a.question_helpfulness;
         })
         setQuestionList(sortedQuestions);
         setFilteredQuestions(sortedQuestions);
@@ -56,22 +61,25 @@ const QuestionAndAnswers = ({ product_id }) => {
 
 
   return (
+
     <div className='QuestionAndAnswers'>
-      <h1>QUESTIONS & ANSWERS</h1>
-      <br></br>
-      <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} />
-      <br></br>
+
+      <h2>QUESTIONS & ANSWERS</h2>
+      <SearchBar handleSearch={handleSearch}/>
+
       {questionList ?
-        <QAList questionList={questionList} filteredQuestions={filteredQuestions}
-          questionNumber={questionNumber} /> : null}
+        <QAList filteredQuestions={filteredQuestions} questionNumber={questionNumber}/> : null}
       <br></br>
       {filteredQuestions.length > 2  && collapseQuestions ?
-        <button onClick={showMoreQuestion} >MORE ANSWERED QUESTIONS</button> : null}
+        <button className='moreQBtn' onClick={showMoreQuestion} >MORE ANSWERED QUESTIONS</button> : null}
+
       {!collapseQuestions ?
-        <button onClick = {closeQuestions}>GO BACK</button> : null}
-      <button onClick={handleOpenModel} >ADD A QUESTION</button>
+        <button className='goBackQ' onClick = {closeQuestions}>GO BACK</button> : null}
+      <button className='addQBtn' onClick={handleOpenModel} >ADD A QUESTION</button>
+
       {showModel ?
-        <AddQuestion product_id={product_id} handleOpenModel={handleOpenModel} /> : null}
+        <AddQuestion  product_id={product_id} handleOpenModel={handleOpenModel} /> : null}
+
     </div>
   )
 

@@ -1,0 +1,108 @@
+.reviewmodal {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
+  z-index: 150; /* Overlay effect: positioned over other containers */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  position: fixed; /* Fix position on the top-left corner*/
+  top: 0;
+  left: 0;
+  max-height: 130%;
+  overflow-y: auto;
+}
+
+.review-modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 70%; /* Width in proportion to its parent container*/
+  max-width: 700px; /* Max width where it stops expanding */
+  height: 130%; /* Height in proportion to its parent container */
+  margin: auto; /* Auto margin according to the element width */
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px; /* Optional. Rounds container corners */
+  /* modal transition here */
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+
+.review-modal-body {
+  width: 80%
+}
+
+#closereviewmodal {
+  margin: 1rem 0 1rem 0;
+}
+
+#submitnewreview {
+  margin: 1rem 0 1rem 8rem;
+}
+
+#closereviewmodal:hover, #submitnewreview:hover{
+  /* background-color: lightgrey; */
+  transition: all ease 0.3s;
+}
+
+/*make text input box wider*/
+#reviewnickname, #reviewemail {
+  width: 200px;
+}
+
+/*textarea*/
+#reviewsummary {
+  width: 560px;
+  height: 50px;
+}
+
+#reviewbody {
+  width: 560px;
+  height: 100px;
+}
+
+#note {
+  font-size: smaller ;
+  color: grey;
+  margin-block: unset;
+}
+
+
+/*chracteristic radio boxes*/
+.newreviewcharlabel {
+  text-align: center;
+  width: 100%
+}
+
+.newreviewchardes {
+  text-align: center;
+  font-size: smaller;
+  width: 100%
+}
+
+.newreview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+
+}
+
+.newreview label {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  font-size: smaller;
+
+}
+
+/*add padding to each review radio box*/
+.newreviewbox {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

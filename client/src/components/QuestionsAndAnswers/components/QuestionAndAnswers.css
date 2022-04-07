@@ -1,6 +1,14 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Zen+Kurenaido&display=swap');
+
+.QuestionAndAnswers {
+  display: block;
+  line-height: 20px;
+  margin: 12%;
+}
 /* QuestionModel Basic CSS */
- .questionModel {
+
+ .QAmodel {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
   z-index: 150; /* Overlay effect: positioned over other containers */
@@ -9,18 +17,18 @@
   position: fixed; /* Fix position on the top-left corner*/
   top: 0;
   left: 0;
-  overflow: auto;
+  overflow: scroll;
   padding-top: 275px; /* Location of the content container */
 }
 
-.modalContent {
+.QAmodalContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: white;
   width: 50%; /* Width in proportion to its parent container*/
   max-width: 500px; /* Max width where it stops expanding */
-  height: 40%; /* Height in proportion to its parent container */
+  height: 60%; /* Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
   border: 1px solid black;
@@ -33,23 +41,258 @@
   animation-duration: 0.5s;
 }
 
-.closeBtn{
+.QAcloseBtn{
   margin: 1rem 0 1rem 0;
   margin-left: 10%;
   border-radius: 20px 0 0 20px;
 }
 
-.submitBtn{
+.QAsubmitBtn{
   margin: 1rem 0 1rem 8rem;
   margin-left: 52%;
   border-radius: 0 20px 20px 0;
 }
 
-.closeBtn:hover, .submitBtn:hover{
+.QAcloseBtn:hover, .QAsubmitBtn:hover{
   background-color: lightgrey;
   transition: all ease 0.3s;
 }
 
-
 /* SearchBar Basic CSS */
+.searchBarWrapper {
+  margin-top: 12px;
+  margin-bottom: 8px ;
+  position: relative;
+  display: inline-block;
+}
 
+.QAicon {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  width: 20px;
+}
+
+.QAsearch {
+  border: 1px solid #888C8C;
+  border-radius: 8px;
+  height: 30px;
+  box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
+  width: 600px;
+  padding: 2px 23px 2px 30px;
+  background-color: #f5f5f5;
+  cursor: text;
+
+}
+
+.QAsearch:hover, .QAsearch:focus {
+  border: 2px solid #63994d;
+  background-color: white
+}
+
+/* QAList Basic CSS */
+.QAList {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 800px
+
+}
+
+/* Question Basic CSS */
+.QAEntry {
+  display: block;
+  margin-bottom: 20px;
+
+}
+.showMoreA, .collapseA{
+  color: #d39d7c;
+  font-weight: 600;
+  font-size: 14px;
+}
+.questionContainer {
+  padding: 5px, 0, 5px, 0;
+  margin-bottom: 15px;
+}
+
+.QAinlineLeft, .QAinlineRight {
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.QAinlineLeft {
+  max-width: 620px;
+  font-weight: 600;
+  color: black;
+
+}
+
+.questionBody{
+  font-size: 30;
+}
+
+.QAinlineRight {
+  position: absolute;
+
+  right: 25%;
+  color: #565959!important;
+  font-size: 14px;
+  line-height: 20px;
+
+
+}
+
+.QAhelpful, .QAhelpful-button, .QAbreak, .add-answer, .QAreport-button{
+  margin: 3px
+}
+
+.QAhelpful-button, .add-answer ,.QAreport-button{
+  text-decoration: underline;
+  cursor: pointer
+}
+
+
+/* answer basic css */
+
+.answerFooter {
+  color: #565959!important;
+  font-size: 14px;
+  line-height: 20px;
+}
+.A {
+  font-weight: 700;
+}
+
+.ABody, .questionBody{
+  font-family: 'Mulish', sans-serif;
+}
+
+.Answer {
+  margin-bottom: 8px;
+}
+
+
+/* more question and add question button CSS */
+.moreQBtn, .goBackQ, .addQBtn{
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Inter,sans-serif;
+  font-size: 12px;
+  height: 48px;
+  margin-right: 300px;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.moreQBtn:after, .goBackQ:after, .addQBtn:after{
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.moreQBtn:hover:after, .goBackQ:hover:after, .addQBtn:hover:after {
+  transform: translate(0, 0);
+}
+
+.moreQBtn:active, .goBackQ:active, .addQBtn:hover:after{
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.moreQBtn:hover, .goBackQ:hover, .addQBtn:hover{
+  outline: 0;
+}
+
+@media (min-width: 500px) {
+  .moreQBtn,.goBackQ, .addQBtn{
+    padding: 0 20px;
+  }
+}
+
+/* Answer photo basic style */
+
+.answerPhotos{
+  display: inline-flex;
+  justify-content: space-around;
+  margin-top: 8px;
+  margin-top: 5px;
+}
+
+.answerPhoto {
+  width:80px;
+  height:70px;
+  margin-right: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.answerPhoto:hover {
+  opacity: 0.7;
+}
+
+/* answer model basic css */
+.AnswerPhotoModel {
+
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+.answerPhotoFZ {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+.AnswerPhotoCloseBtn {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.AnswerPhotoCloseBtn:hover,.AnswerPhotoCloseBtn:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}

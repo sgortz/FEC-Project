@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
+import Star from '../../SharedComponents/Star.jsx';
 
 function ReviewTile ({review, reviews}) {
 
@@ -44,6 +45,7 @@ function ReviewTile ({review, reviews}) {
       <h4>ReviewTile</h4>
       <div>
         rating: {review.rating}
+        <Star value={review.rating}/>
       </div>
       <div className="reviewnameanddate">
         {review.reviewer_name}, {moment(review.date).format('LL')}
@@ -59,7 +61,7 @@ function ReviewTile ({review, reviews}) {
         <div className="reviewbody">
           {reviewbody}
           <br></br>
-          <a onClick={()=> {setReviewbody(review.body); setShowmore(null)}}>{showmore}</a>
+          <u onClick={()=> {setReviewbody(review.body); setShowmore(null)}}>{showmore}</u>
         </div>
       }
 
@@ -75,7 +77,7 @@ function ReviewTile ({review, reviews}) {
       { helpfulreportclicked === false && reviewreport === 'Report' ?
         <div className="reviewhelpfulreport">
           Helpful?
-          <a onClick={markHelpful}> Yes:({reviewhelpful})</a>  |  <a onClick={reportReview}>{reviewreport}</a>
+          <u onClick={markHelpful}> Yes:({reviewhelpful})</u>  |  <u onClick={reportReview}>{reviewreport}</u>
         </div>
         :
         helpfulreportclicked === true && reviewreport === 'You\'ve reported this review' ?
