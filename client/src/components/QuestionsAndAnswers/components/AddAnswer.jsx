@@ -20,7 +20,22 @@ const AddAnswer = ({handleOpenModel, question}) => {
       return emailPattern.test(email);
     }
 
-    if (verifyEmail(email) && name.length > 0 && answerBody.length > 0) {
+    // verify url
+    let validURL =(photos) => {
+      var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+      var photoPattern = /\.(jpeg|jpg|gif|png)$/;
+
+      return (urlPattern.test(photos) && photos.match(photoPattern));
+
+    }
+    console.log(validURL(photos));
+
+    if (verifyEmail(email) && validURL(photos) && name.length > 0 && answerBody.length > 0) {
       var data = { question_id: question_id, body: answerBody, name: name, email: email, photos:photos};
 
       axios.post('/qa/questions/:question_id/answers', data)
@@ -35,8 +50,9 @@ const AddAnswer = ({handleOpenModel, question}) => {
       alert("You must enter the following: name, email and answer");
     } else if (!verifyEmail(email)) {
       alert("Please enter an valid email address!");
+    } else if (! validURL(photos)) {
+      alert("Please enter an valid url!");
     }
-    
   }
 
   const handleOnchange = (e) => {
@@ -44,15 +60,14 @@ const AddAnswer = ({handleOpenModel, question}) => {
       setName(e.target.value);
     } else if (e.target.name === 'email') {
       setEmail(e.target.value)
-    } else {
+    } else if (e.target.name === 'answerBody') {
       setAnswerBody(e.target.value)
+    } else {
+      setPhotos([e.target.value])
     }
   }
 
-  const handleAddPhoto = (e) => {
-    let imgUrl = e.target.value;
-    setPhotos([imgUrl]);
-  }
+
 
   return (
 
@@ -85,7 +100,9 @@ const AddAnswer = ({handleOpenModel, question}) => {
             value={answerBody}></textarea>
 
           <label htmlFor = 'photos'>Upload Photos (Optional): </label>
-          <input type='url' onChange={handleAddPhoto} placeholder="https://example.com" height='40px' ></input>
+          <input type='url' name='photos'
+            onChange={handleOnchange} placeholder="https://example.com" height='50px'
+            value={photos}></input>
 
 
 
