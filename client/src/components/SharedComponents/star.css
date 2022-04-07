@@ -1,13 +1,12 @@
 .allstars {
   align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
 }
 
 .back-stars {
   width: fit-content;
   color: #e4e5e9;
-  position: absolute;
+  position: relative;
 }
 
 .front-stars {

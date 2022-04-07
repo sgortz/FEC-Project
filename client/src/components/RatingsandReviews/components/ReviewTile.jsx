@@ -44,9 +44,7 @@ function ReviewTile ({review, reviews}) {
 
   return(
     <div className="reviewtile">
-      <h4>ReviewTile</h4>
       <div>
-        rating: {review.rating}
         <Star value={review.rating}/>
       </div>
       <div className="reviewnameanddate">

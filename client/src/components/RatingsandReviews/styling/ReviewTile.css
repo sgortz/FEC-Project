@@ -1,3 +1,7 @@
 .reviewphoto {
   display: flex;
 }
+
+.reviewtile {
+  padding-bottom: 15px;
+}
