@@ -66,7 +66,7 @@ class ProductOverview extends React.Component {
             </div>
           </div>
           <ProductDescription features={this.state.product_data[0]} />
-        </>
+        </div>
       )
     }
   }
