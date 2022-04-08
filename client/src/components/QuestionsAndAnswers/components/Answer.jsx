@@ -52,7 +52,7 @@ const Answer = ({ answer }) => {
         }
       </span>
       <div className='answerFooter'>
-        {answerer_name === "seller"?
+        {answerer_name.toLowerCase() === "seller"?
           <span> by <strong>Seller</strong>, {moment(date).format('LL')} </span>
           : <span> by {answerer_name}, {moment(date).format('LL')} </span>
         }

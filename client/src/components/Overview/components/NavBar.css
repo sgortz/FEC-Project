@@ -10,7 +10,7 @@ body {
 .Navbar {
   align-items:center;
   /* background-color: #752819; */
-  background-color: #d39d7c;
+  background-color: rgb(255, 176, 133);
   display: flex;
   justify-content: space-between;
   padding: 16px;

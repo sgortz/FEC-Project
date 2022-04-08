@@ -55,5 +55,7 @@ module.exports = {
       .catch((err) => {
         console.log('An error occurred while getting the product\'s styles', err);
       });
-  }
+  },
+
+
 }

@@ -28,4 +28,8 @@ router.put('/qa/answers/:answer_id/helpful', controller.questions.putAnswerHelpf
 router.put('/qa/questions/:question_id/report', controller.questions.putReportQuestion);
 router.put('/qa/answers/:answer_id/report', controller.questions.putReportAnswer);
 
+/* -------- Related Items & Comparison -------- */
+router.get('/products/:product_id/related',controller.relatedProducts.getRelatedProducts);
+
+
 module.exports = router;
