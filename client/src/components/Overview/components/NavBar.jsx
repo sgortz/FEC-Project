@@ -12,7 +12,7 @@ const NavBar = () => (
         {/* <FiSearch /> */}
       </input>
     </form>
-    <RiShoppingBagLine size="15px" />
+    <RiShoppingBagLine id='RiShoppingBag' size="25px" />
   </div>
 )
 

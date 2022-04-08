@@ -32,6 +32,10 @@
   animation-duration: 0.5s;
 }
 
+.review-modal-header {
+  text-align: center;
+}
+
 .review-modal-body {
   width: 80%;
   display: flex;
