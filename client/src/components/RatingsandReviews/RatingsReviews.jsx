@@ -58,7 +58,9 @@ function RatingsAndReviews (props) {
         <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
         :
         reviewsrenderedcount < filteredreview.length && filteredreview.length !== 0?
-        <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
+        <MoreReviews
+        reviews={reviews}
+        setReviewsrenderedcount={setReviewsrenderedcount}/>
         : null}
 
         <AddReview setReviewmodalshow={setReviewmodalshow}/>
