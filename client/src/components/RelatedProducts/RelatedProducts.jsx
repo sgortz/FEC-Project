@@ -3,13 +3,50 @@ import axios from 'axios';
 import RelatedProductList from "./components/RelatedProductList.jsx"
 import RelatedProductCard from './components/RelatedProductCard.jsx'
 
-const RelatedProducts = ({ product_id, setProductId, avgReviewRating }) => {
+const RelatedProducts = ({ product_id, setProduct_Id, avgReviewRating }) => {
 
   const [relatedProductId, setRelatedProductId] = useState([]);
   const [relatedProductData, setRelatedProductData] = useState([]);
   const [reviewData, setReviewData] = useState([]);
   const [isLoading, setIsLoading] = useState(true)
 
+  useEffect(() => {
+    axios.get('/products/:product_id/related', { params: { product_id: product_id } })
+      .then(res => {
+        setRelatedProductId(res.data);
+      })
+      .catch(err => {
+        console.log("err in getting questions per id:", err)
+      })
+  }, [product_id])
+
+  useEffect(()=>{
+    Promise.all(
+      relatedProductId.map((id)=>
+        axios.get(`/products/${id}/`)
+        .then(res=>res.data)
+        .catch(err=>console.log(err))
+      )
+    )
+    .then(res=>setRelatedProductData(res))
+    .catch(err=>console.log(err))
+
+  },[relatedProductId]);
+
+  useEffect(()=>{
+    Promise.all(
+      relatedProductId.map((id)=>
+        axios.get('/reviews/meta', { params: { product_id: id } })
+        .then(res=>res.data)
+        .catch(err=>console.log(err))
+      )
+    )
+    .then(res=>setReviewData(res))
+    .catch(err=>console.log(err))
+
+  },[relatedProductId]);
+
+  /*
   useEffect(() => {
     axios.get('/products/:product_id/related', { params: { product_id: product_id } })
       .then(res => {
@@ -59,12 +96,13 @@ const RelatedProducts = ({ product_id, setProductId, avgReviewRating }) => {
       })
       .catch(err => { console.error(err) })
   }
+  */
 
   return (
     <div className='RelatedProducts'>
       <h2 className='RP title'>YOU MIGHT ALSO LOVE</h2>
       <div className='RelatedProductList'>
-        <RelatedProductList setProductId={setProductId} relatedProductData={relatedProductData} reviewData={reviewData}
+        <RelatedProductList setProduct_Id={setProduct_Id} relatedProductData={relatedProductData} reviewData={reviewData}
           relatedProductId={relatedProductId} isLoading={isLoading} />
 
       </div>

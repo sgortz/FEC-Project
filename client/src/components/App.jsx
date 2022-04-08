@@ -17,7 +17,7 @@ const App = (props) => {
     <div className="app">
       <NavBar/>
       <ProductOverview product_id={product_id} />
-      <RelatedProducts product_id={product_id} setProductId={setProductId} avgReviewRating={avgReviewRating}/>
+      <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating}/>
       <QuestionAndAnswers product_id={product_id} />
       <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} />
     </div>

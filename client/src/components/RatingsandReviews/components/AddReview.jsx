@@ -5,9 +5,13 @@ function AddReview ({setReviewmodalshow}) {
 
   return(
     <div>
-      <input type="button" id="addreview" value="Add A Review" onClick={(e)=>
+      <button id="addreview" onClick={()=>
+      {setReviewmodalshow(true);}}>
+        ADD A REVIEW
+      </button>
+      {/* <input type="button" id="addreview" value="ADD A REVIEW" onClick={(e)=>
       { e.preventDefault();
-        setReviewmodalshow(true);}}/>
+        setReviewmodalshow(true);}}/> */}
     </div>
   )
 
