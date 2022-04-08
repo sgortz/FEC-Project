@@ -13,9 +13,9 @@ const App = (props) => {
   return (
 
     <div className="app">
-      <NavBar/>
+      {/* <NavBar/>
       <ProductOverview product_id={product_id} />
-      <QuestionAndAnswers product_id={product_id} />
+      <QuestionAndAnswers product_id={product_id} /> */}
       <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} />
     </div>
 
