@@ -6,15 +6,17 @@ import NavBar from './Overview/components/NavBar.jsx'
 
 const App = (props) => {
 
+  const [product_id, setProduct_id] = useState(37311);
+  const [productName, setProductName] = useState('Camo Onesie');
   const [avgReviewRating, setAvgReviewRating] = useState(null);
 
   return (
 
     <div className="app">
       <NavBar/>
-      <ProductOverview product_id={37311} />
-      <QuestionAndAnswers product_id={37311} />
-      <RatingsAndReviews product_id={37315} setAvgReviewRating={setAvgReviewRating} />
+      <ProductOverview product_id={product_id} />
+      <QuestionAndAnswers product_id={product_id} />
+      <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} />
     </div>
 
   )
