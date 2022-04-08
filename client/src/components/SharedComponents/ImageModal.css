@@ -2,7 +2,7 @@
 .PhotoModal {
   position: fixed; /* Stay in place */
   z-index: 10; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 200px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -15,9 +15,10 @@
 .PhotoFZ {
   margin: auto;
   display: block;
+  object-fit: contain;
   width: 80%;
   max-width: 700px;
-  max-height: 80%;
+  max-height: 65%;
   animation-name: zoom;
   animation-duration: 0.6s;
 }
@@ -29,7 +30,7 @@
 
 .PhotoCloseBtn {
   position: absolute;
-  top: 15px;
+  top: 90px;
   right: 35px;
   color: #f1f1f1;
   font-size: 40px;
