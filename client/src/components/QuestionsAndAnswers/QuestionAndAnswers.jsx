@@ -64,11 +64,11 @@ const QuestionAndAnswers = ({ product_id }) => {
 
     <div className='QuestionAndAnswers'>
 
-      <h2>QUESTIONS & ANSWERS</h2>
+      <h2 className='QAtitle'>QUESTIONS & ANSWERS</h2>
       <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
 
       {questionList ?
-        <QAList filteredQuestions={filteredQuestions} questionNumber={questionNumber}/> : null}
+        <QAList searchTerm={searchTerm} filteredQuestions={filteredQuestions} questionNumber={questionNumber}/> : null}
       <br></br>
 
       <div className='QABtn'>

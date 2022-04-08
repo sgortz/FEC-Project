@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import ImageModal from '../../SharedComponents/ImageModal.jsx';
 import "./QuestionAndAnswers.css";
+import '../../SharedComponents/ImageModal.css';
 
 const AddAnswer = ({handleOpenModel, question}) => {
 
@@ -11,6 +13,9 @@ const AddAnswer = ({handleOpenModel, question}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [photos, setPhotos] = useState([]);
+  const [embedImgUrl, setEmbedImgUrl] = useState('');
+  const [showUploadBtn, setShowUploadBtn] = useState(true);
+
 
   const handleAnswerSubmit = (e) => {
     e.preventDefault();
@@ -20,22 +25,7 @@ const AddAnswer = ({handleOpenModel, question}) => {
       return emailPattern.test(email);
     }
 
-    // verify url
-    let validURL =(photos) => {
-      var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-        '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-      var photoPattern = /\.(jpeg|jpg|gif|png)$/;
-
-      return (urlPattern.test(photos) && photos.match(photoPattern));
-
-    }
-    console.log(validURL(photos));
-
-    if (verifyEmail(email) && validURL(photos) && name.length > 0 && answerBody.length > 0) {
+    if (verifyEmail(email) && name.length > 0 && answerBody.length > 0) {
       var data = { question_id: question_id, body: answerBody, name: name, email: email, photos:photos};
 
       axios.post('/qa/questions/:question_id/answers', data)
@@ -63,10 +53,28 @@ const AddAnswer = ({handleOpenModel, question}) => {
     } else if (e.target.name === 'answerBody') {
       setAnswerBody(e.target.value)
     } else {
-      setPhotos([e.target.value])
+      setEmbedImgUrl(e.target.value);
     }
   }
 
+
+  const handleAddPhoto = (e) => {
+    e.preventDefault();
+    var img = new Image();
+    img.src = embedImgUrl;
+
+    img.onload = () => {
+      var newPhotos = [...photos];
+      newPhotos.push(embedImgUrl);
+      setPhotos(newPhotos);
+    };
+    img.onerror = (err) => {
+      alert('You must enter a valid picture url')
+    }
+
+    setShowUploadBtn(true);
+    setEmbedImgUrl('');
+  }
 
 
   return (
@@ -99,12 +107,29 @@ const AddAnswer = ({handleOpenModel, question}) => {
             onChange={handleOnchange}
             value={answerBody}></textarea>
 
-          <label htmlFor = 'photos'>Upload Photos (Optional): </label>
-          <input type='url' name='photos'
-            onChange={handleOnchange} placeholder="https://example.com" height='50px'
-            value={photos}></input>
 
+           <div className='QA-modal-footer'>
+            {showUploadBtn && photos.length < 5?
+                <div>
+                  <input type="button" value='Upload Pictures' onClick={(e)=>{setShowUploadBtn(false)}}/>
+                  <p id='note' style={{display: 'inline'}}> (Optional)</p>
+                </div>
+              : showUploadBtn === false?
+                <div >
+                  <input className='QAaddPhotoModel' type="text" name="photo" required
+                  placeholder='Paste the image link here'
+                  value={embedImgUrl} onChange={handleOnchange}></input>
+                  <input className = 'embedPhotoBtn' type="button" value='Add' onClick={handleAddPhoto}></input>
+                </div>
+              : null
+            }
+           </div>
 
+          <div className="AnswerNewPhotos">
+            {photos.length > 0?
+            photos.map((photo, index)=><ImageModal key={index} url={photo}/>)
+            :null}
+          </div>
 
           <div>
             <span>

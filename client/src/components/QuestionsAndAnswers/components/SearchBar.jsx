@@ -6,8 +6,6 @@ import "./QuestionAndAnswers.css";
 const SearchBar = ({ handleSearch, setSearchTerm, searchTerm }) => {
 
 
-
-
   const onChange = (e) => {
     setSearchTerm(e.target.value);
     handleSearch(e.target.value);
@@ -25,7 +23,6 @@ const SearchBar = ({ handleSearch, setSearchTerm, searchTerm }) => {
 
 }
 
-
-
 export default SearchBar;
+
 
