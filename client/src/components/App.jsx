@@ -7,20 +7,13 @@ const App = (props) => {
 
   const [avgReviewRating, setAvgReviewRating] = useState(null);
 
-
-
-
   return (
-
-    <div>
-
+    <div className="app">
       <ProductOverview product_id={37311} />
       
       <QuestionAndAnswers product_id={37311} />
       <RatingsAndReviews product_id={37315} setAvgReviewRating={setAvgReviewRating} />
     </div>
-
-
 
   )
 }
