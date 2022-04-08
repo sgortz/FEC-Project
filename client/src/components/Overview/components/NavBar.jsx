@@ -4,9 +4,14 @@ import { RiShoppingBagLine } from "react-icons/ri";
 
 import "./NavBar.css";
 
-const NavBar = () => (
+const NavBar = (props) => (
   <div className="Navbar">
-    <div className="Logo">Z. Narrows</div>
+    {props.inView?
+      <div className="Logo">Z. Narrows</div>
+    :
+      <div className="Logo">{props.productName}</div>
+
+    }
     <form>
       <input className="top-search-bar" type="text" disabled={true}>
         {/* <FiSearch /> */}
