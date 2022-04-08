@@ -2,9 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Zen+Kurenaido&display=swap');
 
 .QuestionAndAnswers {
-  display: block;
+  display: flex;
+  flex-direction: column;
   line-height: 20px;
   margin: 12%;
+  width: 80%;
+}
+
+.QAtitle{
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
 }
 /* QuestionModel Basic CSS */
 
@@ -21,14 +29,19 @@
   padding-top: 275px; /* Location of the content container */
 }
 
+.QAmodelTitle {
+  display: flex;
+  justify-content: center;
+}
+
 .QAmodalContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: white;
   width: 50%; /* Width in proportion to its parent container*/
-  max-width: 500px; /* Max width where it stops expanding */
-  height: 60%; /* Height in proportion to its parent container */
+  max-width: 550px; /* Max width where it stops expanding */
+  height: 50%; /* Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
   padding: 10px;
   border: 1px solid black;
@@ -58,12 +71,26 @@
   transition: all ease 0.3s;
 }
 
+.QA-modal-footer {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.QAaddPhotoModel {
+  width: 80%;
+  margin-right: 3px;
+}
+.AnswerNewPhotos {
+  display: inline-flex;
+}
+
 /* SearchBar Basic CSS */
 .searchBarWrapper {
   margin-top: 12px;
-  margin-bottom: 8px ;
+  margin-bottom: 40px ;
   position: relative;
   display: inline-block;
+
 }
 
 .QAicon {
@@ -78,52 +105,59 @@
   border-radius: 8px;
   height: 30px;
   box-shadow: 0 1px 2px rgb(15 17 17 / 15%) inset;
-  width: 600px;
+  width: 75%;
   padding: 2px 23px 2px 30px;
-  background-color: #f5f5f5;
+  background-color: white;
   cursor: text;
 
 }
 
 .QAsearch:hover, .QAsearch:focus {
-  border: 2px solid #63994d;
+  border: 2px solid rgb(144, 170, 203);
   background-color: white
 }
 
 /* QAList Basic CSS */
 .QAList {
+  display: flex;
+  flex-direction: column;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 800px
-
+  max-width: 82%;
+  max-height: 50vh;
+  overflow-y: auto;
 }
 
 /* Question Basic CSS */
 .QAEntry {
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
-
 }
+
 .showMoreA, .collapseA{
   color: #d39d7c;
   font-weight: 600;
   font-size: 14px;
 }
+
 .questionContainer {
+  display: flex;
+  flex-direction: row;
   padding: 5px, 0, 5px, 0;
   margin-bottom: 15px;
+  justify-content: space-between ;
 }
 
 .QAinlineLeft, .QAinlineRight {
-  display: inline-block;
+  display: inline-flex;
   justify-content: space-between;
 }
 
 .QAinlineLeft {
-  max-width: 620px;
+  max-width: 50%;
   font-weight: 600;
   color: black;
-
 }
 
 .questionBody{
@@ -131,18 +165,13 @@
 }
 
 .QAinlineRight {
-  position: absolute;
-
-  right: 25%;
   color: #565959!important;
   font-size: 14px;
   line-height: 20px;
-
-
 }
 
 .QAhelpful, .QAhelpful-button, .QAbreak, .add-answer, .QAreport-button{
-  margin: 3px
+  margin: 5px
 }
 
 .QAhelpful-button, .add-answer ,.QAreport-button{
@@ -172,9 +201,17 @@
 
 
 /* more question and add question button CSS */
+.QABtn{
+  display: flex;
+  justify-content: center;
+  max-width: 78%;
+}
+
 .moreQBtn, .goBackQ, .addQBtn{
+
   align-items: center;
   background-color: #fee6e3;
+  /* background-color: rgb(255, 176, 133); */
   border: 2px solid #111;
   border-radius: 8px;
   box-sizing: border-box;
@@ -184,10 +221,12 @@
   font-family: Inter,sans-serif;
   font-size: 12px;
   height: 48px;
-  margin-right: 300px;
+  margin-top: 50px;
+  margin-left: 120px;
+  margin-right: 120px;
   line-height: 24px;
-  max-width: 100%;
-  padding: 0 25px;
+  max-width: 50%;
+  padding: 25px 25px;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -256,7 +295,7 @@
 .AnswerPhotoModel {
 
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -295,4 +334,9 @@
   color: #bbb;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* highlighting  */
+.QAHighlightClass {
+  background-color: rgb(144, 170, 203,0.5);
 }

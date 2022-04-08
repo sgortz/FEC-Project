@@ -10,7 +10,6 @@ const AnswerPhoto = (url) => {
   }
 
 
-
   const AnswerPhotoModel = (
     <div className='AnswerPhotoModel'>
       <span className='AnswerPhotoCloseBtn' onClick={handleClickPhoto}>&times;</span>
@@ -20,7 +19,7 @@ const AnswerPhoto = (url) => {
 
   return (
 
-    <div>
+    <div className='QAthumbnailPhoto'>
       <img className='answerPhoto' src={url.url} onClick={handleClickPhoto} ></img>
       {openAnswerPhoto? AnswerPhotoModel : null}
     </div>

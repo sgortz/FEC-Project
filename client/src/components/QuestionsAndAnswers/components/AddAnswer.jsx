@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import ImageModal from '../../SharedComponents/ImageModal.jsx';
 import "./QuestionAndAnswers.css";
+import '../../SharedComponents/ImageModal.css';
 
 const AddAnswer = ({handleOpenModel, question}) => {
 
@@ -11,6 +13,9 @@ const AddAnswer = ({handleOpenModel, question}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [photos, setPhotos] = useState([]);
+  const [embedImgUrl, setEmbedImgUrl] = useState('');
+  const [showUploadBtn, setShowUploadBtn] = useState(true);
+
 
   const handleAnswerSubmit = (e) => {
     e.preventDefault();
@@ -35,6 +40,8 @@ const AddAnswer = ({handleOpenModel, question}) => {
       alert("You must enter the following: name, email and answer");
     } else if (!verifyEmail(email)) {
       alert("Please enter an valid email address!");
+    } else if (! validURL(photos)) {
+      alert("Please enter an valid url!");
     }
   }
 
@@ -43,15 +50,32 @@ const AddAnswer = ({handleOpenModel, question}) => {
       setName(e.target.value);
     } else if (e.target.name === 'email') {
       setEmail(e.target.value)
-    } else {
+    } else if (e.target.name === 'answerBody') {
       setAnswerBody(e.target.value)
+    } else {
+      setEmbedImgUrl(e.target.value);
     }
   }
 
+
   const handleAddPhoto = (e) => {
-    let imgUrl = e.target.value;
-    setPhotos([imgUrl]);
+    e.preventDefault();
+    var img = new Image();
+    img.src = embedImgUrl;
+
+    img.onload = () => {
+      var newPhotos = [...photos];
+      newPhotos.push(embedImgUrl);
+      setPhotos(newPhotos);
+    };
+    img.onerror = (err) => {
+      alert('You must enter a valid picture url')
+    }
+
+    setShowUploadBtn(true);
+    setEmbedImgUrl('');
   }
+
 
   return (
 
@@ -83,10 +107,29 @@ const AddAnswer = ({handleOpenModel, question}) => {
             onChange={handleOnchange}
             value={answerBody}></textarea>
 
-          <label htmlFor = 'photos'>Upload Photos (Optional): </label>
-          <input type='url' onChange={handleAddPhoto} placeholder="https://example.com" height='40px' ></input>
 
+           <div className='QA-modal-footer'>
+            {showUploadBtn && photos.length < 5?
+                <div>
+                  <input type="button" value='Upload Pictures' onClick={(e)=>{setShowUploadBtn(false)}}/>
+                  <p id='note' style={{display: 'inline'}}> (Optional)</p>
+                </div>
+              : showUploadBtn === false?
+                <div >
+                  <input className='QAaddPhotoModel' type="text" name="photo" required
+                  placeholder='Paste the image link here'
+                  value={embedImgUrl} onChange={handleOnchange}></input>
+                  <input className = 'embedPhotoBtn' type="button" value='Add' onClick={handleAddPhoto}></input>
+                </div>
+              : null
+            }
+           </div>
 
+          <div className="AnswerNewPhotos">
+            {photos.length > 0?
+            photos.map((photo, index)=><ImageModal key={index} url={photo}/>)
+            :null}
+          </div>
 
           <div>
             <span>

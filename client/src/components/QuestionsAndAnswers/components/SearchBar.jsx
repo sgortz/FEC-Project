@@ -3,9 +3,7 @@ import "./QuestionAndAnswers.css";
 
 
 
-const SearchBar = ({ handleSearch }) => {
-
-  const [searchTerm, setSearchTerm] = useState('');
+const SearchBar = ({ handleSearch, setSearchTerm, searchTerm }) => {
 
 
   const onChange = (e) => {
@@ -25,7 +23,6 @@ const SearchBar = ({ handleSearch }) => {
 
 }
 
-
-
 export default SearchBar;
+
 

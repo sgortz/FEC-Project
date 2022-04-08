@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Highlighter from "react-highlight-words";
 import AddAnswer from './AddAnswer.jsx';
 import "./QuestionAndAnswers.css";
 
-const Question = ({ question }) => {
+
+const Question = ({ question, searchStatus, searchTerm }) => {
 
   const [showAnswerModel, setShowAnswerModel] = useState(false);
   const [questionHelpful, setQuestionHelpful] = useState(question.question_helpfulness);
@@ -28,12 +30,26 @@ const Question = ({ question }) => {
       })
   }
 
+  const MakeTitle = ({titleText, searchStatus, searchTerm}) => {
+    return (
+      <div id="question">
+        <Highlighter
+          highlightClassName="QAHighlightClass"
+          searchWords={[searchTerm]}
+          autoEscape={true}
+          textToHighlight={`Q:   ${titleText}`}
+        />
+      </div>
+    );
+  }
+
 
   return (
 
     <div className='questionContainer'>
       <div className='QAinlineLeft'>
-        <span >Q: {question.question_body} </span>
+        {/* <span >Q: {question.question_body} </span> */}
+        <MakeTitle titleText={question.question_body} searchStatus={searchStatus} searchTerm={searchTerm} />
       </div>
       <div className='QAinlineRight'>
         <span className='QAhelpful'>Helpful? </span>
