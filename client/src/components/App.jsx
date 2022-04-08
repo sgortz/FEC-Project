@@ -1,7 +1,8 @@
 import React, { useState, useEffect} from 'react';
 import ProductOverview from './Overview/ProductOverview.jsx'
 import QuestionAndAnswers from './QuestionsAndAnswers/QuestionAndAnswers.jsx';
-import RatingsAndReviews from './RatingsAndReviews/RatingsReviews.jsx'
+import RatingsAndReviews from './RatingsAndReviews/RatingsReviews.jsx';
+import NavBar from './Overview/components/NavBar.jsx'
 
 const App = (props) => {
 
@@ -13,6 +14,7 @@ const App = (props) => {
   return (
 
     <div>
+      <NavBar/>
 
       <ProductOverview product_id={37311} />
       <QuestionAndAnswers product_id={37311} />

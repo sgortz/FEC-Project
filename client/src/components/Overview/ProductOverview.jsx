@@ -44,7 +44,7 @@ class ProductOverview extends React.Component {
       return (
         <IconContext.Provider value={{ size: '6rem', className: 'loading' }}>
           <div>
-            <NavBar />
+            {/* <NavBar /> */}
             <RiLoader2Line />
             <h1 className="page-loading"> page loading... </h1>
           </div>
@@ -53,7 +53,7 @@ class ProductOverview extends React.Component {
     } else {
       return (
         <div>
-          <NavBar />
+          {/* <NavBar /> */}
           <Announcements />
           <div className="wrapper">
             <ProductDetail data={this.state.product_data} />

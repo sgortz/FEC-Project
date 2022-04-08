@@ -29,6 +29,7 @@
   background-color: #C1E1C1;
   text-align: center;
   color: #C1E1C1;
+  border-color: #C1E1C1;
 }
 
 /* Individual bar */
@@ -57,4 +58,14 @@
 
 .StarFilterandRemove {
   padding-top: 15px;
+}
+
+/*hover effect*/
+.ratingbreakdownrow :hover {
+  color: #C1E1C1;
+  text-decoration: underline;
+  cursor: pointer;
+
+
+
 }
