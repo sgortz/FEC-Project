@@ -10,10 +10,9 @@
   font-family: 'Alegreya Sans SC', sans-serif;
   font-weight: 300;
   font-size: 15px;
-  color: black;
+text-decoration: underline;
 }
 
 .link-to-review:hover {
-  color: #40804f;
   cursor: pointer;
 }
