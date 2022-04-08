@@ -21,19 +21,11 @@ class ProductOverview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product_data: [],
-      current_photo_index: 0
+      product_data: []
     }
     this.fetchProductData = this.fetchProductData.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e){
-    console.log('button clicked');
-  }
-
-
-  /* Fetching data from API */
   fetchProductData(id) {
     axios.get(`/products/${id}/`)
       .then(response => {
@@ -59,28 +51,22 @@ class ProductOverview extends React.Component {
       )
     } else {
       return (
-        <div>
+        <>
           <NavBar />
           <Announcements />
-          {/* <div className="wrapper"> */}
-            {/* <ProductDetail data={this.state.product_data} />
-            <ImageGallery photos={this.state.product_data[1]} /> */}
-            <StylesGallery styles={this.state.product_data[1].results} />
-            {/*  <div className="image-gallery">
-            </div>
-            <div className="star-review">
-              <StarReview/>
+          <div className="wrapper">
+            <div className="style-selector">
+              <StylesGallery styles={this.state.product_data[1].results} />
             </div>
             <div className="product-detail">
-            </div>
-            <div className="style-selector">
+              <ProductDetail data={this.state.product_data} />
             </div>
             <div className="add-to-cart">
-          </div>*/}
-            {/* <AddToCart data={this.state.product_data[1]} /> */}
-          {/* </div> */}
-          {/* <ProductDescription features={this.state.product_data[0]} /> */}
-        </div>
+              <AddToCart data={this.state.product_data[1]} />
+            </div>
+          </div>
+          <ProductDescription features={this.state.product_data[0]} />
+        </>
       )
     }
   }

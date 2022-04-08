@@ -3,8 +3,8 @@ import StarReview from './StarReview.jsx';
 import './ProductDetail.css'
 
 const ProductDetail = ({ data }) => {
-  // let category = props.product.category.toUpperCase();
-  if (data === undefined) {
+  // console.log(data)
+  if (data.length === 0) {
     return null;
   } else if (data[1].results[2].sale_price === null) {
     return (
@@ -17,6 +17,7 @@ const ProductDetail = ({ data }) => {
     )
   } else {
     return (
+      // <h1>Hello World</h1>
       <>
         <p className="product-category">{data[0].category}</p>
         <p className="product-name">{data[0].name}</p>

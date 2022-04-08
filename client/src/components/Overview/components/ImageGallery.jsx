@@ -5,6 +5,7 @@ import './ImageGallery.css';
 
 const ImageGallery = ({ photos }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
+  const [squarePhoto, setSquarePhoto] = useState(0);
   const length = photos.photos.length;
 
   const nextPhoto = () => {

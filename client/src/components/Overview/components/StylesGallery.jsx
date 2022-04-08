@@ -14,21 +14,24 @@ export default function StylesGallery({ styles }) {
     return null;
   } else {
     return (
-      <div>
+      <div className="style-gallery">
         <ImageGallery photos={styles[currentStyleIndex]} />
         <div className="clothing-style">
               STYLE > {styles[currentStyleIndex].name}
         </div>
-        {styles.map((style, index) => {
-          return (
-            <StyleSelector
-              key={index}
-              index={index}
-              style={style}
-              handleClick={handleClick}
-            />
-          )
-        })}
+        <div className="">
+
+          {styles.map((style, index) => {
+            return (
+              <StyleSelector
+                key={index}
+                index={index}
+                style={style}
+                handleClick={handleClick}
+              />
+            )
+          })}
+        </div>
       </div>
     )
   }
