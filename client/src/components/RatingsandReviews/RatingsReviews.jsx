@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ReviewMetaData from './components/ReviewMetaData.jsx'
-import ReviewSort from './components/ReviewSort.jsx'
-import ReviewList from './components/ReviewList.jsx'
-import MoreReviews from './components/MoreReviews.jsx'
-import AddReview from './components/AddReview.jsx'
-import ReviewModal from './components/ReviewModal.jsx'
+import ReviewMetaData from './components/ReviewMetaData.jsx';
+import ReviewSort from './components/ReviewSort.jsx';
+import ReviewList from './components/ReviewList.jsx';
+import MoreReviews from './components/MoreReviews.jsx';
+import AddReview from './components/AddReview.jsx';
+import ReviewModal from './components/ReviewModal.jsx';
+import './RatingsReviews.css'
 
 
 function RatingsAndReviews (props) {
@@ -23,7 +24,7 @@ function RatingsAndReviews (props) {
             params: {
               product_id : props.product_id,
               page : 1,
-              count : 20,
+              count : 100,
               sort : `${sortoption}`
             }
           }
@@ -43,8 +44,8 @@ function RatingsAndReviews (props) {
   }, [selectedstars]);
 
   return(
-    <div>
-      <h1 id='RatingsandReviews'>Ratings And Reviews</h1>
+    <div className='RRContainer'>
+      <h2 id='RatingsandReviews'>RATINGS & REVIEWS</h2>
       <ReviewMetaData product_id={props.product_id} selectedstars={selectedstars} setSelectedstars={setSelectedstars} setReviewsrenderedcount={setReviewsrenderedcount}
       setProductChars={setProductChars} setAvgReviewRating={props.setAvgReviewRating}/>
 
@@ -52,25 +53,27 @@ function RatingsAndReviews (props) {
 
       <ReviewList reviews={reviews} setReviews={setReviews} reviewsrenderedcount={reviewsrenderedcount} selectedstars={selectedstars} filteredreview={filteredreview}/>
 
-      {reviewsrenderedcount < reviews.length && filteredreview.length === 0?
-      <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
-      :
-      reviewsrenderedcount < filteredreview.length && filteredreview.length !== 0?
-      <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
-      : null}
-
-      <AddReview setReviewmodalshow={setReviewmodalshow}/>
-
-      { reviewmodalshow
-        ?
-        <ReviewModal
-        product_id={props.product_id}
-        productChars={productChars}
-        setReviewmodalshow={setReviewmodalshow}/>
+      <div className='ReviewButtons'>
+        {reviewsrenderedcount < reviews.length && filteredreview.length === 0?
+        <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
         :
-        null
-      }
+        reviewsrenderedcount < filteredreview.length && filteredreview.length !== 0?
+        <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
+        : null}
 
+        <AddReview setReviewmodalshow={setReviewmodalshow}/>
+
+        { reviewmodalshow
+          ?
+          <ReviewModal
+          product_id={props.product_id}
+          productChars={productChars}
+          setReviewmodalshow={setReviewmodalshow}
+          setReviews={setReviews}/>
+          :
+          null
+        }
+      </div>
 
     </div>
   )

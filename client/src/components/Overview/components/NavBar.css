@@ -4,6 +4,7 @@
 
 .Navbar {
   align-items:center;
+  /* background-color: #752819; */
   display: flex;
   justify-content: space-between;
   padding: 16px;

@@ -1,5 +1,5 @@
 //import packages
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 // import components
 import SearchBar from './components/SearchBar.jsx';
@@ -12,6 +12,7 @@ const QuestionAndAnswers = ({ product_id }) => {
 
 
   const [questionList, setQuestionList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [filteredQuestions, setFilteredQuestions] = useState([]);
   const [showModel, setShowModel] = useState(false);
   const [questionNumber, setQuestionNumber] = useState(4);
@@ -22,7 +23,7 @@ const QuestionAndAnswers = ({ product_id }) => {
     if (term.length > 2) {
       let filteredQuestions = questionList.filter(
         q => q.question_body.toLowerCase().includes(term.toLowerCase()));
-      setFilteredQuestions(filteredQuestions);
+      setFilteredQuestions(filteredQuestions);;
     } else {
       setFilteredQuestions(questionList);
     }
@@ -43,8 +44,6 @@ const QuestionAndAnswers = ({ product_id }) => {
   }
 
 
-
-
   useEffect(() => {
     axios.get('/qa/questions', { params: { product_id: product_id } })
       .then(res => {
@@ -60,25 +59,27 @@ const QuestionAndAnswers = ({ product_id }) => {
   }, [product_id])
 
 
+
   return (
 
     <div className='QuestionAndAnswers'>
 
-      <h2>QUESTIONS & ANSWERS</h2>
-      <SearchBar handleSearch={handleSearch}/>
+      <h2 className='QAtitle'>QUESTIONS & ANSWERS</h2>
+      <SearchBar handleSearch={handleSearch} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
 
       {questionList ?
-        <QAList filteredQuestions={filteredQuestions} questionNumber={questionNumber}/> : null}
+        <QAList searchTerm={searchTerm} filteredQuestions={filteredQuestions} questionNumber={questionNumber}/> : null}
       <br></br>
-      {filteredQuestions.length > 2  && collapseQuestions ?
-        <button className='moreQBtn' onClick={showMoreQuestion} >MORE ANSWERED QUESTIONS</button> : null}
 
-      {!collapseQuestions ?
-        <button className='goBackQ' onClick = {closeQuestions}>GO BACK</button> : null}
-      <button className='addQBtn' onClick={handleOpenModel} >ADD A QUESTION</button>
-
-      {showModel ?
-        <AddQuestion  product_id={product_id} handleOpenModel={handleOpenModel} /> : null}
+      <div className='QABtn'>
+        {filteredQuestions.length > 2  && collapseQuestions ?
+          <button className='moreQBtn' onClick={showMoreQuestion} >MORE ANSWERED QUESTIONS</button> : null}
+        {!collapseQuestions ?
+          <button className='goBackQ' onClick = {closeQuestions}>GO BACK</button> : null}
+        <button className='addQBtn' onClick={handleOpenModel} >ADD A QUESTION</button>
+        {showModel ?
+          <AddQuestion  product_id={product_id} handleOpenModel={handleOpenModel} /> : null}
+      </div>
 
     </div>
   )

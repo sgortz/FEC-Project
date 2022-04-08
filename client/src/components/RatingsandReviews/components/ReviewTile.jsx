@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import Star from '../../SharedComponents/Star.jsx';
+import ImageModal from '../../SharedComponents/ImageModal.jsx';
+import '../styling/ReviewTile.css';
 
 function ReviewTile ({review, reviews}) {
 
@@ -42,14 +44,15 @@ function ReviewTile ({review, reviews}) {
 
   return(
     <div className="reviewtile">
-      <h4>ReviewTile</h4>
-      <div>
-        rating: {review.rating}
-        <Star value={review.rating}/>
+      <div className='reviewtileheader'>
+        <div>
+          <Star value={review.rating}/>
+        </div>
+        <div className="reviewnameanddate">
+          {review.reviewer_name}, {moment(review.date).format('LL')}
+        </div>
       </div>
-      <div className="reviewnameanddate">
-        {review.reviewer_name}, {moment(review.date).format('LL')}
-      </div>
+
       <div className="reviewsummary">
         <strong>{review.summary.slice(0, 60)}</strong>
       </div>
@@ -66,7 +69,11 @@ function ReviewTile ({review, reviews}) {
       }
 
       <div className="reviewphoto">
-        review images placeholder
+        {review.photos.length > 0?
+        review.photos.map((photo, index)=><ImageModal key={index} url={photo.url}/>)
+        :
+        null
+        }
       </div>
       {review.recommend === true ?
         <div className="reviewrecommend">✓ I recommend this product</div> : null
