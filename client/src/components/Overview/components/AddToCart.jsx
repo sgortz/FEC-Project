@@ -7,7 +7,7 @@ const AddToCart = ({ data }) => {
   /* Which size user selected */
   const [sizeSelection, setSizeSelection] = useState(null);
   /* Quantity user selected */
-  const [quantitySelection, setQuantitySelection] = useState(null);
+  const [quantitySelection, setQuantitySelection] = useState(1);
   /* Quantity available in sotrage */
   const [quantityOption, setQuantityOption] = useState(null);
   const [purchaseDisabled, setPurchaseDisabled] = useState(true);

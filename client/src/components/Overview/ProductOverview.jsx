@@ -13,7 +13,7 @@ import Announcements from './components/Announcements.jsx';
 import ImageGallery from './components/ImageGallery.jsx';
 import StarReview from './components/StarReview.jsx';
 import ProductDetail from './components/ProductDetail.jsx';
-import StyleSelector from './components/StyleSelector.jsx';
+import StylesGallery from './components/StylesGallery.jsx';
 import AddToCart from './components/AddToCart.jsx';
 import ProductDescription from './components/ProductDescription.jsx';
 
@@ -21,8 +21,7 @@ class ProductOverview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product_id: '',
-      product_data: [],
+      product_data: []
     }
     this.fetchProductData = this.fetchProductData.bind(this);
   }
@@ -52,28 +51,22 @@ class ProductOverview extends React.Component {
       )
     } else {
       return (
-        <div>
+        <>
           <NavBar />
           <Announcements />
           <div className="wrapper">
-            <ProductDetail data={this.state.product_data} />
-            <ImageGallery photos={this.state.product_data[1]} />
-           {/*  <div className="image-gallery">
-            </div>
-            <div className="star-review">
-              <StarReview/>
+            <div className="style-selector">
+              <StylesGallery styles={this.state.product_data[1].results} />
             </div>
             <div className="product-detail">
-            </div>
-            <div className="style-selector">
-              <StyleSelector styles={this.state.product_styles[0]} />
+              <ProductDetail data={this.state.product_data} />
             </div>
             <div className="add-to-cart">
-          </div>*/}
-          <AddToCart data={this.state.product_data[1]} />
+              <AddToCart data={this.state.product_data[1]} />
             </div>
+          </div>
           <ProductDescription features={this.state.product_data[0]} />
-        </div>
+        </>
       )
     }
   }

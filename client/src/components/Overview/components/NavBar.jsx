@@ -9,7 +9,7 @@ const NavBar = () => (
     <div className="Logo">Z. Narrows</div>
     <form>
       <input className="top-search-bar" type="text" disabled={true}>
-      {/* <FiSearch /> */}
+        {/* <FiSearch /> */}
       </input>
     </form>
     <RiShoppingBagLine size="15px" />
