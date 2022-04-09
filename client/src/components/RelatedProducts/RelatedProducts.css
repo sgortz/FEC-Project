@@ -1,4 +1,4 @@
-.RelatedProductList,.RP {
+.RelatedProductList {
   display: flex;
   justify-content: center;
   padding-top: 50px;
@@ -13,16 +13,19 @@
 }
 
 
-.card-image {
-  border-radius: 8px;
-  width: 275px;
-  height: 400px;
+.RPcard-image {
+  border-radius: calc(var(40px) * 1px);
+  width: 250px;
+  height: 320px
 
 }
 
-.card-container{
+.RPcard{
+  font-family: 'Noto Sans JP', sans-serif;
+  box-sizing: border-box;
+  border-radius: calc(var(--curve) * 1px);
   display: flex;
-  justify-content:center;
+  justify-content:space-between;
   flex-direction: column;
   margin-left: 40px;
   margin-right: 40px;
