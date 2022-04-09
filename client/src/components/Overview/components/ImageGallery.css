@@ -7,8 +7,8 @@
   /* align-items: center; */
 }
 
-.image {
-  height: 600px;
+.portrait-image {
+  width: 500px;
   border-radius: 10px;
 }
 
@@ -34,7 +34,7 @@
 
 .thumbnail-list {
   list-style: none;
-  filter: drop-shadow(30px 10px 4px rgba(0,0,0,0.2));
+  /* filter: drop-shadow(30px 10px 4px rgba(0,0,0,0.2)); */
   border-radius:10px;
 }
 
