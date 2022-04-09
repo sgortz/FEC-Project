@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Quicksand:wght@300;500;700&display=swap');
 
+/* ---------------- Switch Theme ---------------- */
+:root {
+  --background: white;
+  --text-primary: black;
+  --text-secondary: royalblue;
+  --accent: purple;
+}
+
+[data-theme='dark'] {
+  --background: black;
+  --text-primary: white;
+  --text-secondary: grey;
+  --accent: darkred;
+}
+
 body {
     background-color: rgb(254, 241, 230,0.5);
   /* background-color: #F8F3F0; */
@@ -12,6 +27,8 @@ body {
 .app {
   display : flex;
   flex-direction: column;
+  color: var(--text-primary);
+  background-color: var(--background);
 }
 
 
@@ -68,4 +85,6 @@ body {
 /* ---------------- ProductDescription Component ---------------- */
 .social-media {
   color: black;
-}
+
+
+

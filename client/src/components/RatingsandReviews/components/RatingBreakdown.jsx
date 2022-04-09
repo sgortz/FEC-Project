@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Star from '../../SharedComponents/Star.jsx';
+import Star from '../../SharedComponents/star.jsx';
 import '../styling/RatingBreakdown.css';
 
 
