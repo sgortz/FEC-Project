@@ -60,7 +60,7 @@
 }
 
 #nav-link-to-review:hover,  #nav-link-to-questions:hover {
-  color: grey;
+  color: var(--nav-bar-hover);
 }
 
 .themetogglebtn {

@@ -1,5 +1,6 @@
 .review-maincharlabel {
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .review-productbreakdown {
@@ -19,6 +20,7 @@
 
 .productlabelscontainer {
   width: 100%;
+  margin-top: 5px;
 }
 
 

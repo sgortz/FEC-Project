@@ -10,6 +10,7 @@
   --nav-bar-color: #b7be11;
   --button-color: #328648;
   --announcement-color:#F6F6F6;
+  --nav-bar-hover: #328648;
 }
 
 [data-theme='dark'] {
@@ -18,6 +19,7 @@
   --nav-bar-color: #75790a;
   --button-color: #BEB711;
   --announcement-color: #ecedd0;
+  --nav-bar-hover: #b7be11;
 }
 
 body {
