@@ -4,15 +4,14 @@
 :root {
   --background: white;
   --text-primary: black;
-  --text-secondary: royalblue;
-  --accent: purple;
+  --nav-bar-color: lightyellow;
 }
 
 [data-theme='dark'] {
   --background: black;
   --text-primary: white;
-  --text-secondary: grey;
-  --accent: darkred;
+  --nav-bar-color: rgba(252, 210, 23, 1);
+
 }
 
 body {
@@ -38,7 +37,9 @@ body {
   /* background-color: #3DB2FF; */
   /* background-color: #FFB830; */
   /* background-color: rgba(255, 209, 36, 1); */
-  background-color: rgb(255, 176, 133);
+  /* background-color: rgb(255, 176, 133); */
+  background-color: var(--nav-bar-color);
+
 }
 
 .Logo {
@@ -84,6 +85,6 @@ body {
 /* ---------------- ProductDescription Component ---------------- */
 .social-media {
   color: black;
-
+}
 
 
