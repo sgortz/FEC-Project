@@ -8,7 +8,7 @@ import AddQuestion from './components/AddQuestion.jsx';
 import "./components/QuestionAndAnswers.css";
 
 
-const QuestionAndAnswers = ({ product_id }) => {
+const QuestionAndAnswers = ({ product_id, setQuestionLength}) => {
 
 
   const [questionList, setQuestionList] = useState([]);
@@ -52,6 +52,7 @@ const QuestionAndAnswers = ({ product_id }) => {
         })
         setQuestionList(sortedQuestions);
         setFilteredQuestions(sortedQuestions);
+        setQuestionLength(res.data.results.length)
       })
       .catch(err => {
         console.log("err in getting questions per id:", err)
