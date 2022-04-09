@@ -1,11 +1,5 @@
 import React from 'react';
 import './ProductDescription.css';
-// import {
-//   FacebookShareButton,
-//   InstapaperShareButton,
-//   TwitterShareButton,
-// } from "react-share";
-
 import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 
 const ProductDescription = ({ features }) => {

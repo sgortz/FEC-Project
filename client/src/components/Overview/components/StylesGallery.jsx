@@ -15,11 +15,14 @@ export default function StylesGallery({ styles }) {
   } else {
     return (
       <div className="style-gallery">
-        <ImageGallery photos={styles[currentStyleIndex]} />
+         <div className="images-everywhere">
+        {/* <ImageGallery photos={styles[currentStyleIndex]} /> */}
+
+         </div>
         <div className="clothing-style">
               STYLE > {styles[currentStyleIndex].name}
         </div>
-        <div className="">
+        <div className="funny-guy">
 
           {styles.map((style, index) => {
             return (

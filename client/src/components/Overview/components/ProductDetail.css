@@ -16,8 +16,6 @@
   font-family: 'Belleza', sans-serif;
   font-size: 2.5em;
   margin: 0;
-  margin-bottom: 10px;
-  padding: 10px 0;
 }
 
 .strikethrough {
@@ -26,4 +24,9 @@
 
 .sale-price {
   color: red;
+  display: inline;
+}
+
+.product-price, .sale-price {
+  display: inline;
 }

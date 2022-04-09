@@ -35,7 +35,7 @@ const ImageGallery = ({ photos }) => {
             key={index}
           >
             {index === currentPhoto && (
-              <img src={photo.url} key={index} className="image" />
+              <img src={photo.url} key={index} className="portrait-image" />
             )}
           </div>
         )

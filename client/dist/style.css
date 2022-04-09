@@ -41,19 +41,16 @@ body {
 
 /* ---------------- VerticalThumbnails Component ---------------- */
 .current-thumbnail {
-  border: 1px solid #40804f;;
+  /* border: 3px solid #40804f; */
+  border: 3px solid #FFB830;
+  border-radius:10px;
 }
 
 /* --------------------- AddToCart Component -------------------- */
-#select-size, #quantity, #add-to-bag, .starred {
+/* #select-size, #quantity, #add-to-bag, .starred {
   border: 5px solid #feedec;
 
-}
-
-#add-to-bag, .starred  {
-  /* background-color: #e4d2d1; */
-  background-color: #40814E;
-}
+} */
 
 /* ---------------- ProductDescription Component ---------------- */
 .social-media {

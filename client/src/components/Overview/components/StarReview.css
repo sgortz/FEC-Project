@@ -7,10 +7,11 @@
 }
 
 .link-to-review {
+  display: inline;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-weight: 300;
   font-size: 15px;
-text-decoration: underline;
+  text-decoration: underline;
 }
 
 .link-to-review:hover {

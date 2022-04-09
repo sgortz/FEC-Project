@@ -2,13 +2,24 @@
 
 .style-gallery {
   display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: repeat(5, 20%)
+  grid-template-columns: repeat(4, 50px);
+  grid-template-rows: 1fr;
 }
 
+.images-everywhere {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.funny-guy {
+  grid-column: 1/5;
+  grid-row: 2;
+}
 
 .clothing-style {
   font-family: 'Alegreya Sans SC', sans-serif;
+  grid-column: 1 / 5;
+  grid-row: 1;
 }
 
 .style-circular-photo {
