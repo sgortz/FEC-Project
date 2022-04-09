@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
 
-const RelatedProductCard = ({ setProduct_id, relatedProductData, reviewData, product }) => {
+const RelatedProductCard = ({ setProduct_id, relatedProductData, reviewData, product, setProductName}) => {
 
   const { id, category, photo, name, default_price, sale_price } = product;
 
 
   const handleRelatedCardClick = () => {
     setProduct_id(id);
+    setProductName(name)
   }
 
   return (

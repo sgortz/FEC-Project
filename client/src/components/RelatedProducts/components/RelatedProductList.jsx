@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import RelatedProductCard from './RelatedProductCard.jsx';
 
-const RelatedProductList = ({ relatedProductId, setProduct_id, relatedProductData }) => {
+const RelatedProductList = ({ setProductName, relatedProductId, setProduct_id, relatedProductData }) => {
 
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const [reviewData, setReviewData] = useState([]);
@@ -35,7 +35,7 @@ const RelatedProductList = ({ relatedProductId, setProduct_id, relatedProductDat
 
       {relatedProductData.map((product) => {
 
-        return <RelatedProductCard key={product.id} product={product}
+        return <RelatedProductCard key={product.id} product={product} setProductName={setProductName}
         setProduct_id={setProduct_id} relatedProductData={relatedProductData} reviewData={reviewData}/>
 
       })}

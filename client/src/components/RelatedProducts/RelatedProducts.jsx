@@ -4,7 +4,7 @@ import RelatedProductList from "./components/RelatedProductList.jsx"
 import './RelatedProducts.css'
 
 
-const RelatedProducts = ({ product_id, setProduct_id }) => {
+const RelatedProducts = ({ product_id, setProduct_id, setProductName}) => {
 
   const [relatedProductId, setRelatedProductId] = useState([]);
   const [relatedProductData, setRelatedProductData] = useState([]);
@@ -55,7 +55,7 @@ const RelatedProducts = ({ product_id, setProduct_id }) => {
     <div className='RelatedProducts'>
       <h2 className='RP title'>YOU MIGHT ALSO LOVE</h2>
       <div className='RelatedProductList'>
-        <RelatedProductList setProduct_id={setProduct_id} relatedProductData={relatedProductData}
+        <RelatedProductList setProduct_id={setProduct_id} relatedProductData={relatedProductData} setProductName={setProductName}
           relatedProductId={relatedProductId} />
 
       </div >
