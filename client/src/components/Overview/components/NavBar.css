@@ -6,7 +6,7 @@
   align-items:center;
   /* background-color: #752819; */
   display: grid;
-  grid-template-columns: 3fr 1fr 0.35fr;
+  grid-template-columns: 3fr 1fr 0.5fr 0.5fr;
   justify-content: space-between;
   padding: 6px;
   position: fixed;
@@ -24,6 +24,23 @@
   /* font-style: italic; */
 }
 
+.DynamicProductLogo {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Belleza', sans-serif;
+  font-size: 20px;
+  margin: 10px;
+  grid-column:1/2
+  /* font-family: 'Libre Baskerville', serif; */
+  /* font-style: italic; */
+}
+
+.DynamicProductSecondRow {
+  display: flex;
+  flex-direction: row;
+}
+
+
 .top-search-bar {
   border-radius: 20px;
   margin-right: 15px;
@@ -32,5 +49,15 @@
 }
 
 #RiShoppinBag {
+  grid-column: 4/5;
+}
+
+#nav-link-to-review,  #nav-link-to-questions{
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#themetogglebtn {
   grid-column: 3/4;
 }

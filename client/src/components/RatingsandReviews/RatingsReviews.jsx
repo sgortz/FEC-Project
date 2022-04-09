@@ -29,13 +29,12 @@ function RatingsAndReviews (props) {
             }
           }
         )
-    // axios.get(`/reviews/?product_id=37315&page=1&count=500&sort=relevant`)
     .then((results)=>{
-      setReviews(results.data.results)
-      // console.log('successfully get all reviews')
+      setReviews(results.data.results);
+      props.setReviewLength(results.data.results.length);
     })
     .catch((err)=>{console.log(err)});
-  }, [sortoption]);
+  }, [sortoption, props.product_id]);
 
   const [filteredreview, setFilteredreview] = useState([]);
 

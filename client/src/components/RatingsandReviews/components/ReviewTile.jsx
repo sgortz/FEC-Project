@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
-import Star from '../../SharedComponents/Star.jsx';
+import Star from '../../SharedComponents/star.jsx';
 import ImageModal from '../../SharedComponents/ImageModal.jsx';
 import '../styling/ReviewTile.css';
 
