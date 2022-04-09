@@ -15,12 +15,16 @@ const ImageGallery = ({ photos }) => {
   const prevPhoto = () => {
     setCurrentPhoto(currentPhoto === 0 ? length - 1 : currentPhoto - 1)
   }
+  const handleMyself = (index)=> {
+    setCurrentPhoto(index)
+  }
 
   return (
     <section className="photos">
       <VerticalThumbnails
         photos={photos.photos}
         currentPhoto={currentPhoto}
+        handleMyself={handleMyself}
       />
       <HiOutlineArrowSmLeft
         className="left-arrow"

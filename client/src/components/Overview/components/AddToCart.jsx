@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BsStar, BsStarFill } from "react-icons/bs";
 import QuantityOptions from './QuantityOptions.jsx'
-import './AddToCart.css';
 
 const AddToCart = ({ data }) => {
   /* Which size user selected */
@@ -47,7 +46,7 @@ const AddToCart = ({ data }) => {
     setAddToBag(text);
     setTimeout(()=>{
       setAddToBag('ADD TO BAG')
-    }, [2000])
+    }, [1000])
   }
 
   const toggleStar = (e) => {
@@ -62,7 +61,7 @@ const AddToCart = ({ data }) => {
   return (
     <div>
       <form>
-        <select id="select-size" name="size" className="starred" onChange={setSize} >
+        <select id="select-size" name="size" onChange={setSize} >
           <option value="Select-Size">SELECT SIZE</option>
           {productSizes.map((size, index) => {
             return (<option value={size} key={index}>{size}</option>)
@@ -70,22 +69,18 @@ const AddToCart = ({ data }) => {
         </select>
         <select
           id="quantity"
-          className="starred"
           name="quantity"
           disabled={sizeSelection === null ? true : false}
           onChange={setQuantity} >
-
           <QuantityOptions quantityOption={quantityOption} />
         </select>
         <button
           id="add-to-bag"
-          className="starred"
           disabled={purchaseDisabled}
           value="ADD TO CART"
           onClick={(e) => {
             e.preventDefault();
-            changeText('ITEM ADDED');
-            console.log('Added to bag!')
+            changeText('ITEM ADDED !');
           }}
         >{addToBag}</button>
 

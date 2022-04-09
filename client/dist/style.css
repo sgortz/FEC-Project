@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Quicksand:wght@300;500;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+
 body {
-    background-color: rgb(254, 241, 230,0.5);
+  background-color: rgba(254, 241, 230, 0.3);
   /* background-color: #F8F3F0; */
   margin: 0;
 }
 
-
+hr {
+  max-width: 90%;
+}
 /* ---------------- App Component ---------------- */
 .app {
-  display : flex;
+  display: flex;
   flex-direction: column;
 }
-
-
 
 /* ---------------- NavBar Component ---------------- */
 .Navbar {
@@ -21,22 +25,27 @@ body {
   /* background-color: #3DB2FF; */
   /* background-color: #FFB830; */
   /* background-color: rgba(255, 209, 36, 1); */
-  background-color: rgb(255, 176, 133);
+  background-color: #b7be11;
+  /* background-color: rgba(254, 241, 230, 0.5); */
 }
 
 .Logo {
-  color: #090706;
+  color: whitesmoke;
+  font-family: 'Dancing Script', cursive !important;
+  font-size: 45px !important;
+  font-weight: 600;
 }
 
 .top-search-bar {
-  border: 1px solid #FFB830;
+  /* border: 1px solid #FFB830; */
 }
 
 /* ------------------- Announcements Component ------------------- */
 .announcements {
   /* background-color: #f8e1c7; */
   /* background-color: #21A9BF; */
-  background-color: rgb(249, 213, 167);
+  background-color: #F6F6F6;
+  /* padding: 15px; */
 }
 
 /* -------------------- StarReview Component -------------------- */
@@ -44,6 +53,7 @@ body {
 .link-to-review {
   color: black;
 }
+
 .link-to-review:hover {
   color: #40804f;
 }
@@ -51,17 +61,17 @@ body {
 /* ---------------- VerticalThumbnails Component ---------------- */
 .current-thumbnail {
   /* border: 3px solid #40804f; */
-  border: 3px solid #FFB830;
-  border-radius:10px;
+  border: 3px solid #328648;
+  border-radius: 10px;
 }
 
-/* --------------------- AddToCart Component -------------------- */
-/* #select-size, #quantity, #add-to-bag, .starred {
-  border: 5px solid #feedec;
-
-} */
+.thumbnail:hover {
+  cursor: pointer;
+  /* border: 1px solid black; */
+}
 
 /* ---------------- ProductDescription Component ---------------- */
 .social-media {
   color: black;
 }
+

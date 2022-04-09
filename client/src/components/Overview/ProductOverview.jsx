@@ -45,7 +45,6 @@ class ProductOverview extends React.Component {
       return (
         <IconContext.Provider value={{ size: '6rem', className: 'loading' }}>
           <div>
-            {/* <NavBar /> */}
             <RiLoader2Line />
             <h1 className="page-loading"> page loading... </h1>
           </div>
@@ -54,11 +53,11 @@ class ProductOverview extends React.Component {
     } else {
       return (
         <div style={{'marginTop': '78px'}}>
-          {/* <NavBar /> */}
           <Announcements />
+          <hr />
           <div className="wrapper">
             <div className="style-selector">
-              <StylesGallery styles={this.state.product_data[1].results} />
+              <StylesGallery styles={this.state.product_data[1].results} category={this.state.product_data[0].category} />
             </div>
             <div className="product-detail">
               <ProductDetail data={this.state.product_data} />
