@@ -6,7 +6,7 @@
   align-items:center;
   /* background-color: #752819; */
   display: grid;
-  grid-template-columns: 3fr 0.8fr 0.75fr 0.75fr;
+  grid-template-columns: 5fr 0.8fr 0.85fr 0.75fr;
   justify-content: space-between;
   padding: 6px;
   position: fixed;
@@ -50,7 +50,7 @@
 
 #RiShoppinBag {
   grid-column: 4/5;
-  justify-self: flex-end;
+  justify-self: center;
 }
 
 #nav-link-to-review,  #nav-link-to-questions{
@@ -68,7 +68,7 @@
 }
 
 .themetogglebtn {
-  width: 60%;
+  width: 80%;
   background-color: var(--background);
   border: 0 solid #e2e8f0;
   border-radius: 1.5rem;
