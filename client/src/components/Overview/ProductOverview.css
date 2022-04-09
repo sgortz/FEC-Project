@@ -29,11 +29,13 @@
 
 .wrapper {
   display: grid;
-  gap: 10px;
+  column-gap: 30px;
   grid-template-columns: 20px 1fr 1fr 1fr;
-  grid-template-rows: 20px 0fr 0fr 1fr;
+  grid-template-rows: 20px 1fr 1fr 1fr;
   min-height: 0;
   min-width: 0;
+  margin-right: 8%;
+  margin-left: 8%;
 }
 
 /* First version of the grid
@@ -44,21 +46,28 @@
   grid-template-columns: 1fr 680px 319px 1fr;*/
 
 .style-selector {
-  grid-column: 3;
+  grid-column: 3/span2;
   grid-row: 3;
   margin: 20px;
 }
 
 .product-detail {
-  grid-column: 3;
+  grid-column: 3/span2;
   grid-row: 2;
   margin: 20px;
 }
 
 .add-to-cart {
-  grid-column: 3;
+  grid-column: 3/span1;
   grid-row: 4;
   margin: 20px;
+  width: 65%
+}
+
+.add-to-cart-form {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
 }
 
 .images-everywhere {
@@ -153,6 +162,8 @@
 
 /* --------------------- AddToCart Component -------------------- */
 #select-size {
+  grid-column: 1/2;
+  grid-row: 1/2;
   background-color: #328648;
   /* border: 2px solid #111; */
   border-radius: 8px;
@@ -170,6 +181,8 @@
 }
 
 #quantity {
+  grid-column: 2/3;
+  grid-row: 1/2;
   background-color: #328648;
   /* border: 2px solid #111; */
   border-radius: 8px;
@@ -187,6 +200,8 @@
 }
 
 #add-to-bag {
+  grid-column: 1/2;
+  grid-row: 2/3;
   background-color: #328648;
   /* border: 2px solid #111; */
   border-radius: 8px;
@@ -237,6 +252,8 @@
 }
 
 .starred {
+  grid-column: 2/3;
+  grid-row: 2/3;
   background-color: #328648;
   /* border: 2px solid #111; */
   border-radius: 8px;
