@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ProductOverview from './Overview/ProductOverview.jsx';
 import RelatedProducts from './RelatedProducts/RelatedProducts.jsx';
 import QuestionAndAnswers from './QuestionsAndAnswers/QuestionAndAnswers.jsx';
@@ -6,6 +6,7 @@ import RatingsAndReviews from './RatingsAndReviews/RatingsReviews.jsx';
 import NavBar from './Overview/components/NavBar.jsx';
 import { useInView } from 'react-intersection-observer';
 import useLocalStorage from "use-local-storage";
+
 
 
 

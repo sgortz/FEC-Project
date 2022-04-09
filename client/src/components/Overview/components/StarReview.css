@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,300;0,400;1,100;1,300&family=Libre+Baskerville:ital@0;1&display=swap');
 
 .star-rating {
-  /* margin-top: 20px; */
-  margin-left: 6px;
-  font-size: 12px;
+  align-items: end;
+  display: flex;
+  justify-content: space-around;
+margin: 6px;
+  max-width: 209px;
+}
+
+.star-rating span {
+  font-size: 14px;
 }
 
 .link-to-review {
+  display: inline;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-weight: 300;
-  font-size: 15px;
-text-decoration: underline;
+  font-size: 18px;
+  text-decoration: underline;
 }
 
 .link-to-review:hover {

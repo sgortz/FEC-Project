@@ -1,12 +1,7 @@
 import React from 'react';
 import './ProductDescription.css';
-// import {
-//   FacebookShareButton,
-//   InstapaperShareButton,
-//   TwitterShareButton,
-// } from "react-share";
-
 import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
+import { FiCheck } from "react-icons/fi";
 
 const ProductDescription = ({ features }) => {
   if (features === undefined) {
@@ -17,18 +12,24 @@ const ProductDescription = ({ features }) => {
         <p className="product-slogan">{features.slogan}</p>
         <p className="product-description">{features.description}</p>
         <hr className="divider" />
-        {features.features.map((feature, index) => {
-          return (
-            <p className="clothes-features" key={index} >
-              {feature.feature}: {feature.value}
-            </p>
-          )
-        })}
-        <span className="social-media">
-          <a href="#"><BsInstagram /></a>
-          <a href="#"><BsFacebook /></a>
-          <a href="#"><BsTwitter /></a>
-        </span>
+        <ul className="clothes-features">
+
+          {features.features.map((feature, index) => {
+            return (
+              <li key={index} >
+                <FiCheck />   {feature.feature}: {feature.value}
+              </li>
+            )
+          })}
+          <li>
+
+            <span className="social-media">
+              <a href="#"><BsInstagram /></a>
+              <a href="#"><BsFacebook /></a>
+              <a href="#"><BsTwitter /></a>
+            </span>
+          </li>
+        </ul>
       </div>
     )
   }

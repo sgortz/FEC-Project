@@ -15,12 +15,16 @@ const ImageGallery = ({ photos }) => {
   const prevPhoto = () => {
     setCurrentPhoto(currentPhoto === 0 ? length - 1 : currentPhoto - 1)
   }
+  const handleMyself = (index)=> {
+    setCurrentPhoto(index)
+  }
 
   return (
     <section className="photos">
       <VerticalThumbnails
         photos={photos.photos}
         currentPhoto={currentPhoto}
+        handleMyself={handleMyself}
       />
       <HiOutlineArrowSmLeft
         className="left-arrow"
@@ -35,7 +39,7 @@ const ImageGallery = ({ photos }) => {
             key={index}
           >
             {index === currentPhoto && (
-              <img src={photo.url} key={index} className="image" />
+              <img src={photo.url} key={index} className="portrait-image" />
             )}
           </div>
         )

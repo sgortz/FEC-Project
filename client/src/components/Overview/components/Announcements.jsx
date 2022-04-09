@@ -1,5 +1,4 @@
 import React from 'react';
-import './Announcements.css'
 
 const Announcements = () => (
   <small className="announcements">
