@@ -5,7 +5,14 @@ import { Link } from 'react-scroll';
 import Star from '../../SharedComponents/star.jsx'
 import "./NavBar.css";
 
-const NavBar = (props) => (
+const NavBar = (props) => {
+
+  const switchTheme = () => {
+    const newTheme = props.theme === 'light' ? 'dark' : 'light';
+    props.setTheme(newTheme);
+  }
+
+  return (
   <div className="Navbar">
     {props.inView?
       <div className="Logo">Z. Narrows</div>
@@ -29,8 +36,10 @@ const NavBar = (props) => (
         {/* <FiSearch /> */}
       </input>
     </form>
+    <button id='themetogglebtn' onClick={switchTheme}>Switch to {props.theme === 'light' ? 'Dark' : 'Light'} Theme</button>
     <RiShoppingBagLine id='RiShoppingBag' size="25px" />
   </div>
-)
+  )
+  }
 
 export default NavBar;
