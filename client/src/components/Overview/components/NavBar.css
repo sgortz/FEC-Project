@@ -51,3 +51,9 @@
 #RiShoppinBag {
   grid-column: 3/4;
 }
+
+#nav-link-to-review,  #nav-link-to-questions{
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+}

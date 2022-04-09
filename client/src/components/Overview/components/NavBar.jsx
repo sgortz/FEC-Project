@@ -11,13 +11,18 @@ const NavBar = (props) => (
       <div className="Logo">Z. Narrows</div>
     :
       <div className="DynamicProductLogo">{props.productName}
-      <span className='DynamicProductSecondRow'><Star value={props.avgReviewRating}/>
-      <Link activeClass="active" to='RatingsandReviews' spy={true} smooth={true}>
-      <u className="link-to-review">111</u>
-    </Link>
+      <span className='DynamicProductSecondRow'>
+      <Link activeClass="active" to='RatingsandReviews' spy={true} smooth={true}><Star value={props.avgReviewRating}/>
+      </Link>
+
+      <Link activeClass="active" to='RatingsandReviews' spy={true} smooth={true}>    <u id="nav-link-to-review">{props.reviewLength} Reviews</u>
+      </Link>
+    |
+      <Link activeClass="active" to='QAtitle' spy={true} smooth={true}>
+        <u id="nav-link-to-questions">{props.questionLength} Questions</u>
+      </Link>
       </span>
       </div>
-
     }
     <form>
       <input className="top-search-bar" type="text" disabled={true}>
