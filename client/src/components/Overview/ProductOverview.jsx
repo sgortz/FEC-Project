@@ -14,6 +14,7 @@ import ImageGallery from './components/ImageGallery.jsx';
 import StarReview from './components/StarReview.jsx';
 import ProductDetail from './components/ProductDetail.jsx';
 import StylesGallery from './components/StylesGallery.jsx';
+import StyleSelector from './components/StyleSelector.jsx';
 import AddToCart from './components/AddToCart.jsx';
 import ProductDescription from './components/ProductDescription.jsx';
 
@@ -21,7 +22,8 @@ class ProductOverview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      product_data: []
+      product_data: [],
+      currentIndex: 0,
     }
     this.fetchProductData = this.fetchProductData.bind(this);
   }
@@ -43,7 +45,6 @@ class ProductOverview extends React.Component {
       return (
         <IconContext.Provider value={{ size: '6rem', className: 'loading' }}>
           <div>
-            {/* <NavBar /> */}
             <RiLoader2Line />
             <h1 className="page-loading"> page loading... </h1>
           </div>
@@ -52,17 +53,21 @@ class ProductOverview extends React.Component {
     } else {
       return (
         <div style={{'marginTop': '78px'}}>
-          {/* <NavBar /> */}
           <Announcements />
+          <hr />
           <div className="wrapper">
             <div className="style-selector">
-              <StylesGallery styles={this.state.product_data[1].results} />
+              <StylesGallery styles={this.state.product_data[1].results} category={this.state.product_data[0].category} />
             </div>
             <div className="product-detail">
               <ProductDetail data={this.state.product_data} />
             </div>
             <div className="add-to-cart">
               <AddToCart data={this.state.product_data[1]} />
+            </div>
+            <div className="images-everywhere">
+              {/* <StyleSelector /> */}
+              <ImageGallery photos={this.state.product_data[1].results[0]} />
             </div>
           </div>
           <ProductDescription features={this.state.product_data[0]} />

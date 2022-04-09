@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ImageGallery from './ImageGallery.jsx';
 import StyleSelector from './StyleSelector.jsx';
 
-export default function StylesGallery({ styles }) {
+export default function StylesGallery({ styles, category }) {
   const [currentStyleIndex, setCurrentStyleIndex] = useState(0);
 
   const handleClick = (e) => {
@@ -15,11 +15,15 @@ export default function StylesGallery({ styles }) {
   } else {
     return (
       <div className="style-gallery">
-        <ImageGallery photos={styles[currentStyleIndex]} />
-        <div className="clothing-style">
-              STYLE > {styles[currentStyleIndex].name}
+        <div className="images-everywhere">
+          {/* <ImageGallery photos={styles[currentStyleIndex]} /> */}
+
         </div>
-        <div className="">
+        <div className="clothing-style">
+          <span className="product-category">{category}: </span>
+           {styles[currentStyleIndex].name}
+        </div>
+        <div className="styles-options">
 
           {styles.map((style, index) => {
             return (

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsStar, BsStarFill } from "react-icons/bs";
 import QuantityOptions from './QuantityOptions.jsx'
-import './AddToCart.css';
 
 const AddToCart = ({ data }) => {
   /* Which size user selected */
@@ -12,6 +11,7 @@ const AddToCart = ({ data }) => {
   const [quantityOption, setQuantityOption] = useState(null);
   const [purchaseDisabled, setPurchaseDisabled] = useState(true);
   const [star, setStar] = useState(0);
+  const [addToBag, setAddToBag] = useState('ADD TO BAG')
 
   /* Managing duplicated data from API */
   let skusData = Object.values(data.results[0].skus);
@@ -27,6 +27,12 @@ const AddToCart = ({ data }) => {
     }
   })
 
+  useEffect(() => {
+    if(addToBag !== 'ADD TO BAG'){
+      setTimeout(() => setButtonText('ADD TO BAG'), [2000])
+    }
+  }, [addToBag])
+
   const setSize = (e) => {
     setSizeSelection(e.target.value);
     setQuantityOption(storageData[e.target.value] <= 15 ? storageData[e.target.value] : 15)
@@ -34,6 +40,13 @@ const AddToCart = ({ data }) => {
   const setQuantity = (e) => {
     setQuantitySelection(e.target.value);
     setPurchaseDisabled(false);
+  }
+
+  const changeText = (text) => {
+    setAddToBag(text);
+    setTimeout(()=>{
+      setAddToBag('ADD TO BAG')
+    }, [1000])
   }
 
   const toggleStar = (e) => {
@@ -59,14 +72,17 @@ const AddToCart = ({ data }) => {
           name="quantity"
           disabled={sizeSelection === null ? true : false}
           onChange={setQuantity} >
-
           <QuantityOptions quantityOption={quantityOption} />
         </select>
         <button
           id="add-to-bag"
           disabled={purchaseDisabled}
-          onClick={(e) => { e.preventDefault(); console.log('Added to bag!') }}
-        > ADD TO BAG</button>
+          value="ADD TO CART"
+          onClick={(e) => {
+            e.preventDefault();
+            changeText('ITEM ADDED !');
+          }}
+        >{addToBag}</button>
 
         <button className={star === 0 ? "starred" : "starred hidden"} onClick={toggleStar}> <BsStar /> </button>
         <button className={star === 1 ? "starred" : "starred hidden"} onClick={toggleStar}> <BsStarFill /> </button>
