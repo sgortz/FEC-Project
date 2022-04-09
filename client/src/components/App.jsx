@@ -24,7 +24,6 @@ const App = (props) => {
         <ProductOverview product_id={product_id}/>
       </div>
       <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName}/>
-      <QuestionAndAnswers product_id={product_id} />
       <QuestionAndAnswers product_id={product_id} setQuestionLength={setQuestionLength} />
       <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} />
     </div>

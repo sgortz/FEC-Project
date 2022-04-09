@@ -35,7 +35,7 @@ function RatingsAndReviews (props) {
       // console.log('successfully get all reviews')
     })
     .catch((err)=>{console.log(err)});
-  }, [sortoption]);
+  }, [sortoption, props.product_id]);
 
   const [filteredreview, setFilteredreview] = useState([]);
 
