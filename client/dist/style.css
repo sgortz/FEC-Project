@@ -32,6 +32,7 @@ hr {
   flex-direction: column;
   color: var(--text-primary);
   background-color: var(--background);
+  /* font-family: 'Poppins' */
 }
 
 /* ---------------- NavBar Component ---------------- */
@@ -40,8 +41,9 @@ hr {
   /* background-color: #3DB2FF; */
   /* background-color: #FFB830; */
   /* background-color: rgba(255, 209, 36, 1); */
+  /* background-color: rgb(255, 176, 133); */
   background-color: var(--nav-bar-color);
-  /* background-color: rgba(254, 241, 230, 0.5); */
+
 }
 
 .Logo {
@@ -90,3 +92,5 @@ color:black;
 .social-media {
   color: black;
 }
+
+

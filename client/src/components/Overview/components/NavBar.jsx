@@ -36,10 +36,12 @@ const NavBar = (props) => {
         {/* <FiSearch /> */}
       </input>
     </form>
-    <button id='themetogglebtn' onClick={switchTheme}>Switch to {props.theme === 'light' ? 'Dark' : 'Light'} Theme</button>
+    <button className="themetogglebtn" onClick={switchTheme}>Switch to {props.theme === 'light' ? 'Dark' : 'Light'}</button>
     <RiShoppingBagLine id='RiShoppingBag' size="25px" />
   </div>
   )
   }
 
 export default NavBar;
+
+

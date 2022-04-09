@@ -6,7 +6,7 @@
   align-items:center;
   /* background-color: #752819; */
   display: grid;
-  grid-template-columns: 3fr 1fr 0.5fr 0.5fr;
+  grid-template-columns: 5fr 0.8fr 0.85fr 0.75fr;
   justify-content: space-between;
   padding: 6px;
   position: fixed;
@@ -50,6 +50,7 @@
 
 #RiShoppinBag {
   grid-column: 4/5;
+  justify-self: center;
 }
 
 #nav-link-to-review,  #nav-link-to-questions{
@@ -58,6 +59,34 @@
   padding-right: 10px;
 }
 
-#themetogglebtn {
+#nav-link-to-review:hover,  #nav-link-to-questions:hover {
+  color: grey;
+}
+
+.themetogglebtn {
   grid-column: 3/4;
+}
+
+.themetogglebtn {
+  width: 80%;
+  background-color: var(--background);
+  border: 0 solid #e2e8f0;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  color: var(--text-primary);
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 1rem 1.6rem;
+  text-align: center;
+  text-decoration: none var(--text-primary) solid;
+}
+
+.themetogglebtn:hover {
+  background-color: var(--text-primary);
+  color: var(--background);
+  transition: 0.2s;
+  cursor: pointer;
+
 }
