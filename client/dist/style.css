@@ -8,13 +8,16 @@
   --background: white;
   --text-primary: black;
   --nav-bar-color: #b7be11;
+  --button-color: #328648;
+  --announcement-color:#F6F6F6;
 }
 
 [data-theme='dark'] {
   --background: #2a2c29;
   --text-primary: white;
   --nav-bar-color: #75790a;
-
+  --button-color: #BEB711;
+  --announcement-color: #ecedd0;
 }
 
 body {
@@ -61,8 +64,8 @@ hr {
 .announcements {
   /* background-color: #f8e1c7; */
   /* background-color: #21A9BF; */
-  background-color: #F6F6F6;
-color:black;
+  background-color: var(--announcement-color);
+  color:black;
   /* padding: 15px; */
 }
 
