@@ -3,7 +3,8 @@ var models = require('../models');
 module.exports = {
 
   getRelatedProducts: function (req, res) {
-    models.questions.getRelatedProducts(req.query, (err, data) => {
+
+    models.relatedProducts.getRelatedProducts(req.query, (err, data) => {
       if (err) {
         console.log('controller error from getQuestions:');
         res.status(400).send(err);

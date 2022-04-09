@@ -4,7 +4,7 @@ import StarRating from './StarRating.jsx'
 import ImageModal from '../../SharedComponents/ImageModal.jsx';
 import '../styling/ReviewModal.css';
 
-function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}) {
+function ReviewModal ({product_id, productName, productChars, setReviewmodalshow, setReviews}) {
 
   const [rating, setRating] = useState(null);
   const [ratingDescription, setRatingDescription] = useState('');
@@ -176,7 +176,7 @@ function ReviewModal ({product_id, productChars, setReviewmodalshow, setReviews}
       <div className='review-modal-content'>
         <div className='review-modal-header'>
           <h2 className='review-modal-title-1'>Write Your Review</h2>
-          <h4 className='review-modal-title-2'>About the [Product Name] </h4>
+          <h4 className='review-modal-title-2'>About the {productName} </h4>
         </div>
         <div className='review-modal-body'>
           <div className='reviewoverallrating'>

@@ -54,19 +54,23 @@ function RatingsAndReviews (props) {
       <ReviewList reviews={reviews} setReviews={setReviews} reviewsrenderedcount={reviewsrenderedcount} selectedstars={selectedstars} filteredreview={filteredreview}/>
 
       <div className='ReviewButtons'>
+      <AddReview setReviewmodalshow={setReviewmodalshow}/>
+
         {reviewsrenderedcount < reviews.length && filteredreview.length === 0?
         <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
         :
         reviewsrenderedcount < filteredreview.length && filteredreview.length !== 0?
-        <MoreReviews reviewsrenderedcount={reviewsrenderedcount} setReviewsrenderedcount={setReviewsrenderedcount}/>
+        <MoreReviews
+        reviews={reviews}
+        setReviewsrenderedcount={setReviewsrenderedcount}/>
         : null}
 
-        <AddReview setReviewmodalshow={setReviewmodalshow}/>
 
         { reviewmodalshow
           ?
           <ReviewModal
           product_id={props.product_id}
+          productName={props.productName}
           productChars={productChars}
           setReviewmodalshow={setReviewmodalshow}
           setReviews={setReviews}/>

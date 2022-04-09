@@ -45,7 +45,7 @@ class ProductOverview extends React.Component {
       return (
         <IconContext.Provider value={{ size: '6rem', className: 'loading' }}>
           <div>
-            <NavBar />
+            {/* <NavBar /> */}
             <RiLoader2Line />
             <h1 className="page-loading"> page loading... </h1>
           </div>
@@ -53,8 +53,8 @@ class ProductOverview extends React.Component {
       )
     } else {
       return (
-        <>
-          <NavBar />
+        <div style={{'marginTop': '78px'}}>
+          {/* <NavBar /> */}
           <Announcements />
           <div className="wrapper">
             <div className="style-selector">
@@ -72,7 +72,7 @@ class ProductOverview extends React.Component {
             </div>
           </div>
           <ProductDescription features={this.state.product_data[0]} />
-        </>
+        </div>
       )
     }
   }

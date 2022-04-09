@@ -29,6 +29,10 @@ u {
   cursor: pointer;
 }
 
-u :hover {
-  background-color: grey;
+.reviewhelpfulreport :hover {
+ color: grey;
+}
+
+.reviewbody :hover {
+  color: grey
 }

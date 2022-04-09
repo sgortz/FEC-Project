@@ -6,6 +6,15 @@ body {
   margin: 0;
 }
 
+
+/* ---------------- App Component ---------------- */
+.app {
+  display : flex;
+  flex-direction: column;
+}
+
+
+
 /* ---------------- NavBar Component ---------------- */
 .Navbar {
   /* background-color: #752819; */

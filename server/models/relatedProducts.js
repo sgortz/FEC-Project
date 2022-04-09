@@ -3,13 +3,13 @@ const { API_KEY, FEC_API_URL } = require('../../client/src/config/config');
 
 module.exports = {
 
-  getRelatedProducts: function (req, callback) {
+  getRelatedProducts: function (query, callback) {
 
-    let product_id = req.body.product_id;
+    let product_id = query.product_id;
 
     options = {
       method: 'get',
-      url: `${FEC_API_URL}qa/questions/${question_id}/helpful`,
+      url: `${FEC_API_URL}products/${product_id}/related`,
       headers: {
         'User-Agent': 'request',
         'Authorization': API_KEY
@@ -22,7 +22,7 @@ module.exports = {
         callback(null, res.data);
       })
       .catch((err) => {
-        console.log('Error in models putQuestionHelpful:', err);
+        console.log('Error in models getRelatedProducts:', err);
       });
 
   },
