@@ -3,6 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+/* ---------------- Switch Theme ---------------- */
+:root {
+  --background: white;
+  --text-primary: black;
+  --nav-bar-color: #b7be11;
+}
+
+[data-theme='dark'] {
+  --background: #2a2c29;
+  --text-primary: white;
+  --nav-bar-color: #75790a;
+
+}
 
 body {
   background-color: rgba(254, 241, 230, 0.3);
@@ -17,6 +30,8 @@ hr {
 .app {
   display: flex;
   flex-direction: column;
+  color: var(--text-primary);
+  background-color: var(--background);
 }
 
 /* ---------------- NavBar Component ---------------- */
@@ -25,7 +40,7 @@ hr {
   /* background-color: #3DB2FF; */
   /* background-color: #FFB830; */
   /* background-color: rgba(255, 209, 36, 1); */
-  background-color: #b7be11;
+  background-color: var(--nav-bar-color);
   /* background-color: rgba(254, 241, 230, 0.5); */
 }
 
@@ -45,13 +60,14 @@ hr {
   /* background-color: #f8e1c7; */
   /* background-color: #21A9BF; */
   background-color: #F6F6F6;
+color:black;
   /* padding: 15px; */
 }
 
 /* -------------------- StarReview Component -------------------- */
 
 .link-to-review {
-  color: black;
+  /* color: black; */
 }
 
 .link-to-review:hover {
@@ -74,4 +90,3 @@ hr {
 .social-media {
   color: black;
 }
-

@@ -191,6 +191,7 @@
   /* border: 2px solid #111; */
   border-radius: 8px;
   box-sizing: border-box;
+  box-shadow: 6px 8px 0 black;
   /* cursor: pointer; */
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
