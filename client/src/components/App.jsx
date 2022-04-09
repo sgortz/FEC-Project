@@ -10,6 +10,7 @@ const App = (props) => {
   const [product_id, setProduct_id] = useState(37311);
   const [productName, setProductName] = useState('Camo Onesie');
   const [avgReviewRating, setAvgReviewRating] = useState(null);
+  const [questionLength, setQuestionLength] = useState(null);
 
 
   return (
@@ -18,7 +19,7 @@ const App = (props) => {
       <NavBar/>
       <ProductOverview product_id={product_id} />
       <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating}/>
-      <QuestionAndAnswers product_id={product_id} />
+      <QuestionAndAnswers product_id={product_id} setQuestionLength={setQuestionLength} />
       <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} />
     </div>
 
