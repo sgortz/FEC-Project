@@ -1,7 +1,8 @@
 import React from 'react';
 import { FiSearch } from "react-icons/fi";
 import { RiShoppingBagLine } from "react-icons/ri";
-
+import { Link } from 'react-scroll';
+import Star from '../../SharedComponents/star.jsx'
 import "./NavBar.css";
 
 const NavBar = (props) => (
@@ -9,7 +10,13 @@ const NavBar = (props) => (
     {props.inView?
       <div className="Logo">Z. Narrows</div>
     :
-      <div className="Logo">{props.productName}</div>
+      <div className="DynamicProductLogo">{props.productName}
+      <span className='DynamicProductSecondRow'><Star value={props.avgReviewRating}/>
+      <Link activeClass="active" to='RatingsandReviews' spy={true} smooth={true}>
+      <u className="link-to-review">111</u>
+    </Link>
+      </span>
+      </div>
 
     }
     <form>

@@ -24,6 +24,23 @@
   /* font-style: italic; */
 }
 
+.DynamicProductLogo {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Belleza', sans-serif;
+  font-size: 20px;
+  margin: 10px;
+  grid-column:1/2
+  /* font-family: 'Libre Baskerville', serif; */
+  /* font-style: italic; */
+}
+
+.DynamicProductSecondRow {
+  display: flex;
+  flex-direction: row;
+}
+
+
 .top-search-bar {
   border-radius: 20px;
   margin-right: 15px;

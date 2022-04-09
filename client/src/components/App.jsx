@@ -18,7 +18,7 @@ const App = (props) => {
   return (
 
     <div className="app">
-      <NavBar productName={productName} inView={inView}/>
+      <NavBar productName={productName} avgReviewRating={avgReviewRating} inView={inView}/>
       <div ref={ref}>
         <ProductOverview product_id={product_id}/>
       </div>

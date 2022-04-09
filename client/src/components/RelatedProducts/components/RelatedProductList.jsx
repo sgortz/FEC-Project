@@ -13,7 +13,7 @@ const RelatedProductList = ({setProductId, relatedProductData, reviewData, isLoa
           (<div className='RelatedProductList'>
 
               {relatedProductData.map((product) => {
-                console.log("worked!", relatedProductData)
+                
                 return <RelatedProductCard />
               })}
 
