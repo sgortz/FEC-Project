@@ -37,27 +37,30 @@ const App = (props) => {
   return (
 
     <div className="app" data-theme={theme} onClick={appLevelClickHandler}>
-      <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} sidebarDisplay={sidebarDisplay} setSidebarDisplay={setSidebarDisplay}/>
-      <Announcements />
-      <div ref={ref}>
-        <ProductOverview product_id={product_id} />
+
+      <div id="asidesidebar">
+        <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} sidebarDisplay={sidebarDisplay} setSidebarDisplay={setSidebarDisplay}/>
+        <Announcements />
+        <div ref={ref}>
+          <ProductOverview product_id={product_id} />
+        </div>
+        <hr id="RPDivider"/>
+        <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName} />
+        <hr id="QADivider"/>
+        <QuestionAndAnswers product_id={product_id} setQuestionLength={setQuestionLength} />
+        <hr id="RRDivider"/>
+        <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} setReviewLength={setReviewLength} />
+        {inView? null :
+        <button className="scroll-top">
+          <Link activeClass="active" to="app" spy={true} smooth={true}>
+            <BsArrowBarUp id="ArrowBarUp"/>
+          </Link>
+        </button>
+        }
+
       </div>
-      <hr id="RPDivider"/>
-      <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName} />
-      <hr id="QADivider"/>
-      <QuestionAndAnswers product_id={product_id} setQuestionLength={setQuestionLength} />
-      <hr id="RRDivider"/>
-      <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} setReviewLength={setReviewLength} />
-      {inView? null :
-      <button className="scroll-top">
-        <Link activeClass="active" to="app" spy={true} smooth={true}>
-          <BsArrowBarUp id="ArrowBarUp"/>
-        </Link>
-      </button>
-      }
-      {sidebarDisplay?
+
       <Sidebar/>
-      : null}
 
     </div>
 

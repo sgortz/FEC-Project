@@ -16,8 +16,12 @@ const NavBar = (props) => {
     e.preventDefault();
     if (props.sidebarDisplay) {
       props.setSidebarDisplay(false);
+      document.getElementById("Sidebar").style.width = "125px";
+      document.getElementById("asidesidebar").style.marginRight = "125px";
     } else {
       props.setSidebarDisplay(true);
+      document.getElementById("Sidebar").style.width = "0";
+      document.getElementById("asidesidebar").style.marginRight = "0";
     }
   }
 
