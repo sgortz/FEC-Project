@@ -3,13 +3,10 @@ import { BsStar, BsStarFill } from "react-icons/bs";
 import QuantityOptions from './QuantityOptions.jsx'
 
 const AddToCart = ({ data, stylesIndex }) => {
-  /* Which size user selected */
   const [sizeSelection, setSizeSelection] = useState(null);
-  /* Quantity user selected */
   const [quantitySelection, setQuantitySelection] = useState(1);
-  /* Quantity available in sotrage */
   const [quantityOption, setQuantityOption] = useState(null);
-  const [purchaseDisabled, setPurchaseDisabled] = useState(true);
+  // const [purchaseDisabled, setPurchaseDisabled] = useState(true);
   const [star, setStar] = useState(0);
   const [addToBag, setAddToBag] = useState('ADD TO BAG')
 
@@ -27,11 +24,11 @@ const AddToCart = ({ data, stylesIndex }) => {
     }
   })
 
-  useEffect(() => {
-    if (addToBag !== 'ADD TO BAG') {
-      setTimeout(() => setButtonText('ADD TO BAG'), [1500])
-    }
-  }, [addToBag])
+  // useEffect(() => {
+  //   if (addToBag !== 'ADD TO BAG') {
+  //     setTimeout(() => setButtonText('ADD TO BAG'), [1500])
+  //   }
+  // }, [addToBag])
 
   const setSize = (e) => {
     setSizeSelection(e.target.value);
@@ -62,7 +59,7 @@ const AddToCart = ({ data, stylesIndex }) => {
     <div>
       <form className='add-to-cart-form'>
         <select id="select-size" name="size" onChange={setSize} >
-          <option value="Select-Size">SELECT SIZE</option>
+          <option value="Select Size">SELECT SIZE</option>
           {productSizes.map((size, index) => {
             return (<option value={size} key={index}>{size}</option>)
           })}
@@ -76,11 +73,11 @@ const AddToCart = ({ data, stylesIndex }) => {
         </select>
         <button
           id="add-to-bag"
-          disabled={purchaseDisabled}
+          disabled={sizeSelection === null ? true : false}
           value="ADD TO CART"
           onClick={(e) => {
             e.preventDefault();
-            changeText('ITEM ADDED !');
+            changeText('Item added !');
           }}
         >{addToBag}</button>
 
