@@ -16,8 +16,8 @@ const NavBar = (props) => {
     e.preventDefault();
     if (props.sidebarDisplay) {
       props.setSidebarDisplay(false);
-      document.getElementById("Sidebar").style.width = "125px";
-      document.getElementById("asidesidebar").style.marginRight = "125px";
+      document.getElementById("Sidebar").style.width = "145px";
+      document.getElementById("asidesidebar").style.marginRight = "145px";
     } else {
       props.setSidebarDisplay(true);
       document.getElementById("Sidebar").style.width = "0";
@@ -44,11 +44,11 @@ const NavBar = (props) => {
       </span>
       </div>
     }
-    <form>
+    {/* <form>
       <input className="top-search-bar" type="text" disabled={true}>
-        {/* <FiSearch /> */}
+        <FiSearch />
       </input>
-    </form>
+    </form> */}
     <button className="themetogglebtn" onClick={switchTheme}>Switch to {props.theme === 'light' ? 'Dark' : 'Light'}</button>
     <RiShoppingBagLine id="RiShoppingBag" size="25px" onClick={handleShoppingBagClick}/>
   </div>

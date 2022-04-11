@@ -32,7 +32,7 @@ body {
   margin: 0px;
 }
 
-/* ---------------- App Component ---------------- */
+/* ---------------- App Main Component ---------------- */
 #asidesidebar {
   display: flex;
   flex-direction: column;
@@ -58,7 +58,8 @@ body {
   right: 0;
   overflow-x: hidden;
   transition: 0.1s;
-  background-color: red;
+  background-color: var(--announcement-color);
+  border-left: solid 0.5px grey;
 }
 
 
@@ -85,7 +86,7 @@ body {
   font-weight: 300;
   font-size: 18px;
   text-align: center;
-  padding: 10px;
+  padding: 10px 0px;
   width: 100%;
 }
 
@@ -142,7 +143,7 @@ body {
 /* ------------------------- Widget Dividers ------------------------- */
 #RRDivider, #QADivider, #RPDivider{
   width: 30%;
-  margin: 4%;
+  margin: 4.5%;
   color: black;
 }
 

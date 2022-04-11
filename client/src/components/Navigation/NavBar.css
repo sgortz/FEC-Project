@@ -6,9 +6,9 @@
   align-items:center;
   /* background-color: #752819; */
   display: grid;
-  grid-template-columns: 5fr 0.8fr 0.85fr 0.75fr;
+  grid-template-columns: 4.5fr 0.8fr 0.85fr;
   justify-content: space-between;
-  padding: 6px;
+  padding: 6px 0px 6px 6px;
   position: sticky;
   width: 100%;
   top : 0;
@@ -42,15 +42,15 @@
 }
 
 
-.top-search-bar {
+/* .top-search-bar {
   border-radius: 20px;
   margin-right: 15px;
   padding: 10px;
   grid-column: 2/3
-}
+} */
 
 #RiShoppingBag {
-  grid-column: 4/5;
+  grid-column: 3/4;
   justify-self: center;
   cursor: pointer;
 }
@@ -70,7 +70,8 @@
 }
 
 .themetogglebtn {
-  grid-column: 3/4;
+  grid-column: 2/3;
+  justify-self: center;
 }
 
 .themetogglebtn {

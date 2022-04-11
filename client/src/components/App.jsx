@@ -30,7 +30,6 @@ const App = (props) => {
   const appLevelClickHandler = (e) => {
     e.preventDefault();
     console.log(e.target);
-
   }
 
 
@@ -57,7 +56,6 @@ const App = (props) => {
           </Link>
         </button>
         }
-
       </div>
 
       <Sidebar/>
