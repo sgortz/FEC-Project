@@ -19,13 +19,13 @@ const NavBar = (props) => {
     :
       <div className="DynamicProductLogo">{props.productName}
       <span className='DynamicProductSecondRow'>
-      <Link activeClass="active" to='RatingsandReviews' spy={true} smooth={true}><Star value={props.avgReviewRating}/>
+      <Link activeClass="active" to='RRDivider' spy={true} smooth={true}><Star value={props.avgReviewRating}/>
       </Link>
 
-      <Link activeClass="active" to='RatingsandReviews' spy={true} smooth={true}>    <u id="nav-link-to-review">{props.reviewLength} Reviews</u>
+      <Link activeClass="active" to='RRDivider' spy={true} smooth={true}>    <u id="nav-link-to-review">{props.reviewLength} Reviews</u>
       </Link>
     |
-      <Link activeClass="active" to='QAtitle' spy={true} smooth={true}>
+      <Link activeClass="active" to='QADivider' spy={true} smooth={true}>
         <u id="nav-link-to-questions">{props.questionLength} Questions</u>
       </Link>
       </span>

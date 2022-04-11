@@ -35,16 +35,19 @@ const App = (props) => {
       <div ref={ref}>
         <ProductOverview product_id={product_id} />
       </div>
-      {/* <div ref={ref}> */}
+      <hr id="RPDivider"/>
       <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName} />
-      {/* </div> */}
+      <hr id="QADivider"/>
       <QuestionAndAnswers product_id={product_id} setQuestionLength={setQuestionLength} />
+      <hr id="RRDivider"/>
       <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} setReviewLength={setReviewLength} />
+      {inView? null :
       <button className="scroll-top">
         <Link activeClass="active" to="app" spy={true} smooth={true}>
-          <p>TOP <BsArrowBarUp /> </p>
+          <BsArrowBarUp id="ArrowBarUp"/>
         </Link>
       </button>
+      }
 
     </div>
 
