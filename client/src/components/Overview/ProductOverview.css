@@ -30,8 +30,8 @@
 .wrapper {
   display: grid;
   column-gap: 30px;
-  grid-template-columns: 20px 1fr 1fr 1fr;
-  grid-template-rows: 20px 1fr 1fr 1fr;
+  grid-template-columns: 20px 1fr 1fr 50px;
+  grid-template-rows: 20px 0fr 1fr 1fr;
   min-height: 0;
   min-width: 0;
   margin-right: 8%;
@@ -72,7 +72,7 @@
 
 .style-gallery {
   display: grid;
-  grid-template-columns: repeat(4, 50px);
+  grid-template-columns: repeat(4, 70px);
   grid-template-rows: 1fr;
 }
 
@@ -85,9 +85,14 @@
   margin-top: 7px;
 }
 
+.clothing-style {
+  font-weight: 300;
+}
+
 .styles-options {
   grid-column: 1/5;
   grid-row: 2;
+  margin-top: 20px;
 }
 
 /* ----------------- StyleSelector Component ----------------- */
@@ -95,11 +100,11 @@
 .circular-photo {
   border-radius: 50%;
   display: inline-block;
-  height: 50px;
-  margin: 3px;
+  height: 60px;
+  margin: 5px;
   position: relative;
   overflow: hidden;
-  width: 50px;
+  width: 60px;
 }
 
 .circular--portrait {
@@ -119,122 +124,58 @@
 }
 
 /* --------------------- AddToCart Component -------------------- */
-#select-size {
-  grid-column: 1/2;
-  grid-row: 1/2;
-  background-color: #328648;
-  /* border: 2px solid #111; */
+#select-size,
+#quantity,
+#add-to-bag, .starred {
+  background-color: var(--button-color);
   border-radius: 8px;
-  box-sizing: border-box;
-  /* cursor: pointer; */
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  height: 48px;
-  line-height: 24px;
-  max-width: 100%;
-  padding: 0 10px;
-  position: relative;
-  text-align: center;
-}
-
-#quantity {
-  grid-column: 2/3;
-  grid-row: 1/2;
-  background-color: #328648;
-  /* border: 2px solid #111; */
-  border-radius: 8px;
-  box-sizing: border-box;
   color: white;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  height: 48px;
-  line-height: 24px;
-  margin: 7px;
-  max-width: 100%;
-  padding: 0 13px;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 5px;
+  padding: 10px;
   text-align: center;
+  /* background-color: var(--button-color);
+  border: 2.5px solid var(--button-color);
+  border-radius: 8px;
+  box-sizing: border-box;
+
+
+  font-weight: 600;
+  height: 52px;
+  margin: 20px;
+  max-width: 80%;
+  padding: 15px 20px;
+  position: relative;
+ */
+}
+
+#select-size:hover,
+#quantity:hover,
+#add-to-bag:hover, .starred:hover {
+  border: 2.5px solid #326a44;
+}
+
+#select-size {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+#quantity {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
 }
 
 #add-to-bag {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  background-color: #328648;
-  /* border: 2px solid #111; */
-  border-radius: 8px;
-  box-sizing: border-box;
-  box-shadow: 6px 8px 0 black;
-  /* cursor: pointer; */
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  height: 48px;
-  line-height: 24px;
-  max-width: 100%;
-  padding: 0 20px;
-  color: white;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-#add-to-bag:after,
-.starred:after {
-  background-color: #111;
-  border-radius: 8px;
-  content: "";
-  display: block;
-  height: 48px;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
-  z-index: -1;
-}
-
-#add-to-bag:hover:after,
-.starred:hover:after {
-  transform: translate(0, 0);
-}
-
-#add-to-bag:active,
-.starred:active {
-  background-color: #328648;
-  outline: 0;
-}
-
-#add-to-bag:hover,
-.starred:hover {
-  outline: 0;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }
 
 .starred {
   grid-column: 2/3;
   grid-row: 2/3;
-  background-color: #328648;
-  /* border: 2px solid #111; */
-  border-radius: 8px;
-  box-sizing: border-box;
-  color: white;
-  cursor: pointer;
-  font-family: 'Poppins', sans-serif;
-  font-size: 22px;
-  height: 48px;
-  line-height: 24px;
-  margin: 7px;
-  max-width: 100%;
-  padding: 0 20px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
 }
 
 .hidden {
@@ -250,18 +191,17 @@
 }
 
 .product-slogan {
-  /* font-family: 'Alegreya Sans SC', sans-serif; */
-  font-family: 'Belleza', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   grid-column: 2;
   grid-row: 1;
 }
 
 .product-description {
-  /* font-family: 'Libre Baskerville', serif; */
-  font-family: 'Belleza', sans-serif;
-  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 200;
   grid-column: 2;
   grid-row: 2;
   margin: 15px 25px 0 0;
@@ -276,21 +216,24 @@
 .clothes-features {
   grid-column: 4;
   grid-row: 1;
-
 }
 
 .clothes-features li {
-  font-family: 'Belleza', sans-serif;
-  font-size: 19px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 200;
   list-style: none;
   padding: 10px;
 }
 
 .social-media {
-  font-size: 20px;
+
+  font-size: 25px;
   margin-top: 10px;
+  text-align: center;
 }
 
 .social-media a {
   padding: 13px;
+  color: var(--social-media);
 }

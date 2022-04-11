@@ -15,6 +15,7 @@
   --announcement-color:#F6F6F6;
   --nav-bar-hover: #328648;
   --top-bar-hover: #b7be11;
+  --social-media: #328648;
 }
 
 
@@ -26,6 +27,7 @@
   --announcement-color: #ecedd0;
   --nav-bar-hover: #b7be11;
   --top-bar-hover: white;
+  --social-media: #b7be11;
 }
 
 body {

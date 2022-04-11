@@ -26,22 +26,21 @@ const App = (props) => {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
   const [sidebarDisplay, setSidebarDisplay] = useState(false);
+  const [cartData, setCartData] = useState([]);
 
-  const appLevelClickHandler = (e) => {
-    e.preventDefault();
-    console.log(e.target);
+
+  const handleCartData = (data) => {
+    setCartData([...cartData, data]);
   }
 
-
   return (
-
-    <div className="app" data-theme={theme} onClick={appLevelClickHandler}>
+    <div className="app" data-theme={theme}>
 
       <div id="asidesidebar">
         <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} sidebarDisplay={sidebarDisplay} setSidebarDisplay={setSidebarDisplay}/>
         <Announcements />
         <div ref={ref}>
-          <ProductOverview product_id={product_id} />
+          <ProductOverview product_id={product_id} handleCartData={handleCartData}/>
         </div>
         <hr id="RPDivider"/>
         <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName} />
