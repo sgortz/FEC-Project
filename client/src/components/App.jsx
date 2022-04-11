@@ -24,16 +24,20 @@ const App = (props) => {
   const [reviewLength, setReviewLength] = useState(null);
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+  const [cartData, setCartData] = useState([]);
 
+
+  const handleCartData = (data) => {
+    setCartData([...cartData, data]);
+  }
 
   return (
-
 
     <div className="app" data-theme={theme}>
       <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} />
       <Announcements />
       <div ref={ref}>
-        <ProductOverview product_id={product_id} />
+        <ProductOverview product_id={product_id} handleCartData={handleCartData} />
       </div>
       {/* <div ref={ref}> */}
       <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName} />

@@ -1,5 +1,4 @@
 import React from 'react';
-import './ProductDescription.css';
 import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 import { FiCheck } from "react-icons/fi";
 
