@@ -4,30 +4,29 @@ const StyleSelector = ({ index, style, handleClick }) => {
   const [photoOrientation, setPhotoOrientation] = useState('circular--portrait');
 
   const resizeImg = (img) => {
-
-    if (img.height < img.width) {
-      // console.log('this image is landscape', img, img.height, img.width);
-      // img.heigh = 64;
-      setPhotoOrientation('circular--landscape');
-    } else if (img.height > img.width) {
-      // console.log('this image is portrait', img, img.height, img.width);
-      setPhotoOrientation('circular--portrait');
-    } else if (img.height === img.width) {
+    if (img.height === img.width) {
       setPhotoOrientation('circular--square');
+    } else if (img.height > img.width) {
+      setPhotoOrientation('circular--portrait');
+    } else if (img.height < img.width) {
+      setPhotoOrientation('circular--landscape');
     }
   }
 
 
   return (
-    <span className={photoOrientation}>
+    <div className="circular-photo">
       <img
-        className="circular-photo"
+        className={photoOrientation}
         src={style.photos[0].thumbnail_url}
         value={index}
         onLoad={(e) => { resizeImg(e.target) }}
-        onClick={handleClick}
+        onClick={(e) => {
+          e.preventDefault();
+          handleClick(e.target.attributes[2].value);
+        }}
       />
-    </span>
+    </div>
   )
 }
 

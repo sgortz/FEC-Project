@@ -4,11 +4,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
 /* ---------------- Switch Theme ---------------- */
 :root {
   --background: white;
   --text-primary: black;
   --nav-bar-color: #b7be11;
+  --button-color: #328648;
+  --announcement-color:#F6F6F6;
+  --nav-bar-hover: #328648;
 }
 
 
@@ -16,34 +21,33 @@
   --background: #2a2c29;
   --text-primary: white;
   --nav-bar-color: #75790a;
-
+  --button-color: #BEB711;
+  --announcement-color: #ecedd0;
+  --nav-bar-hover: #b7be11;
 }
 
 body {
-  background-color: rgba(254, 241, 230, 0.3);
-  /* background-color: #F8F3F0; */
-   margin: 0;
+  margin: 0px;
 }
 
 /* ---------------- App Component ---------------- */
 .app {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   color: var(--text-primary);
   background-color: var(--background);
-  /* font-family: 'Poppins' */
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  transition: all 0.3s linear;
 }
 
 /* ---------------- NavBar Component ---------------- */
 .Navbar {
-  /* background-color: #752819; */
-  /* background-color: #3DB2FF; */
-  /* background-color: #FFB830; */
-  /* background-color: rgba(255, 209, 36, 1); */
-  /* background-color: rgb(255, 176, 133); */
   background-color: var(--nav-bar-color);
   border-bottom:  2px solid #8b9004
-
 }
 
 .Logo {
@@ -53,26 +57,24 @@ body {
   font-weight: 600;
 }
 
-.top-search-bar {
-  /* border: 1px solid #FFB830; */
-}
-
 /* ------------------- Announcements Component ------------------- */
 .announcements {
-  /* background-color: #f8e1c7; */
-  /* background-color: #21A9BF; */
-  background-color: #F6F6F6;
+  background-color: var(--announcement-color);
+  display: block;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 90px;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
 
-  color:black;
-
-  /* padding: 15px; */
+.announcements span {
+  text-decoration: underline
 }
 
 /* -------------------- StarReview Component -------------------- */
-
-.link-to-review {
-  /* color: black; */
-}
 
 .link-to-review:hover {
   color: #40804f;
@@ -80,14 +82,12 @@ body {
 
 /* ---------------- VerticalThumbnails Component ---------------- */
 .current-thumbnail {
-  /* border: 3px solid #40804f; */
   border: 3px solid #328648;
   border-radius: 10px;
 }
 
 .thumbnail:hover {
   cursor: pointer;
-  /* border: 1px solid black; */
 }
 
 /* ---------------- ProductDescription Component ---------------- */
@@ -96,3 +96,20 @@ body {
 }
 
 
+/* ------------------------- TOP Button ------------------------- */
+.scroll-top {
+  background-color: #B7BE0E;
+  border: 1px solid #B7BE0E;
+  border-radius: 10px;
+  bottom: 47px;
+  color: whitesmoke;
+  display: flex;
+  align-items: end;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  padding: 7px;
+  position: fixed;
+  right: 64px;
+  width: 8%;
+}

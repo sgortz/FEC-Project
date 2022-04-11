@@ -8,8 +8,6 @@ import { IconContext } from "react-icons";
 import './ProductOverview.css';
 
 /* CHILDREN COMPONENTS */
-import NavBar from './components/NavBar.jsx';
-import Announcements from './components/Announcements.jsx';
 import ImageGallery from './components/ImageGallery.jsx';
 import StarReview from './components/StarReview.jsx';
 import ProductDetail from './components/ProductDetail.jsx';
@@ -26,6 +24,12 @@ class ProductOverview extends React.Component {
       currentIndex: 0,
     }
     this.fetchProductData = this.fetchProductData.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(num) {
+    console.log(num)
+    this.setState({ currentIndex: num })
   }
 
   fetchProductData(id) {
@@ -52,21 +56,23 @@ class ProductOverview extends React.Component {
       )
     } else {
       return (
-        <div style={{'marginTop': '78px'}}>
-          <Announcements />
-          <hr />
+        <div className="product-overview">
+
           <div className="wrapper">
             <div className="style-selector">
-              <StylesGallery styles={this.state.product_data[1].results} category={this.state.product_data[0].category} />
+              <StylesGallery
+                styles={this.state.product_data[1].results}
+                category={this.state.product_data[0].category}
+                stylesIndex={this.state.currentIndex}
+                handleClick={this.handleClick} />
             </div>
             <div className="product-detail">
-              <ProductDetail data={this.state.product_data} />
+              <ProductDetail data={this.state.product_data} stylesIndex={this.state.currentIndex} />
             </div>
             <div className="add-to-cart">
               <AddToCart data={this.state.product_data[1]} />
             </div>
             <div className="images-everywhere">
-              {/* <StyleSelector /> */}
               <ImageGallery photos={this.state.product_data[1].results[0]} />
             </div>
           </div>

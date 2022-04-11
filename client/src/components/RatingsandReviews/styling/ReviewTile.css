@@ -10,6 +10,10 @@
   padding-bottom: 35px;
 }
 
+.reviewnameanddate {
+  padding-right: 15px;
+}
+
 .reviewhelpfulreport {
   border-bottom: 1px solid grey;
   padding-bottom: 35px;
@@ -29,10 +33,3 @@ u {
   cursor: pointer;
 }
 
-.reviewhelpfulreport :hover {
- color: grey;
-}
-
-.reviewbody :hover {
-  color: grey
-}
