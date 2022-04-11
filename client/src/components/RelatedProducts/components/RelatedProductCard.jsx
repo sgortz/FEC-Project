@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 
-const RelatedProductCard = ({ setProduct_id, relatedProductData, reviewData, product, setProductName}) => {
+const RelatedProductCard = ({ setProduct_id, relatedProductData, reviewData, product, setProductName }) => {
 
-  const { id, category, photo, name, default_price, sale_price } = product;
+  const { id, category, photos, name, default_price, sale_price } = product;
 
 
   const handleRelatedCardClick = () => {
@@ -13,30 +13,21 @@ const RelatedProductCard = ({ setProduct_id, relatedProductData, reviewData, pro
 
   return (
 
-    <div>
-      <div className='card-container' onClick={handleRelatedCardClick}>
-        <div className='card-item'>
-          <img loading='lazy' className='card-image' alt='related-card' src={photo}></img>
-        </div>
-        <div className="carousel-slide-item__body">
-
-          <div className='card-item text category'>{category.toUpperCase()}</div>
-          <div className='card-item text name'>{name}</div>
-          {sale_price ?
-            <div className='card-item text price'>
-              <p style={{ color: 'red' }}>${sale_price}</p>
-              <p style={{ textDecoration: 'line-through' }}>${default_price}</p>
+        <div className='RPcard' onClick={handleRelatedCardClick}>
+          <img className='RPcard-image' alt='related-card' src={(!photos[0].thumbnail_url) ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png' : photos[0].thumbnail_url}></img>
+          <div className="RPcard__content">
+            <div className="card__header-text">
+              <h3 className="RPcategory">{category.toUpperCase()}</h3>
+              <span className="RPname">{name}</span>
             </div>
-            : <div className='card-item text'>${default_price}</div>
-          }
+              {sale_price ?
+              <div className='RPprice'>
+                <p style={{ color: 'red' }}>${sale_price}</p>
+                <p style={{ textDecoration: 'line-through' }}>${default_price}</p>
+              </div>
+              : <span className='RPprice'>${default_price}</span> }
+           </div>
         </div>
-        <div className='card-item text rating'>
-
-        </div>
-      </div>
-    </div>
-
-
 
   )
 }
