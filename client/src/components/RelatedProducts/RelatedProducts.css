@@ -4,11 +4,14 @@
   justify-content: center;
   padding-top: 50px;
   margin: 20px, auto;
-  font-family: 'Belleza', sans-serif;
-
+  /* font-family: 'Belleza', sans-serif;
+  font-size:2em */
 
 }
-
+ .RP {
+  font-family: 'Belleza', sans-serif;
+  font-size:2em
+ }
 
 .RelatedProducts{
   margin-top: 100px;
@@ -41,7 +44,8 @@
 .RPcard-image {
   border-radius: 40px 40px 0 0;
   width: 275px;
-  height: 350px
+  height: 350px;
+  object-fit: cover;
 
 }
 .RPprice{
