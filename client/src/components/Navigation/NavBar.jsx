@@ -17,11 +17,11 @@ const NavBar = (props) => {
     if (props.sidebarDisplay) {
       props.setSidebarDisplay(false);
       document.getElementById("Sidebar").style.width = "145px";
-      document.getElementById("asidesidebar").style.marginRight = "145px";
+      document.getElementById("mainpage").style.marginRight = "145px";
     } else {
       props.setSidebarDisplay(true);
       document.getElementById("Sidebar").style.width = "0";
-      document.getElementById("asidesidebar").style.marginRight = "0";
+      document.getElementById("mainpage").style.marginRight = "0";
     }
   }
 

@@ -35,7 +35,7 @@ body {
 }
 
 /* ---------------- App Main Component ---------------- */
-#asidesidebar {
+#mainpage {
   display: flex;
   flex-direction: column;
   justify-content: center;

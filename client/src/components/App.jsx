@@ -36,7 +36,7 @@ const App = (props) => {
   return (
     <div className="app" data-theme={theme}>
 
-      <div id="asidesidebar">
+      <div id="mainpage">
         <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} sidebarDisplay={sidebarDisplay} setSidebarDisplay={setSidebarDisplay}/>
         <Announcements />
         <div ref={ref}>
