@@ -8,7 +8,6 @@ import { IconContext } from "react-icons";
 import './ProductOverview.css';
 
 /* CHILDREN COMPONENTS */
-import NavBar from './components/NavBar.jsx';
 import Announcements from './components/Announcements.jsx';
 import ImageGallery from './components/ImageGallery.jsx';
 import StarReview from './components/StarReview.jsx';

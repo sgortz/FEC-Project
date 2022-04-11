@@ -15,6 +15,7 @@
   --nav-bar-hover: #328648;
 }
 
+
 [data-theme='dark'] {
   --background: #2a2c29;
   --text-primary: white;
@@ -28,9 +29,6 @@ body {
   margin: 0px;
 }
 
-hr {
-  max-width: 90%;
-}
 /* ---------------- App Component ---------------- */
 .app {
   display: flex;
@@ -48,6 +46,8 @@ hr {
 /* ---------------- NavBar Component ---------------- */
 .Navbar {
   background-color: var(--nav-bar-color);
+  border-bottom:  2px solid #8b9004
+
 }
 
 .Logo {

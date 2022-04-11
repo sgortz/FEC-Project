@@ -8,7 +8,7 @@ import AddQuestion from './components/AddQuestion.jsx';
 import "./components/QuestionAndAnswers.css";
 
 
-const QuestionAndAnswers = ({ product_id, setQuestionLength}) => {
+const QuestionAndAnswers = ({ props, product_id, setQuestionLength}) => {
 
 
   const [questionList, setQuestionList] = useState([]);

@@ -34,9 +34,7 @@ const RelatedProducts = ({ product_id, setProduct_id, setProductName}) => {
               name: res.data[0].name,
               category: res.data[0].category,
               default_price: res.data[0].default_price,
-              photo: (!res.data[1].results[0].photos[0] ? res.data[1].results[0].photos[0]
-                : 'https://images.unsplash.com/photo-1611267254323-4db7b39c732c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y3V0ZSUyMGNhdHxlbnwwfHwwfHw%3D&w=1000&q=80'),
-                // 'https://bit.ly/2Tg8g4s'),
+              photos: res.data[1].results[0].photos,
               sale_price: res.data[1].results[0].sale_price
             }
             return cleanData;

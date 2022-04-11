@@ -3,7 +3,7 @@ import StarReview from './StarReview.jsx';
 import './ProductDetail.css'
 
 const ProductDetail = ({ data }) => {
-  console.log(data)
+  // console.log(data)
   if (data.length === 0) {
     return null;
   } else if (data[1].results[0].sale_price === null) {

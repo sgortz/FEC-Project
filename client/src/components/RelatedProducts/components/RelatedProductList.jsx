@@ -31,16 +31,18 @@ const RelatedProductList = ({ setProductName, relatedProductId, setProduct_id, r
 
 
   return (
-    (<div className='RelatedProductList'>
+    <div className='RelatedProductList'>
+
 
       {relatedProductData.map((product) => {
 
         return <RelatedProductCard key={product.id} product={product} setProductName={setProductName}
-        setProduct_id={setProduct_id} relatedProductData={relatedProductData} reviewData={reviewData}/>
+          setProduct_id={setProduct_id} relatedProductData={relatedProductData} reviewData={reviewData} />
 
       })}
 
-    </div>)
+    </div>
+
   )
 
 }
