@@ -106,7 +106,33 @@
 
 /* ----------------- StyleSelector Component ----------------- */
 
+.circular-photo {
+  border-radius: 50%;
+  display: inline-block;
+  height: 50px;
+  margin: 3px;
+  position: relative;
+  overflow: hidden;
+  width: 50px;
+}
+
+.circular--portrait {
+  width: 100%;
+  height: auto;
+}
+
 .circular--landscape {
+  width: auto;
+  height: 100%;
+  margin-left: -12px;
+}
+
+
+.circular-photo:hover {
+  cursor: pointer;
+}
+
+/* .circular--landscape {
   display: inline-block;
   margin: 3px;
   position: relative;
@@ -145,11 +171,7 @@
 
 .circular-photo {
   max-height: 30px;
-}
-
-.circular-photo:hover {
-  cursor: pointer;
-}
+} */
 
 /* --------------------- AddToCart Component -------------------- */
 #select-size {
@@ -208,7 +230,8 @@
   touch-action: manipulation;
 }
 
-#add-to-bag:after, .starred:after {
+#add-to-bag:after,
+.starred:after {
   background-color: #111;
   border-radius: 8px;
   content: "";
@@ -223,16 +246,19 @@
   z-index: -1;
 }
 
-#add-to-bag:hover:after, .starred:hover:after{
+#add-to-bag:hover:after,
+.starred:hover:after {
   transform: translate(0, 0);
 }
 
-#add-to-bag:active, .starred:active {
+#add-to-bag:active,
+.starred:active {
   background-color: #328648;
   outline: 0;
 }
 
-#add-to-bag:hover, .starred:hover {
+#add-to-bag:hover,
+.starred:hover {
   outline: 0;
 }
 
@@ -312,6 +338,6 @@
   margin-top: 10px;
 }
 
-.social-media a{
+.social-media a {
   padding: 13px;
 }

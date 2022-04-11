@@ -31,7 +31,9 @@ const App = (props) => {
       <div ref={ref}>
         <ProductOverview product_id={product_id} />
       </div>
+      {/* <div ref={ref}> */}
       <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName} />
+      {/* </div> */}
       <QuestionAndAnswers product_id={product_id} setQuestionLength={setQuestionLength} />
       <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} setReviewLength={setReviewLength} />
       <button className="scroll-top">
