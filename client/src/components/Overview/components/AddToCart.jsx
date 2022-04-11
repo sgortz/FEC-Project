@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { BsStar, BsStarFill } from "react-icons/bs";
 import QuantityOptions from './QuantityOptions.jsx'
 
-const AddToCart = ({ data, stylesIndex }) => {
-  const [sizeSelection, setSizeSelection] = useState(null);
+const AddToCart = ({ data, stylesIndex, handleCartData }) => {
+  const [sizeSelection, setSizeSelection] = useState('');
   const [quantitySelection, setQuantitySelection] = useState(1);
-  const [quantityOption, setQuantityOption] = useState(null);
+  const [quantityOption, setQuantityOption] = useState('');
   // const [purchaseDisabled, setPurchaseDisabled] = useState(true);
   const [star, setStar] = useState(0);
-  const [addToBag, setAddToBag] = useState('ADD TO BAG')
+  const [addToBag, setAddToBag] = useState('ADD TO BAG');
+  // const [bagData, setBagData] = useState([]);
+
 
   /* Managing duplicated data from API */
   let skusData = Object.values(data.results[stylesIndex].skus);
@@ -24,19 +26,30 @@ const AddToCart = ({ data, stylesIndex }) => {
     }
   })
 
-  // useEffect(() => {
-  //   if (addToBag !== 'ADD TO BAG') {
-  //     setTimeout(() => setButtonText('ADD TO BAG'), [1500])
-  //   }
-  // }, [addToBag])
-
   const setSize = (e) => {
     setSizeSelection(e.target.value);
     setQuantityOption(storageData[e.target.value] <= 15 ? storageData[e.target.value] : 15)
   }
   const setQuantity = (e) => {
     setQuantitySelection(e.target.value);
-    setPurchaseDisabled(false);
+    // setPurchaseDisabled(false);
+  }
+
+  const handleSubmitCart = (e) => {
+    e.preventDefault();
+    let cartObj = {
+      price: data.results[stylesIndex].original_price,
+      sale_price: data.results[stylesIndex].sale_price,
+      product_id: data.product_id,
+      quantity: quantitySelection,
+      size: sizeSelection,
+      sku: 111,
+      style_id: data.results[stylesIndex].style_id,
+      photo_url: data.results[stylesIndex].photos[0].url
+    }
+    console.log(cartObj);
+    // handleCartData(cartObj)
+    changeText('Item added !');
   }
 
   const changeText = (text) => {
@@ -55,37 +68,39 @@ const AddToCart = ({ data, stylesIndex }) => {
     }
   }
 
+
+
   return (
     <div>
-      <form className='add-to-cart-form'>
-        <select id="select-size" name="size" onChange={setSize} >
+      <form
+        className='add-to-cart-form'
+      // onSubmit={(e) => { e.preventDefault(); console.log('clicked!')}}
+      >
+        <select id="select-size" name="size" onChange={setSize} value={sizeSelection}>
           <option value="Select Size">SELECT SIZE</option>
           {productSizes.map((size, index) => {
             return (<option value={size} key={index}>{size}</option>)
           })}
         </select>
+
         <select
           id="quantity"
           name="quantity"
           disabled={sizeSelection === null ? true : false}
           onChange={setQuantity} >
+          value={quantityOption}
           <QuantityOptions quantityOption={quantityOption} />
         </select>
-        <button
-          id="add-to-bag"
-          disabled={sizeSelection === null ? true : false}
-          value="ADD TO CART"
-          onClick={(e) => {
-            e.preventDefault();
-            changeText('Item added !');
-          }}
-        >{addToBag}</button>
+
+        <input type="submit" id="add-to-bag" disabled={sizeSelection === null ? true : false} value={addToBag}
+          onClick={handleSubmitCart}
+        />
 
         <button className={star === 0 ? "starred" : "starred hidden"} onClick={toggleStar}>
-        <BsStar />
+          <BsStar />
         </button>
         <button className={star === 1 ? "starred" : "starred hidden"} onClick={toggleStar}>
-        <BsStarFill />
+          <BsStarFill />
         </button>
       </form>
     </div>
@@ -93,3 +108,4 @@ const AddToCart = ({ data, stylesIndex }) => {
 }
 
 export default AddToCart;
+

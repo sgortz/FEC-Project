@@ -70,7 +70,10 @@ class ProductOverview extends React.Component {
               <ProductDetail data={this.state.product_data} stylesIndex={this.state.currentIndex} />
             </div>
             <div className="add-to-cart">
-              <AddToCart data={this.state.product_data[1]} stylesIndex={this.state.currentIndex} />
+              <AddToCart
+              data={this.state.product_data[1]}
+              stylesIndex={this.state.currentIndex}
+              handleCartData={this.props.handleCartData} />
             </div>
             <div className="images-everywhere">
               <ImageGallery photos={this.state.product_data[1].results[this.state.currentIndex]} />
