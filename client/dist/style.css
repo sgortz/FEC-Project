@@ -25,10 +25,6 @@ body {
    margin: 0;
 }
 
-hr {
-  max-width: 90%;
-}
-
 /* ---------------- App Component ---------------- */
 .app {
   display: flex;
@@ -46,6 +42,7 @@ hr {
   /* background-color: rgba(255, 209, 36, 1); */
   /* background-color: rgb(255, 176, 133); */
   background-color: var(--nav-bar-color);
+  border-bottom:  2px solid #8b9004
 
 }
 
@@ -65,7 +62,9 @@ hr {
   /* background-color: #f8e1c7; */
   /* background-color: #21A9BF; */
   background-color: #F6F6F6;
-color:black;
+
+  color:black;
+
   /* padding: 15px; */
 }
 
