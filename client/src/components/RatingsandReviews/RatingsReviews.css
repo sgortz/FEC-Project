@@ -4,8 +4,7 @@
   grid-template-rows: 20px 20px 1fr 30px;
   column-gap: 120px;
   row-gap: 30px;
-  padding-left: 170px;
-  padding-right: 170px;
+  width: 80%;
   padding-bottom: 200px;
 }
 
@@ -59,7 +58,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--button-color);
-  border: 2px solid var(--background);
+  border: 2.5px solid var(--button-color);
   border-radius: 8px;
   box-sizing: border-box;
   color: white;
@@ -79,6 +78,6 @@
 }
 
 #morereviews:hover, #addreview:hover{
-  border: 2px solid #75790A11;
+  border: 2.5px solid #75790A;
 }
 
