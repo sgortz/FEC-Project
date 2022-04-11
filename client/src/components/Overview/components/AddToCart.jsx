@@ -47,8 +47,8 @@ const AddToCart = ({ data, stylesIndex, handleCartData }) => {
       style_id: data.results[stylesIndex].style_id,
       photo_url: data.results[stylesIndex].photos[0].url
     }
-    console.log(cartObj);
-    // handleCartData(cartObj)
+    // console.log(cartObj);
+    handleCartData(cartObj);
     changeText('Item added !');
   }
 
