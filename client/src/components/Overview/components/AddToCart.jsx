@@ -60,7 +60,7 @@ const AddToCart = ({ data }) => {
 
   return (
     <div>
-      <form>
+      <form className='add-to-cart-form'>
         <select id="select-size" name="size" onChange={setSize} >
           <option value="Select-Size">SELECT SIZE</option>
           {productSizes.map((size, index) => {

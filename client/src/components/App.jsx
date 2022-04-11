@@ -13,6 +13,7 @@ import { Link } from 'react-scroll';
 import { BsArrowBarUp } from 'react-icons/bs'
 
 
+
 const App = (props) => {
 
   const [product_id, setProduct_id] = useState(37311);
@@ -26,6 +27,7 @@ const App = (props) => {
 
 
   return (
+
 
     <div className="app" data-theme={theme}>
       <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} />

@@ -4,21 +4,32 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
+<<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+>>>>>>> main
 /* ---------------- Switch Theme ---------------- */
 :root {
   --background: white;
   --text-primary: black;
   --nav-bar-color: #b7be11;
+  --button-color: #328648;
+  --announcement-color:#F6F6F6;
+  --nav-bar-hover: #328648;
 }
+
 
 [data-theme='dark'] {
   --background: #2a2c29;
   --text-primary: white;
   --nav-bar-color: #75790a;
-
+  --button-color: #BEB711;
+  --announcement-color: #ecedd0;
+  --nav-bar-hover: #b7be11;
 }
 
 body {
+<<<<<<< HEAD
   background-color: rgba(254, 241, 230, 0.3);
   margin: 0;
 }
@@ -27,17 +38,29 @@ hr {
   max-width: 90%;
 }
 
+=======
+  margin: 0px;
+}
+
+>>>>>>> main
 /* ---------------- App Component ---------------- */
 .app {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   color: var(--text-primary);
   background-color: var(--background);
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+  transition: all 0.3s linear;
 }
 
 /* ---------------- NavBar Component ---------------- */
 .Navbar {
   background-color: var(--nav-bar-color);
+  border-bottom:  2px solid #8b9004
 }
 
 .Logo {
@@ -49,8 +72,8 @@ hr {
 
 /* ------------------- Announcements Component ------------------- */
 .announcements {
-  background-color: #F6F6F6;
-  color: black;
+  background-color: var(--announcement-color);
+  /* color:black; */
 }
 
 /* -------------------- StarReview Component -------------------- */

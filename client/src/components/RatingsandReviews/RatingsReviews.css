@@ -6,14 +6,14 @@
   grid-template-rows: 20px 20px 1fr 30px;
   column-gap: 120px;
   row-gap: 30px;
-  padding-left: 170px;
-  padding-right: 170px;
+  width: 80%;
   padding-bottom: 200px;
 }
 
 #RatingsandReviews {
   grid-column: 1/3;
   grid-row: 1/2;
+  font-family: 'Belleza', sans-serif;
 }
 
 .ReviewMeta {
@@ -60,72 +60,27 @@
 #morereviews, #addreview{
   align-items: center;
   justify-content: center;
-  background-color: #fee6e3;
-  /* background-color: rgb(255, 176, 133); */
-  border: 2px solid #111;
+  background-color: var(--button-color);
+  border: 2.5px solid var(--button-color);
   border-radius: 8px;
   box-sizing: border-box;
-  color: #111;
+  color: white;
   cursor: pointer;
   display: inline-flex;
-  font-family: Inter,sans-serif;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
   height: 48px;
   margin-left: 120px;
   margin-right: 120px;
   line-height: 24px;
   max-width: 80%;
-  width: 45%;
+  width: 50%;
   padding: 25px 25px;
   position: relative;
   text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-#morereviews:after, #addreview:after{
-  background-color: #111;
-  border-radius: 8px;
-  content: "";
-  display: block;
-  height: 48px;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  top: -2px;
-  transform: translate(8px, 8px);
-  transition: transform .2s ease-out;
-  z-index: -1;
-}
-
-#morereviews:hover:after, #addreview:hover:after {
-  transform: translate(0, 0);
-}
-
-#morereviews:active, #addreview:active{
-  background-color: #ffdeda;
-  outline: 0;
 }
 
 #morereviews:hover, #addreview:hover{
-  outline: 0;
+  border: 2.5px solid #75790A;
 }
 
-@media (min-width: 500px) {
-  #morereviews, #addreview{
-    padding: 0 20px;
-  }
-}
-
-/*Sort Bar*/
-/* .ReviewSortLabel {
-  display: flex;
-  gap: 15px;
-  align-items: baseline;
-}
-
-#reviewsortdropdown {
-
-} */

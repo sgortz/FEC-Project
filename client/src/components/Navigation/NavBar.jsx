@@ -2,7 +2,7 @@ import React from 'react';
 import { FiSearch } from "react-icons/fi";
 import { RiShoppingBagLine } from "react-icons/ri";
 import { Link } from 'react-scroll';
-import Star from '../../SharedComponents/star.jsx'
+import Star from '../SharedComponents/star.jsx'
 import "./NavBar.css";
 
 const NavBar = (props) => {
@@ -36,10 +36,12 @@ const NavBar = (props) => {
         {/* <FiSearch /> */}
       </input>
     </form>
-    <button id='themetogglebtn' onClick={switchTheme}>Switch to {props.theme === 'light' ? 'Dark' : 'Light'} Theme</button>
+    <button className="themetogglebtn" onClick={switchTheme}>Switch to {props.theme === 'light' ? 'Dark' : 'Light'}</button>
     <RiShoppingBagLine id='RiShoppingBag' size="25px" />
   </div>
   )
   }
 
 export default NavBar;
+
+
