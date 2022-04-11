@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
 /* ---------------- Switch Theme ---------------- */
 :root {
   --background: white;
@@ -47,7 +48,6 @@ body {
 .Navbar {
   background-color: var(--nav-bar-color);
   border-bottom:  2px solid #8b9004
-
 }
 
 .Logo {
@@ -57,16 +57,24 @@ body {
   font-weight: 600;
 }
 
-
-
 /* ------------------- Announcements Component ------------------- */
 .announcements {
   background-color: var(--announcement-color);
-  color:black;
+  display: block;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 90px;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.announcements span {
+  text-decoration: underline
 }
 
 /* -------------------- StarReview Component -------------------- */
-
 
 .link-to-review:hover {
   color: #40804f;
@@ -88,3 +96,20 @@ body {
 }
 
 
+/* ------------------------- TOP Button ------------------------- */
+.scroll-top {
+  background-color: #B7BE0E;
+  border: 1px solid #B7BE0E;
+  border-radius: 10px;
+  bottom: 47px;
+  color: whitesmoke;
+  display: flex;
+  align-items: end;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  padding: 7px;
+  position: fixed;
+  right: 64px;
+  width: 8%;
+}

@@ -29,7 +29,7 @@ const AddToCart = ({ data }) => {
 
   useEffect(() => {
     if(addToBag !== 'ADD TO BAG'){
-      setTimeout(() => setButtonText('ADD TO BAG'), [2000])
+      setTimeout(() => setButtonText('ADD TO BAG'), [1500])
     }
   }, [addToBag])
 
