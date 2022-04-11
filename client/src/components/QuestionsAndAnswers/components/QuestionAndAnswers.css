@@ -163,6 +163,7 @@
 .QAinlineLeft {
   max-width: 50%;
   font-weight: 600;
+  font-size: large;
   /* color: black; */
 }
 
@@ -172,7 +173,7 @@
 
 .QAinlineRight {
   /* color: #565959!important; */
-  font-size: 14px;
+  font-size: medium;
   line-height: 20px;
 }
 
@@ -190,7 +191,7 @@
 
 .answerFooter {
   /* color: #565959!important; */
-  font-size: 14px;
+  font-size: medium;
   line-height: 20px;
 }
 .A {

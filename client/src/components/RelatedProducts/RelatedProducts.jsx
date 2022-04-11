@@ -22,6 +22,7 @@ const RelatedProducts = ({ product_id, setProduct_id, setProductName}) => {
         console.log("err in getting related product id:", err)
       })
   }, [product_id])
+  
 
   useEffect(() => {
     Promise.all(
