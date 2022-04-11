@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import NavBar from './Navigation/NavBar.jsx';
+import Sidebar from './Navigation/Sidebar.jsx';
 import Announcements from './Navigation/Announcements.jsx';
 import ProductOverview from './Overview/ProductOverview.jsx';
 import RelatedProducts from './RelatedProducts/RelatedProducts.jsx';
@@ -24,13 +25,19 @@ const App = (props) => {
   const [reviewLength, setReviewLength] = useState(null);
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+  const [sidebarDisplay, setSidebarDisplay] = useState(false);
+
+  const appLevelClickHandler = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+
+  }
 
 
   return (
 
-
-    <div className="app" data-theme={theme}>
-      <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} />
+    <div className="app" data-theme={theme} onClick={appLevelClickHandler}>
+      <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} sidebarDisplay={sidebarDisplay} setSidebarDisplay={setSidebarDisplay}/>
       <Announcements />
       <div ref={ref}>
         <ProductOverview product_id={product_id} />
@@ -48,6 +55,9 @@ const App = (props) => {
         </Link>
       </button>
       }
+      {sidebarDisplay?
+      <Sidebar/>
+      : null}
 
     </div>
 

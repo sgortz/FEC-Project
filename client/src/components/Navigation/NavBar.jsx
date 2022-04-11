@@ -12,6 +12,15 @@ const NavBar = (props) => {
     props.setTheme(newTheme);
   }
 
+  const handleShoppingBagClick = (e) => {
+    e.preventDefault();
+    if (props.sidebarDisplay) {
+      props.setSidebarDisplay(false);
+    } else {
+      props.setSidebarDisplay(true);
+    }
+  }
+
   return (
   <div className="Navbar">
     {props.inView?
@@ -37,7 +46,7 @@ const NavBar = (props) => {
       </input>
     </form>
     <button className="themetogglebtn" onClick={switchTheme}>Switch to {props.theme === 'light' ? 'Dark' : 'Light'}</button>
-    <RiShoppingBagLine id='RiShoppingBag' size="25px" />
+    <RiShoppingBagLine id="RiShoppingBag" size="25px" onClick={handleShoppingBagClick}/>
   </div>
   )
   }

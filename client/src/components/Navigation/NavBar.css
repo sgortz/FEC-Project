@@ -9,7 +9,7 @@
   grid-template-columns: 5fr 0.8fr 0.85fr 0.75fr;
   justify-content: space-between;
   padding: 6px;
-  position: fixed;
+  position: sticky;
   width: 100%;
   top : 0;
   z-index: 30;
@@ -49,9 +49,14 @@
   grid-column: 2/3
 }
 
-#RiShoppinBag {
+#RiShoppingBag {
   grid-column: 4/5;
   justify-self: center;
+  cursor: pointer;
+}
+
+#RiShoppinBag:hover {
+  cursor: pointer;
 }
 
 #nav-link-to-review,  #nav-link-to-questions{

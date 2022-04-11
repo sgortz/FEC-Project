@@ -112,7 +112,7 @@ body {
   position: fixed;
   right: 70px;
   cursor: pointer;
-  transition: all 0.2s linear;
+  transition: all 0.1s linear;
 }
 
 .scroll-top:hover {
@@ -128,4 +128,17 @@ body {
   width: 30%;
   margin: 4%;
   color: black;
+}
+
+
+/* ------------------------- Sidebar
+------------------------- */
+.Sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 5%;
+  height: 100%;
+  background-color: red;
+  z-index: 50;
 }

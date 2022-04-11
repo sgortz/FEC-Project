@@ -81,6 +81,6 @@
 }
 
 #morereviews:hover, #addreview:hover{
-  border: 2.5px solid #75790A;
+  border: 2.5px solid var(--nav-bar-color);
 }
 
