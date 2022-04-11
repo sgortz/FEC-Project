@@ -56,7 +56,7 @@ class ProductOverview extends React.Component {
       )
     } else {
       return (
-        <div style={{ 'marginTop': '78px' }}>
+        <div className="product-overview">
 
           <div className="wrapper">
             <div className="style-selector">

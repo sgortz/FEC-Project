@@ -4,10 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
->>>>>>> main
+
 /* ---------------- Switch Theme ---------------- */
 :root {
   --background: white;
@@ -29,20 +27,9 @@
 }
 
 body {
-<<<<<<< HEAD
-  background-color: rgba(254, 241, 230, 0.3);
-  margin: 0;
-}
-
-hr {
-  max-width: 90%;
-}
-
-=======
   margin: 0px;
 }
 
->>>>>>> main
 /* ---------------- App Component ---------------- */
 .app {
   display: flex;
@@ -73,7 +60,18 @@ hr {
 /* ------------------- Announcements Component ------------------- */
 .announcements {
   background-color: var(--announcement-color);
-  /* color:black; */
+  display: block;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 90px;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+}
+
+.announcements span {
+  text-decoration: underline
 }
 
 /* -------------------- StarReview Component -------------------- */

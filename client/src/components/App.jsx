@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import NavBar from './Overview/components/NavBar.jsx';
-import Announcements from './SharedComponents/Announcements.jsx';
+import NavBar from './Navigation/NavBar.jsx';
+import Announcements from './Navigation/Announcements.jsx';
 import ProductOverview from './Overview/ProductOverview.jsx';
 import RelatedProducts from './RelatedProducts/RelatedProducts.jsx';
 import QuestionAndAnswers from './QuestionsAndAnswers/QuestionAndAnswers.jsx';
@@ -32,7 +32,6 @@ const App = (props) => {
     <div className="app" data-theme={theme}>
       <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} />
       <Announcements />
-
       <div ref={ref}>
         <ProductOverview product_id={product_id} />
       </div>
