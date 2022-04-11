@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BsStar, BsStarFill } from "react-icons/bs";
 import QuantityOptions from './QuantityOptions.jsx'
 
-const AddToCart = ({ data }) => {
+const AddToCart = ({ data, stylesIndex }) => {
   /* Which size user selected */
   const [sizeSelection, setSizeSelection] = useState(null);
   /* Quantity user selected */
@@ -14,7 +14,7 @@ const AddToCart = ({ data }) => {
   const [addToBag, setAddToBag] = useState('ADD TO BAG')
 
   /* Managing duplicated data from API */
-  let skusData = Object.values(data.results[0].skus);
+  let skusData = Object.values(data.results[stylesIndex].skus);
   let productSizes = [];
   let storageData = {};
 
@@ -28,7 +28,7 @@ const AddToCart = ({ data }) => {
   })
 
   useEffect(() => {
-    if(addToBag !== 'ADD TO BAG'){
+    if (addToBag !== 'ADD TO BAG') {
       setTimeout(() => setButtonText('ADD TO BAG'), [1500])
     }
   }, [addToBag])
@@ -44,7 +44,7 @@ const AddToCart = ({ data }) => {
 
   const changeText = (text) => {
     setAddToBag(text);
-    setTimeout(()=>{
+    setTimeout(() => {
       setAddToBag('ADD TO BAG')
     }, [1000])
   }
@@ -84,8 +84,12 @@ const AddToCart = ({ data }) => {
           }}
         >{addToBag}</button>
 
-        <button className={star === 0 ? "starred" : "starred hidden"} onClick={toggleStar}> <BsStar /> </button>
-        <button className={star === 1 ? "starred" : "starred hidden"} onClick={toggleStar}> <BsStarFill /> </button>
+        <button className={star === 0 ? "starred" : "starred hidden"} onClick={toggleStar}>
+        <BsStar />
+        </button>
+        <button className={star === 1 ? "starred" : "starred hidden"} onClick={toggleStar}>
+        <BsStarFill />
+        </button>
       </form>
     </div>
   )
