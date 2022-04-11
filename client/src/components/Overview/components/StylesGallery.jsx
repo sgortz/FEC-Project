@@ -2,26 +2,17 @@ import React, { useState } from 'react';
 import ImageGallery from './ImageGallery.jsx';
 import StyleSelector from './StyleSelector.jsx';
 
-export default function StylesGallery({ styles, category }) {
-  const [currentStyleIndex, setCurrentStyleIndex] = useState(0);
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    setCurrentStyleIndex(e.target.attributes[2].value)
-  }
+export default function StylesGallery({ styles, category, handleClick, stylesIndex }) {
+  // const [currentStyleIndex, setCurrentStyleIndex] = useState(0);
 
   if (styles === undefined) {
     return null;
   } else {
     return (
       <div className="style-gallery">
-        <div className="images-everywhere">
-          {/* <ImageGallery photos={styles[currentStyleIndex]} /> */}
-
-        </div>
         <div className="clothing-style">
           <span className="product-category">{category}: </span>
-           {styles[currentStyleIndex].name}
+           {styles[stylesIndex].name}
         </div>
         <div className="styles-options">
 

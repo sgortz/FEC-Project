@@ -36,13 +36,6 @@
   min-width: 0;
 }
 
-/* First version of the grid
-  grid-template-columns: repeat(7, 1fr);
-  grid-auto-rows: minmax(30px, auto); */
-
-/* Second version of the grid
-  grid-template-columns: 1fr 680px 319px 1fr;*/
-
 .style-selector {
   grid-column: 3;
   grid-row: 3;
@@ -93,7 +86,7 @@
 .clothing-style,
 .product-category {
   font-family: 'Poppins', sans-serif;
-  font-size: 25px;
+  font-size: 21px;
   grid-column: 1 / 5;
   grid-row: 1;
   margin-top: 7px;
@@ -131,47 +124,6 @@
 .circular-photo:hover {
   cursor: pointer;
 }
-
-/* .circular--landscape {
-  display: inline-block;
-  margin: 3px;
-  position: relative;
-  width: 56px;
-  height: 56px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.circular--landscape img {
-  width: auto;
-  height: 100%;
-  margin-left: -12px;
-}
-
-.circular--portrait {
-  position: relative;
-  width: 56px;
-  height: 56px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.circular--portrait img {
-  width: 100%;
-  height: auto;
-}
-
-.circular--square {
-  max-width: 50px;
-  max-height: 50px;
-  margin: 3px;
-  border-radius: 50%;
-}
-
-
-.circular-photo {
-  max-height: 30px;
-} */
 
 /* --------------------- AddToCart Component -------------------- */
 #select-size {

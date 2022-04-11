@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+
+import NavBar from './Overview/components/NavBar.jsx';
+import Announcements from './SharedComponents/Announcements.jsx';
 import ProductOverview from './Overview/ProductOverview.jsx';
 import RelatedProducts from './RelatedProducts/RelatedProducts.jsx';
 import QuestionAndAnswers from './QuestionsAndAnswers/QuestionAndAnswers.jsx';
 import RatingsAndReviews from './RatingsAndReviews/RatingsReviews.jsx';
-import NavBar from './Overview/components/NavBar.jsx';
+
 import { useInView } from 'react-intersection-observer';
 import useLocalStorage from "use-local-storage";
 import { Link } from 'react-scroll';
 import { BsArrowBarUp } from 'react-icons/bs'
-
 
 
 const App = (props) => {
@@ -19,7 +21,6 @@ const App = (props) => {
   const { ref, inView, entry } = useInView();
   const [questionLength, setQuestionLength] = useState(null);
   const [reviewLength, setReviewLength] = useState(null);
-
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
@@ -28,6 +29,8 @@ const App = (props) => {
 
     <div className="app" data-theme={theme}>
       <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} />
+      <Announcements />
+
       <div ref={ref}>
         <ProductOverview product_id={product_id} />
       </div>

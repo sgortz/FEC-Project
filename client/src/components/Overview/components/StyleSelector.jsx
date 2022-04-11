@@ -5,14 +5,10 @@ const StyleSelector = ({ index, style, handleClick }) => {
 
   const resizeImg = (img) => {
     if (img.height === img.width) {
-      console.log('this is a square image')
       setPhotoOrientation('circular--square');
     } else if (img.height > img.width) {
-      console.log('this image is portrait', img.height, img.width);
       setPhotoOrientation('circular--portrait');
     } else if (img.height < img.width) {
-      console.log('this image is landscape', img.height, img.width);
-      // img.heigh = 64;
       setPhotoOrientation('circular--landscape');
     }
   }
@@ -25,7 +21,10 @@ const StyleSelector = ({ index, style, handleClick }) => {
         src={style.photos[0].thumbnail_url}
         value={index}
         onLoad={(e) => { resizeImg(e.target) }}
-        onClick={handleClick}
+        onClick={(e) => {
+          e.preventDefault();
+          handleClick(e.target.attributes[2].value);
+        }}
       />
     </div>
   )

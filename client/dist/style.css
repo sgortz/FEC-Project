@@ -37,12 +37,7 @@ hr {
 
 /* ---------------- NavBar Component ---------------- */
 .Navbar {
-  /* background-color: #752819; */
-  /* background-color: #3DB2FF; */
-  /* background-color: #FFB830; */
-  /* background-color: rgba(255, 209, 36, 1); */
   background-color: var(--nav-bar-color);
-  /* background-color: rgba(254, 241, 230, 0.5); */
 }
 
 .Logo {
