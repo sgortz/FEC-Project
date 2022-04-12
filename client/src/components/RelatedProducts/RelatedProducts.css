@@ -95,7 +95,7 @@
   width: 1160px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
 
 }
 
@@ -117,11 +117,11 @@
 
 
 .RPleft-arrow {
-  left: 24px;
+  left: 175px;
   z-index: 1;
 }
 
 .RPright-arrow {
-  right: 24px;
+  right: 175px;
   z-index: 1;
 }
