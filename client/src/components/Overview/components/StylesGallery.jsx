@@ -5,7 +5,7 @@ import StyleSelector from './StyleSelector.jsx';
 export default function StylesGallery({ styles, category, handleClick, stylesIndex }) {
   // const [currentStyleIndex, setCurrentStyleIndex] = useState(0);
 
-  if (styles === undefined) {
+  if (styles === undefined && category === undefined && stylesIndex === undefined) {
     return null;
   } else {
     return (

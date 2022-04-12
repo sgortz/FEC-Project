@@ -37,7 +37,7 @@ const App = (props) => {
       <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} />
       <Announcements />
       <div ref={ref}>
-        <ProductOverview product_id={product_id} handleCartData={handleCartData} />
+        <ProductOverview product_id={product_id} handleCartData={handleCartData} avgReviewRating={avgReviewRating} />
       </div>
       {/* <div ref={ref}> */}
       <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName} />

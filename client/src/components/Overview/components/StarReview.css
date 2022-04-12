@@ -4,8 +4,8 @@
   align-items: end;
   display: flex;
   justify-content: space-around;
-margin: 6px;
-  max-width: 209px;
+  margin: 6px;
+  max-width: 240px;
 }
 
 .star-rating span {

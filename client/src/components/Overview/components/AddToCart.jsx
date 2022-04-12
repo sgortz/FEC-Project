@@ -6,7 +6,7 @@ const AddToCart = ({ data, stylesIndex, handleCartData }) => {
   const [sizeSelection, setSizeSelection] = useState('');
   const [quantitySelection, setQuantitySelection] = useState(1);
   const [quantityOption, setQuantityOption] = useState('');
-  // const [purchaseDisabled, setPurchaseDisabled] = useState(true);
+  const [purchaseDisabled, setPurchaseDisabled] = useState(true);
   const [star, setStar] = useState(0);
   const [addToBag, setAddToBag] = useState('ADD TO BAG');
   // const [bagData, setBagData] = useState([]);
@@ -32,7 +32,7 @@ const AddToCart = ({ data, stylesIndex, handleCartData }) => {
   }
   const setQuantity = (e) => {
     setQuantitySelection(e.target.value);
-    // setPurchaseDisabled(false);
+    setPurchaseDisabled(false);
   }
 
   const handleSubmitCart = (e) => {
@@ -47,8 +47,7 @@ const AddToCart = ({ data, stylesIndex, handleCartData }) => {
       style_id: data.results[stylesIndex].style_id,
       photo_url: data.results[stylesIndex].photos[0].url
     }
-    console.log(cartObj);
-    // handleCartData(cartObj)
+    handleCartData(cartObj)
     changeText('Item added !');
   }
 
@@ -87,8 +86,9 @@ const AddToCart = ({ data, stylesIndex, handleCartData }) => {
           id="quantity"
           name="quantity"
           disabled={sizeSelection === null ? true : false}
-          onChange={setQuantity} >
+          onChange={setQuantity}
           value={quantityOption}
+          >
           <QuantityOptions quantityOption={quantityOption} />
         </select>
 
@@ -96,12 +96,12 @@ const AddToCart = ({ data, stylesIndex, handleCartData }) => {
           onClick={handleSubmitCart}
         />
 
-        <button className={star === 0 ? "starred" : "starred hidden"} onClick={toggleStar}>
+        {/* <button className={star === 0 ? "starred" : "starred hidden"} onClick={toggleStar}>
           <BsStar />
         </button>
         <button className={star === 1 ? "starred" : "starred hidden"} onClick={toggleStar}>
           <BsStarFill />
-        </button>
+        </button> */}
       </form>
     </div>
   )
