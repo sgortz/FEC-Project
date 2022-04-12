@@ -33,6 +33,19 @@ const App = (props) => {
     setCartData([...cartData, data]);
   }
 
+  useEffect (()=>{
+    if (cartData.length !== 0) {
+      setSidebarDisplay(true);
+      document.getElementById("Sidebar").style.width = "145px";
+      document.getElementById("mainpage").style.marginRight = "145px";
+    } else {
+      setSidebarDisplay(false);
+      document.getElementById("Sidebar").style.width = "0";
+      document.getElementById("mainpage").style.marginRight = "0";
+    }
+
+  }, [cartData]);
+
   return (
     <div className="app" data-theme={theme}>
 
@@ -57,7 +70,7 @@ const App = (props) => {
         }
       </div>
 
-      <Sidebar/>
+      <Sidebar cartData={cartData} setProduct_id={setProduct_id}/>
 
     </div>
 

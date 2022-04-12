@@ -23,6 +23,7 @@ class ProductOverview extends React.Component {
       product_data: [],
       currentIndex: 0,
     }
+
     this.fetchProductData = this.fetchProductData.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
@@ -42,6 +43,12 @@ class ProductOverview extends React.Component {
 
   componentDidMount() {
     this.fetchProductData(this.props.product_id);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.product_id !== prevProps.product_id) {
+      this.fetchProductData(this.props.product_id);
+    }
   }
 
   render() {
@@ -67,7 +74,10 @@ class ProductOverview extends React.Component {
                 handleClick={this.handleClick} />
             </div>
             <div className="product-detail">
-              <ProductDetail data={this.state.product_data} stylesIndex={this.state.currentIndex} />
+              <ProductDetail
+              data={this.state.product_data}
+              stylesIndex={this.state.currentIndex}
+              avgReviewRating={this.props.avgReviewRating} />
             </div>
             <div className="add-to-cart">
               <AddToCart
