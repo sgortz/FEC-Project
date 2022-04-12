@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 import VerticalThumbnails from './VerticalThumbnails.jsx';
 import { HiOutlineArrowSmRight, HiOutlineArrowSmLeft } from 'react-icons/hi';
-import './ImageGallery.css';
 
 const ImageGallery = ({ photos }) => {
   const [currentPhoto, setCurrentPhoto] = useState(0);
   const [standardSize, setStandardSize] = useState('square-image');
   const length = photos.photos.length;
 
-  const nextPhoto = () => {
-    setCurrentPhoto(currentPhoto === length - 1 ? 0 : currentPhoto + 1)
+  const nextPhoto = (e) => {
+    setCurrentPhoto(currentPhoto === length - 1 ? 0 : currentPhoto + 1);
+    resizeImg(e.target);
   }
 
-  const prevPhoto = () => {
-    setCurrentPhoto(currentPhoto === 0 ? length - 1 : currentPhoto - 1)
+  const prevPhoto = (e) => {
+    setCurrentPhoto(currentPhoto === 0 ? length - 1 : currentPhoto - 1);
+    resizeImg(e.target);
   }
   const changeIndex = (index) => {
     setCurrentPhoto(index)
@@ -22,10 +23,12 @@ const ImageGallery = ({ photos }) => {
   const resizeImg = (img) => {
     if (img.height > img.width) {
       setStandardSize('portrait-image')
-      img.height = 500;
+      console.log(img, img.height, img.width)
+      // img.height = 500;
     } else if (img.height < img.width) {
       setStandardSize('landscape-image')
-      img.width = 700;
+      console.log(img, img.height, img.width)
+      // img.width = 700;
     }
   }
 
