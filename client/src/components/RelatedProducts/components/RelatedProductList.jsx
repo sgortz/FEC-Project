@@ -68,10 +68,10 @@ const RelatedProductList = ({ setProductName, relatedProductId, setProduct_id, r
       {scrollable.left? <BsArrowLeftCircle fontSize = 'xx-large' className='RPleft-arrow'
       onClick={scrollLeft}> </BsArrowLeftCircle> : null}
 
-      <div className='RPcarousel-container' style={{ transform: `translateX(-${currentPhoto * (100 / 4)}%)` }}>
+      <div className='RPcarousel-container' style={{ transform: `translateX(-${currentPhoto * (100 / 125)}%)` }}>
         {listLength !== 0?
           relatedProductData.map((product, count) => {
-            return  (count >= currentPhoto || currentPhoto + 2 >= listLength?
+            return  (count >= currentPhoto || currentPhoto + 3 >= listLength?
             <RelatedProductCard key={product.id} product={product} setProductName={setProductName}
               setProduct_id={setProduct_id} relatedProductData={relatedProductData} reviewData={reviewData} /> : null);
             })
