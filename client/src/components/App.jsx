@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import NavBar from './Navigation/NavBar.jsx';
+import Sidebar from './Navigation/Sidebar.jsx';
 import Announcements from './Navigation/Announcements.jsx';
 import ProductOverview from './Overview/ProductOverview.jsx';
 import RelatedProducts from './RelatedProducts/RelatedProducts.jsx';
@@ -24,6 +25,7 @@ const App = (props) => {
   const [reviewLength, setReviewLength] = useState(null);
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+  const [sidebarDisplay, setSidebarDisplay] = useState(false);
   const [cartData, setCartData] = useState([]);
 
 
@@ -32,23 +34,30 @@ const App = (props) => {
   }
 
   return (
-
     <div className="app" data-theme={theme}>
-      <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} />
-      <Announcements />
-      <div ref={ref}>
-        <ProductOverview product_id={product_id} handleCartData={handleCartData} avgReviewRating={avgReviewRating} />
+
+      <div id="mainpage">
+        <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} sidebarDisplay={sidebarDisplay} setSidebarDisplay={setSidebarDisplay}/>
+        <Announcements />
+        <div ref={ref}>
+          <ProductOverview product_id={product_id} handleCartData={handleCartData}/>
+        </div>
+        <hr id="RPDivider"/>
+        <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName} />
+        <hr id="QADivider"/>
+        <QuestionAndAnswers product_id={product_id} setQuestionLength={setQuestionLength} />
+        <hr id="RRDivider"/>
+        <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} setReviewLength={setReviewLength} />
+        {inView? null :
+        <button className="scroll-top">
+          <Link activeClass="active" to="app" spy={true} smooth={true}>
+            <BsArrowBarUp id="ArrowBarUp"/>
+          </Link>
+        </button>
+        }
       </div>
-      {/* <div ref={ref}> */}
-      <RelatedProducts product_id={product_id} setProduct_id={setProduct_id} avgReviewRating={avgReviewRating} setProductName={setProductName} />
-      {/* </div> */}
-      <QuestionAndAnswers product_id={product_id} setQuestionLength={setQuestionLength} />
-      <RatingsAndReviews product_id={product_id} productName={productName} setAvgReviewRating={setAvgReviewRating} setReviewLength={setReviewLength} />
-      <button className="scroll-top">
-        <Link activeClass="active" to="app" spy={true} smooth={true}>
-          <p>TOP <BsArrowBarUp /> </p>
-        </Link>
-      </button>
+
+      <Sidebar/>
 
     </div>
 
