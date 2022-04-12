@@ -57,7 +57,7 @@ const App = (props) => {
         }
       </div>
 
-      <Sidebar/>
+      <Sidebar cartData={cartData}/>
 
     </div>
 
