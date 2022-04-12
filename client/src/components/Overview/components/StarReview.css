@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-around;
   margin: 6px;
-  max-width: 209px;
+  max-width: 240px;
 }
 
 .star-rating span {
