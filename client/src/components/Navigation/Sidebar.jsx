@@ -6,6 +6,11 @@ const Sidebar = (props) => {
   const [sortedCartData, setSortedCartData] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  const cartitemphotoClickHandler = (e) => {
+    e.preventDefault();
+    props.setProduct_id(e.target.id);
+  }
+
   useEffect(()=>{
     var styleidBasedData = {};
     var totalprice = 0;
@@ -51,7 +56,7 @@ const Sidebar = (props) => {
     <div>
       {sortedCartData.map((item, index)=>
         <div className="cartitem" key={index}>
-          <img className="cartitemphoto" src={item.photo_url}>
+          <img className="cartitemphoto" id={item.product_id} src={item.photo_url} onClick={cartitemphotoClickHandler}>
           </img>
           {item.sale_price === 0 ?
             <p>${item.price}.00</p>

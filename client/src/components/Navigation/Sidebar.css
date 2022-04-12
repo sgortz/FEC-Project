@@ -30,6 +30,11 @@
   object-fit: cover;
 }
 
+.cartitemphoto:hover {
+  cursor:pointer;
+  opacity:0.7;
+}
+
 #onsale {
   color: red;
   margin-bottom: 0px;
