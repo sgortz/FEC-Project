@@ -15,7 +15,7 @@ const StarReview = () => (
     </span>
 
 <span></span><span></span><span></span>
-    <Link activeClass="active" to='RatingsandReviews' spy={true} smooth={true}>
+    <Link activeClass="active" to='RRDivider' spy={true} smooth={true}>
       <p className="link-to-review">    read all reviews</p>
     </Link>
   </div>

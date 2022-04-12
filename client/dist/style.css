@@ -15,6 +15,8 @@
   --announcement-color:#F6F6F6;
   --nav-bar-hover: #328648;
   --RP-card-color:#328648;
+  --top-bar-hover: #b7be11;
+  --social-media: #328648;
 }
 
 
@@ -26,14 +28,16 @@
   --announcement-color: #ecedd0;
   --nav-bar-hover: #b7be11;
   --RP-card-color:#b7be11;
+  --top-bar-hover: white;
+  --social-media: #b7be11;
 }
 
 body {
   margin: 0px;
 }
 
-/* ---------------- App Component ---------------- */
-.app {
+/* ---------------- App Main Component ---------------- */
+#mainpage {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,10 +50,28 @@ body {
   transition: all 0.3s linear;
 }
 
+
+/* ------------------------- Sidebar
+------------------------- */
+#Sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.1s;
+  background-color: var(--announcement-color);
+  border-left: solid 0.5px grey;
+}
+
+
 /* ---------------- NavBar Component ---------------- */
 .Navbar {
   background-color: var(--nav-bar-color);
-  border-bottom:  2px solid #8b9004
+  border-bottom:  2px solid #8b9004;
+  width: 100%;
 }
 
 .Logo {
@@ -63,13 +85,13 @@ body {
 .announcements {
   color: #2a2c29;
   background-color: var(--announcement-color);
+  color:black;
   display: block;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-weight: 300;
   font-size: 18px;
-  margin-top: 90px;
   text-align: center;
-  padding: 10px;
+  padding: 10px 0px;
   width: 100%;
 }
 
@@ -101,18 +123,33 @@ body {
 
 /* ------------------------- TOP Button ------------------------- */
 .scroll-top {
-  background-color: #B7BE0E;
-  border: 1px solid #B7BE0E;
+  background-color: rgba(241, 241, 241, 0.8);
+  padding: 10;
+  border: 0px;
   border-radius: 10px;
-  bottom: 47px;
-  color: whitesmoke;
-  display: flex;
-  align-items: end;
+  bottom: 70px;
+  color: black;
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  justify-content: center;
-  padding: 7px;
+  font-size: larger;
   position: fixed;
-  right: 64px;
-  width: 8%;
+  left: 70px;
+  cursor: pointer;
+  transition: all 0.1s linear;
 }
+
+.scroll-top:hover {
+  color: var(--top-bar-hover);
+}
+
+#ArrowBarUp {
+  padding: 10px;
+}
+
+/* ------------------------- Widget Dividers ------------------------- */
+#RRDivider, #QADivider, #RPDivider{
+  width: 30%;
+  margin: 4.5%;
+  color: black;
+}
+
+

@@ -12,6 +12,8 @@ const RelatedProducts = ({ product_id, setProduct_id, setProductName}) => {
 
 
 
+
+
   useEffect(() => {
     axios.get('/products/:product_id/related', { params: { product_id: product_id } })
       .then(res => {
@@ -22,7 +24,7 @@ const RelatedProducts = ({ product_id, setProduct_id, setProductName}) => {
         console.log("err in getting related product id:", err)
       })
   }, [product_id])
-  
+
 
   useEffect(() => {
     Promise.all(
@@ -43,7 +45,7 @@ const RelatedProducts = ({ product_id, setProduct_id, setProductName}) => {
           .catch(err => console.log(err))
       )
     )
-      .then(cleanData => setRelatedProductData(cleanData))
+      .then(cleanData => {setRelatedProductData(cleanData)})
       .catch(err => console.log(err))
 
   }, [relatedProductId]);

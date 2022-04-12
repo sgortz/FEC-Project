@@ -5,6 +5,8 @@
   padding-top: 50px;
   margin: 20px, auto;
   align-items: center;
+  overflow: hidden;
+
   /* font-family: 'Belleza', sans-serif;
   font-size:2em */
 
@@ -51,8 +53,8 @@
 
 .RPcard-image {
   border-radius: 40px 40px 0 0;
-  width: 275px;
-  height: 350px;
+  width: 250px;
+  height: 275px;
   object-fit: cover;
 
 }
@@ -74,6 +76,9 @@
   margin: 0px 20px;
   background-color: var(--RP-card-color);
   text-align: center;
+  position: relative;
+  overflow-x: hidden;
+  cursor: pointer;
 
 }
 
@@ -87,16 +92,20 @@
 /* Related Products Carousel Basic CSS */
 
 .RPcarousel-container {
-  width: 100%;
+  width: 1160px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+
 }
 
-.RPcarousel-content-wrapper {
+.RPcarousel-content{
   display: flex;
   width: 100%;
+  overflow: hidden;
   position: relative;
 }
+
 
 .RPright-arrow, .RPleft-arrow{
   position: absolute;
@@ -109,8 +118,10 @@
 
 .RPleft-arrow {
   left: 24px;
+  z-index: 1;
 }
 
 .RPright-arrow {
   right: 24px;
+  z-index: 1;
 }
