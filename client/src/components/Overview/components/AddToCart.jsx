@@ -71,10 +71,7 @@ const AddToCart = ({ data, stylesIndex, handleCartData }) => {
 
   return (
     <div>
-      <form
-        className='add-to-cart-form'
-      // onSubmit={(e) => { e.preventDefault(); console.log('clicked!')}}
-      >
+      <form className='add-to-cart-form' >
         <select id="select-size" name="size" onChange={setSize} value={sizeSelection}>
           <option value="Select Size">SELECT SIZE</option>
           {productSizes.map((size, index) => {
@@ -85,10 +82,10 @@ const AddToCart = ({ data, stylesIndex, handleCartData }) => {
         <select
           id="quantity"
           name="quantity"
-          disabled={sizeSelection === null ? true : false}
+          disabled={sizeSelection === '' ? true : false}
           onChange={setQuantity}
-          value={quantityOption}
-          >
+          value={quantitySelection}
+        >
           <QuantityOptions quantityOption={quantityOption} />
         </select>
 
