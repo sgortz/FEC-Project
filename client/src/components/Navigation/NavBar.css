@@ -27,7 +27,7 @@
 .DynamicProductLogo {
   display: flex;
   flex-direction: column;
-  font-family: 'Belleza', sans-serif;
+  /* font-family: 'Belleza', sans-serif; */
   row-gap:1.5px;
   font-size: 23px;
   margin: 10px;
@@ -96,4 +96,18 @@
   transition: 0.2s;
   cursor: pointer;
 
+}
+
+#RiShoppingBag {
+  position: absolute;
+}
+
+.reddot {
+  position: relative;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color:red;
+  top: -30px;
+  right: -22px;
 }

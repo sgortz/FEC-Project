@@ -50,7 +50,14 @@ const NavBar = (props) => {
       </input>
     </form> */}
     <button className="themetogglebtn" onClick={switchTheme}>Switch to {props.theme === 'light' ? 'Dark' : 'Light'}</button>
-    <RiShoppingBagLine id="RiShoppingBag" size="25px" onClick={handleShoppingBagClick}/>
+    <div id="RiShoppingBag">
+     <RiShoppingBagLine  size="25px" onClick={handleShoppingBagClick}/>
+     {props.cartData.length > 0?
+      <div className="reddot"></div>
+      : null
+      }
+    </div>
+
   </div>
   )
   }
