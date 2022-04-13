@@ -34,7 +34,9 @@
   flex-direction: row;
 }
 
-
+.DynamicProductSecondRow:hover {
+  cursor: pointer;
+}
 
 #RiShoppingBag {
   grid-column: 3/4;
