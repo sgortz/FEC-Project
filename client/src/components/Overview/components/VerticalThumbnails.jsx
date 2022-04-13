@@ -1,8 +1,6 @@
 import React from 'react';
 
 const VerticalThumbnails = ({ photos, currentPhoto, changeIndex }) => {
-
-  
   return (
     <ul>
       {photos.map((thumbnail, index) => {
