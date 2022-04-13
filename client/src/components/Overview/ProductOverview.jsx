@@ -29,7 +29,6 @@ class ProductOverview extends React.Component {
   }
 
   handleClick(num) {
-    console.log(num)
     this.setState({ currentIndex: num })
   }
 

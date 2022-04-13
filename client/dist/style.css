@@ -10,10 +10,10 @@
   --text-primary: black;
   --nav-bar-color: #b7be11;
   --button-color: #328648;
-  --button-color-border-hover:#326a44;
-  --announcement-color:#F6F6F6;
+  --button-color-border-hover: #326a44;
+  --announcement-color: #F6F6F6;
   --nav-bar-hover: #328648;
-  --RP-card-color:#328648;
+  --RP-card-color: #328648;
   --top-bar-hover: #b7be11;
   --social-media: #328648;
 }
@@ -24,10 +24,10 @@
   --text-primary: white;
   --nav-bar-color: #75790a;
   --button-color: #BEB711;
-  --button-color-border-hover:#75790a;
+  --button-color-border-hover: #75790a;
   --announcement-color: #ecedd0;
   --nav-bar-hover: #b7be11;
-  --RP-card-color:#b7be11;
+  --RP-card-color: #b7be11;
   --top-bar-hover: white;
   --social-media: #b7be11;
 }
@@ -71,7 +71,7 @@ body {
 /* ---------------- NavBar Component ---------------- */
 .Navbar {
   background-color: var(--nav-bar-color);
-  border-bottom:  2px solid #8b9004;
+  border-bottom: 2px solid #8b9004;
   width: 100%;
 }
 
@@ -86,7 +86,7 @@ body {
 .announcements {
   color: #2a2c29;
   background-color: var(--announcement-color);
-  color:black;
+  color: black;
   display: block;
   font-family: 'Alegreya Sans SC', sans-serif;
   font-weight: 300;
@@ -98,27 +98,6 @@ body {
 
 .announcements span {
   text-decoration: underline
-}
-
-/* -------------------- StarReview Component -------------------- */
-
-.link-to-review:hover {
-  color: #40804f;
-}
-
-/* ---------------- VerticalThumbnails Component ---------------- */
-.current-thumbnail {
-  border: 3px solid #328648;
-  border-radius: 10px;
-}
-
-.thumbnail:hover {
-  cursor: pointer;
-}
-
-/* ---------------- ProductDescription Component ---------------- */
-.social-media {
-  color: black;
 }
 
 /* ------------------------- TOP Button ------------------------- */
@@ -146,7 +125,9 @@ body {
 }
 
 /* ------------------------- Widget Dividers ------------------------- */
-#RRDivider, #QADivider, #RPDivider{
+#RRDivider,
+#QADivider,
+#RPDivider {
   width: 30%;
   margin: 4.5%;
   color: black;
@@ -156,6 +137,6 @@ body {
   margin-top: 10%;
 }
 
-.themetogglebtn{
+.themetogglebtn {
   font-family: 'Poppins', sans-serif;
 }

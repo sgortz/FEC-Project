@@ -67,6 +67,11 @@
   grid-column: 2;
   grid-row: 1 / 5;
 }
+/* -------------------- StarReview Component -------------------- */
+
+.link-to-review:hover {
+  color: #40804f;
+}
 
 /* ----------------- ProductDetail Component ----------------- */
 .product-name {
@@ -121,6 +126,16 @@
   margin-top: 20px;
 }
 
+/* ---------------- VerticalThumbnails Component ---------------- */
+.current-thumbnail {
+  border: 3px solid var(--button-color);
+  border-radius: 10px;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
+}
+
 /* ----------------- StyleSelector Component ----------------- */
 
 .circular-photo {
@@ -144,10 +159,10 @@
   margin-left: -12px;
 }
 
-
 .circular-photo:hover {
   cursor: pointer;
 }
+
 
 /* --------------------- AddToCart Component -------------------- */
 #select-size,
@@ -163,7 +178,7 @@
   font-size: 18px;
   font-weight: 300;
   margin: 5px;
-  min-width: 160px;
+  min-width: 60px;
   padding: 10px;
   text-align: center;
 }
@@ -207,12 +222,10 @@
 
 /* ------------------- ImageGallery Component ------------------- */
 .photos {
-  /* height: 100vh; */
   display: flex;
   justify-content: start;
   margin-top: 20px;
   position: relative;
-  /* align-items: center; */
 }
 
 .portrait-image {
