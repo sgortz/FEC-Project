@@ -7,8 +7,8 @@
   line-height: 20px;
   width: 100%;
   align-items: center;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  /* margin-top: 100px; */
+  /* margin-bottom: 100px; */
 }
 
 .QAtitle{
@@ -220,7 +220,7 @@
   max-width: 78%;
 }
 
-.moreQBtn, .addQBtn {
+.moreQBtn, .addQBtn, .goBackQ {
   align-items: center;
   justify-content: center;
   background-color: var(--button-color);
