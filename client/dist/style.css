@@ -46,7 +46,7 @@ body {
   color: var(--text-primary);
   background-color: var(--background);
   /* font-family: 'Roboto', sans-serif; */
-  /* font-family: 'Poppins', sans-serif; */
+  font-family: 'Poppins', sans-serif;
   transition: all 0.3s linear;
 }
 
@@ -64,6 +64,8 @@ body {
   transition: 0.1s;
   background-color: var(--announcement-color);
   border-left: solid 0.5px grey;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 
@@ -152,4 +154,10 @@ body {
   color: black;
 }
 
+#RPDivider {
+  margin-top: 10%;
+}
 
+.themetogglebtn{
+  font-family: 'Poppins', sans-serif;
+}
