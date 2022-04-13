@@ -8,6 +8,7 @@
   width: 100%;
   margin-top:10px;
   margin-bottom: 10px;
+  /* position: relative; */
 }
 
 
@@ -16,6 +17,8 @@
   background-color: #f1f1f1;
   text-align: end;
   color: #04AA6D;
+  /* position:relative; */
+  z-index: 0;
 }
 
 .productlabelscontainer {
@@ -26,6 +29,7 @@
 
 .review-indicator {
   height: 18px;
+  z-index: 40;
   /* background-color: #04AA6D; */
 }
 
@@ -41,3 +45,23 @@
   float: right;
   /* text-align: right; */
 }
+
+/* .productbarcontainer::before{
+  position: absolute;
+  top: 0px;
+  width: 4px;
+  height: 19.5px;
+  content: '';
+  left: 33%;
+  background-color: white;
+}
+
+.productbarcontainer::after{
+  top: 0px;
+  position: absolute;
+  width: 4px;
+  height: 19.5px;
+  content: '';
+  right: 33%;
+  background-color: white;
+} */

@@ -14,7 +14,7 @@
 .QAtitle{
   display: flex;
   justify-content: center;
-  font-family: 'Belleza', sans-serif;
+  /* font-family: 'Belleza', sans-serif; */
   font-size: 2em
 }
 /* QuestionModel Basic CSS */
