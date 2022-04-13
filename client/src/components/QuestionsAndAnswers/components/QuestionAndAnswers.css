@@ -220,7 +220,7 @@
   max-width: 78%;
 }
 
-.moreQBtn, .addQBtn {
+.moreQBtn, .addQBtn, .goBackQ {
   align-items: center;
   justify-content: center;
   background-color: var(--button-color);

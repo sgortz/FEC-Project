@@ -161,7 +161,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-#morereviews, #addreview, .goBackQ {
+#morereviews, #addreview {
   align-items: center;
   justify-content: center;
   background-color: var(--button-color);
