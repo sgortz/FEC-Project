@@ -5,7 +5,7 @@
 
 /* ---------------- ProductOverview Component ---------------- */
 .page-loading {
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 25px;
   text-align: center;
 }
@@ -39,19 +39,19 @@
 }
 
 .style-selector {
-  grid-column: 3/span2;
+  grid-column: 3 / span 2;
   grid-row: 3;
   margin: 20px;
 }
 
 .product-detail {
-  grid-column: 3/span2;
+  grid-column: 3 / span 2;
   grid-row: 2;
   margin: 20px;
 }
 
 .add-to-cart {
-  grid-column: 3/span1;
+  grid-column: 3/ span 1;
   grid-row: 4;
   margin: 20px;
   width: 65%
@@ -68,6 +68,32 @@
   grid-row: 1 / 5;
 }
 
+/* ----------------- ProductDetail Component ----------------- */
+.product-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.sale-price {
+  color: red;
+}
+
+.product-price,
+.sale-price {
+  display: inline;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  margin: 6px;
+  position: relative;
+  top: 22px;
+}
+
 /* ----------------- StylesGallery Component ----------------- */
 
 .style-gallery {
@@ -79,7 +105,7 @@
 .clothing-style,
 .product-category {
   font-family: 'Poppins', sans-serif;
-  font-size: 21px;
+  font-size: 19px;
   grid-column: 1 / 5;
   grid-row: 1;
   margin-top: 7px;
@@ -129,7 +155,7 @@
 #add-to-bag,
 .starred {
   background-color: var(--button-color);
-  border: 2.5px solid #40804f;
+  border: 3px solid var(--button-color);
   border-radius: 8px;
   color: white;
   cursor: pointer;
@@ -137,6 +163,7 @@
   font-size: 18px;
   font-weight: 300;
   margin: 5px;
+  min-width: 160px;
   padding: 10px;
   text-align: center;
 }
@@ -145,7 +172,11 @@
 #quantity:hover,
 #add-to-bag:hover,
 .starred:hover {
-  border: 2.5px solid #326a44;
+  border: 3px solid var(--button-color-border-hover);
+}
+
+#add-to-bag:disabled {
+  opacity: 0.7;
 }
 
 #select-size {
@@ -231,7 +262,7 @@
 .about-style {
   display: grid;
   grid-template-columns: 1fr 438px 5px 319px 1fr;
-  grid-template-rows: 50px 50px;
+  grid-template-rows: 50px 50px 50px;
   margin: 35px;
 }
 
@@ -248,7 +279,7 @@
   font-size: 18px;
   font-weight: 200;
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 2 / 4;
   margin: 15px 25px 0 0;
 }
 
@@ -272,7 +303,6 @@
 }
 
 .social-media {
-
   font-size: 25px;
   margin-top: 10px;
   text-align: center;

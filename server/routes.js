@@ -5,11 +5,8 @@ var router = require('express').Router();
 // example:
 // router.get('/pageDetail', controller.pageDetail.get);
 
-
 /* -------- PRODUCT OVERVIEW -------- */
 router.get('/products/:product_id/', controller.products.getProductData);
-// router.get('/products/', controller.products.getProductInfo);
-// router.get('/products/:product_id/styles', controller.products.getProductStyles);
 
 //Ratings and Reviews
 router.get('/reviews/', controller.review.getAllreviews);
@@ -30,6 +27,5 @@ router.put('/qa/answers/:answer_id/report', controller.questions.putReportAnswer
 
 /* -------- Related Items & Comparison -------- */
 router.get('/products/:product_id/related',controller.relatedProducts.getRelatedProducts);
-
 
 module.exports = router;

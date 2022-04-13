@@ -3,25 +3,6 @@ const { API_KEY, FEC_API_URL } = require('../../client/src/config/config');
 // https://app-hrsei-api.herokuapp.com/api/fec2/hr-rfe/
 
 module.exports = {
-  // getProductInfo: function (callback) {
-  //   options = {
-  //     method: 'get',
-  //     url: `${FEC_API_URL}products/`,
-  //     headers: {
-  //       'User-Agent': 'request',
-  //       'Authorization': API_KEY
-  //     }
-  //   };
-
-  //   return axios(options)
-  //     .then((response) => {
-  //       callback(null, response.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log('An error occurred while getting the product\'s information', err);
-  //     });
-  // },
-
   getProductFeatures: function (product_id) {
     let options = {
       method: 'get',
@@ -55,7 +36,5 @@ module.exports = {
       .catch((err) => {
         console.log('An error occurred while getting the product\'s styles', err);
       });
-  },
-
-
+  }
 }

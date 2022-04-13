@@ -4,14 +4,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
 /* ---------------- Switch Theme ---------------- */
 :root {
   --background: white;
   --text-primary: black;
   --nav-bar-color: #b7be11;
   --button-color: #328648;
+  --button-color-border-hover:#326a44;
   --announcement-color:#F6F6F6;
   --nav-bar-hover: #328648;
   --RP-card-color:#328648;
@@ -25,6 +24,7 @@
   --text-primary: white;
   --nav-bar-color: #75790a;
   --button-color: #BEB711;
+  --button-color-border-hover:#75790a;
   --announcement-color: #ecedd0;
   --nav-bar-hover: #b7be11;
   --RP-card-color:#b7be11;
@@ -45,7 +45,6 @@ body {
   align-items: center;
   color: var(--text-primary);
   background-color: var(--background);
-  /* font-family: 'Roboto', sans-serif; */
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s linear;
 }
@@ -121,7 +120,6 @@ body {
 .social-media {
   color: black;
 }
-
 
 /* ------------------------- TOP Button ------------------------- */
 .scroll-top {
