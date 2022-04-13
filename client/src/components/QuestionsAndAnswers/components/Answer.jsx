@@ -41,7 +41,7 @@ const Answer = ({ answer }) => {
   return (
     <div className='Answer'>
       <div className='answerBody'>
-        <span className='A'>A:</span>
+        <span className='A'>A: </span>
         <span className='ABody'>{body}</span>
       </div>
       <span className='answerPhotos'>

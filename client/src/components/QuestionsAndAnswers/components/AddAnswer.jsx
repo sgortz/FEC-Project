@@ -86,7 +86,7 @@ const AddAnswer = ({handleOpenModel, question}) => {
           <h3 className='QAmodelTitle'>Submit your Answer</h3>
 
           <label htmlFor='nickname'>Your Name * : </label>
-          <input type='text' name='name' required
+          <input id = 'name' type='text' name='name' required
             maxLength='60'
             placeholder='Example: jackson11'
             onChange={handleOnchange}
@@ -94,7 +94,7 @@ const AddAnswer = ({handleOpenModel, question}) => {
           <p>For privacy reasons, do not use your full name or email address. </p>
 
           <label htmlFor='email'>Your Email * : </label>
-          <input type='email' name='email' required
+          <input id= 'email' type='email' name='email' required
             maxLength='60'
             placeholder='Example: jackson11@gmail.com'
             onChange={handleOnchange}
@@ -102,7 +102,7 @@ const AddAnswer = ({handleOpenModel, question}) => {
           <p>For authentication reasons, you will not be emailed.</p>
 
           <label htmlFor='answer'>Your Answer * : </label>
-          <textarea maxLength='1000' name='answerBody' required
+          <textarea id='answerBody' maxLength='1000' name='answerBody' required
             placeholder='Enter your answer here...'
             onChange={handleOnchange}
             value={answerBody}></textarea>

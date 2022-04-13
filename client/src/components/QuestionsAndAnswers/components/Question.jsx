@@ -54,7 +54,7 @@ const Question = ({ question, searchStatus, searchTerm }) => {
       <div className='QAinlineRight'>
         <span className='QAhelpful'>Helpful? </span>
         {!helpfulClicked ?
-          <a className='QAhelpful-button' onClick={handleClickHelpful}>Yes ({questionHelpful}) </a>
+          <a data-testid='helpfulLink' className='QAhelpful-button' onClick={handleClickHelpful}>Yes ({questionHelpful}) </a>
           : <a>Yes ({questionHelpful})</a>
         }
         <span className='QAbreak'>|</span>
