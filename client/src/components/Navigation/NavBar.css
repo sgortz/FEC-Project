@@ -3,8 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
 
 .Navbar {
-  align-items:center;
-  /* background-color: #752819; */
+  align-items: center;
   display: grid;
   grid-template-columns: 4.5fr 0.8fr 0.85fr;
   justify-content: space-between;
@@ -16,24 +15,18 @@
 }
 
 .Logo {
-  /* font-family: 'Belleza', sans-serif; */
   font-size: 40px;
   margin: 10px;
   grid-column:1/2
-  /* font-family: 'Libre Baskerville', serif; */
-  /* font-style: italic; */
 }
 
 .DynamicProductLogo {
   display: flex;
   flex-direction: column;
-  /* font-family: 'Belleza', sans-serif; */
   row-gap:1.5px;
-  font-size: 23px;
+  font-size: 17px;
   margin: 10px;
   grid-column:1/2;
-  /* font-family: 'Libre Baskerville', serif; */
-  /* font-style: italic; */
 }
 
 .DynamicProductSecondRow {
@@ -41,13 +34,9 @@
   flex-direction: row;
 }
 
-
-/* .top-search-bar {
-  border-radius: 20px;
-  margin-right: 15px;
-  padding: 10px;
-  grid-column: 2/3
-} */
+.DynamicProductSecondRow:hover {
+  cursor: pointer;
+}
 
 #RiShoppingBag {
   grid-column: 3/4;
@@ -60,7 +49,7 @@
 }
 
 #nav-link-to-review,  #nav-link-to-questions{
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -104,10 +93,19 @@
 
 .reddot {
   position: relative;
-  height: 7px;
-  width: 7px;
+  height: 7.2px;
+  width: 7.2px;
   border-radius: 50%;
   background-color:red;
-  top: -30px;
-  right: -22px;
+  top: -32px;
+  right: -25px;
+}
+
+#shoppingbag:hover {
+  color: var(--background);
+}
+
+#nav-product-name {
+  margin: 0;
+  font-weight: 600;
 }

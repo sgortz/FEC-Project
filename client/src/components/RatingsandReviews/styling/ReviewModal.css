@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .reviewmodal {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Overlay effect: translucent background: black w/ partial opacity */
@@ -22,6 +24,8 @@
   max-width: 700px; /* Max width where it stops expanding */
   /* height: 130%; Height in proportion to its parent container */
   margin: auto; /* Auto margin according to the element width */
+  margin-top: 3vh;
+  margin-bottom: 3vh;
   padding: 10px;
   border: 1px solid black;
   border-radius: 20px; /* Optional. Rounds container corners */
@@ -70,7 +74,7 @@
 
 /*make text input box wider*/
 #reviewnickname, #reviewemail {
-  width: 200px;
+  width: 250px;
 }
 
 /*textarea*/
@@ -156,4 +160,10 @@
 
 .newreviewembeddedphotos {
   padding-top: 7px;
+}
+
+
+#uploadphotos, #embedphotosubmitbtn, #closereviewmodal, #submitnewreview,#reviewsummary, #reviewbody, #embedphotourl, #reviewnickname, #reviewemail{
+  font-family: 'Poppins', sans-serif;
+
 }

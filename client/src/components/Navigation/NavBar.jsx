@@ -30,7 +30,7 @@ const NavBar = (props) => {
     {props.inView?
       <div className="Logo">Z. Narrows</div>
     :
-      <div className="DynamicProductLogo">{props.productName}
+      <div className="DynamicProductLogo"><p id="nav-product-name">{props.productName}</p>
       <span className='DynamicProductSecondRow'>
       <Link activeClass="active" to='RRDivider' spy={true} smooth={true}><Star value={props.avgReviewRating}/>
       </Link>
@@ -44,14 +44,9 @@ const NavBar = (props) => {
       </span>
       </div>
     }
-    {/* <form>
-      <input className="top-search-bar" type="text" disabled={true}>
-        <FiSearch />
-      </input>
-    </form> */}
     <button className="themetogglebtn" onClick={switchTheme}>Switch to {props.theme === 'light' ? 'Dark' : 'Light'}</button>
     <div id="RiShoppingBag">
-     <RiShoppingBagLine  size="25px" onClick={handleShoppingBagClick}/>
+     <RiShoppingBagLine  id="shoppingbag" size="27px" onClick={handleShoppingBagClick}/>
      {props.cartData.length > 0?
       <div className="reddot"></div>
       : null
