@@ -3,7 +3,7 @@
 .RRContainer {
   display: grid;
   grid-template-columns: 1.1fr 3fr;
-  grid-template-rows: 20px 20px 1fr 30px;
+  grid-template-rows: 50px 20px 1fr 30px;
   column-gap: 120px;
   row-gap: 30px;
   width: 80%;
@@ -82,6 +82,6 @@
 }
 
 #morereviews:hover, #addreview:hover{
-  border: 2.5px solid var(--nav-bar-color);
+  border: 2.5px solid var(--button-color-border-hover);
 }
 

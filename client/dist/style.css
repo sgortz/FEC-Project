@@ -4,8 +4,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
 /* ---------------- Switch Theme ---------------- */
 :root {
   --background: white;
@@ -17,6 +15,7 @@
   --RP-card-color:#328648;
   --top-bar-hover: #b7be11;
   --social-media: #328648;
+  --button-color-border-hover:#326a44;
 }
 
 
@@ -30,6 +29,7 @@
   --RP-card-color:#b7be11;
   --top-bar-hover: white;
   --social-media: #b7be11;
+  --button-color-border-hover:#75790a;
 }
 
 body {
@@ -45,7 +45,6 @@ body {
   align-items: center;
   color: var(--text-primary);
   background-color: var(--background);
-  /* font-family: 'Roboto', sans-serif; */
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s linear;
 }
