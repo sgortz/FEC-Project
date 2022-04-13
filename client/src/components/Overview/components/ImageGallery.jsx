@@ -23,12 +23,8 @@ const ImageGallery = ({ photos }) => {
   const resizeImg = (img) => {
     if (img.height > img.width) {
       setStandardSize('portrait-image')
-      console.log(img, img.height, img.width)
-      // img.height = 500;
     } else if (img.height < img.width) {
       setStandardSize('landscape-image')
-      console.log(img, img.height, img.width)
-      // img.width = 700;
     }
   }
 
