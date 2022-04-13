@@ -84,6 +84,9 @@ body {
   font-weight: 600;
 }
 
+.themetogglebtn {
+  font-family: 'Poppins', sans-serif;
+}
 /* ------------------- Announcements Component ------------------- */
 .announcements {
   color: #2a2c29;
@@ -131,17 +134,26 @@ body {
 #QADivider,
 #RPDivider {
   width: 30%;
-  margin: 4.5%;
+  margin: 6%;
   color: black;
 }
 
-#RPDivider {
-  margin-top: 10%;
+.RP.title, .QAtitle {
+ margin-top: 0;
+ padding-top: 0;
 }
 
-.themetogglebtn {
-  font-family: 'Poppins', sans-serif;
+.QuestionAndAnswers {
+  margin-top: 0px;
 }
+
+#RatingsandReviews {
+  margin-top: 0px;
+}
+
+
+
+/* ------------------------- Buttons ------------------------- */
 
 #morereviews, #addreview {
   align-items: center;
