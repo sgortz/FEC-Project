@@ -17,6 +17,7 @@
   --RP-card-color:#328648;
   --top-bar-hover: #b7be11;
   --social-media: #328648;
+  --button-color-border-hover:#326a44;
 }
 
 
@@ -160,4 +161,31 @@ body {
 
 .themetogglebtn{
   font-family: 'Poppins', sans-serif;
+}
+
+#morereviews, #addreview, .goBackQ {
+  align-items: center;
+  justify-content: center;
+  background-color: var(--button-color);
+  border: 2.5px solid var(--button-color);
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 600;
+  height: 48px;
+  margin-left: 120px;
+  margin-right: 120px;
+  line-height: 24px;
+  max-width: 60%;
+  width: 50%;
+  padding: 25px 25px;
+  position: relative;
+  text-align: center;
+}
+
+#morereviews:hover, #addreview:hover, .moreQBtn:hover, .goBackQ:hover, .addQBtn:hover{
+  border: 2.5px solid var(--button-color-border-hover);
 }
