@@ -50,7 +50,7 @@ const App = (props) => {
     <div className="app" data-theme={theme}>
 
       <div id="mainpage">
-        <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} sidebarDisplay={sidebarDisplay} setSidebarDisplay={setSidebarDisplay}/>
+        <NavBar productName={productName} avgReviewRating={avgReviewRating} reviewLength={reviewLength} questionLength={questionLength} inView={inView} theme={theme} setTheme={setTheme} sidebarDisplay={sidebarDisplay} setSidebarDisplay={setSidebarDisplay} cartData={cartData}/>
         <Announcements />
         <div ref={ref}>
           <ProductOverview product_id={product_id} handleCartData={handleCartData}/>

@@ -97,3 +97,17 @@
   cursor: pointer;
 
 }
+
+#RiShoppingBag {
+  position: absolute;
+}
+
+.reddot {
+  position: relative;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color:red;
+  top: -30px;
+  right: -22px;
+}
